@@ -5,11 +5,11 @@ plugins {
 
 android {
     namespace = "com.bevesttech.bevest"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.bevesttech.bevest"
-        minSdk = 24
+        minSdk = 26
         targetSdk = 33
         versionCode = 1
         versionName = "1.0"
