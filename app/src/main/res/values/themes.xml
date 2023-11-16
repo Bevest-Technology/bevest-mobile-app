@@ -4,6 +4,10 @@
         <!-- Color -->
         <item name="dsColorPrimary">@color/ds_primary</item>
         <item name="dsColorSecondary">@color/ds_secondary</item>
+        <item name="dsColorDisabled">@color/ds_color_diabled</item>
+        <item name="dsColorActive">@color/ds_color_active</item>
+        <item name="dsColorBlue60">@color/ds_blue_60</item>
+        <item name="dsColorBlue20">@color/ds_blue_20</item>
         <item name="dsColorPositive100">@color/ds_positive_100</item>
         <item name="dsColorPositive60">@color/ds_positive_60</item>
         <item name="dsColorPositive20">@color/ds_positive_20</item>
@@ -15,6 +19,7 @@
         <item name="dsColorNeutral80">@color/ds_neutral_80</item>
         <item name="dsColorNeutral70">@color/ds_neutral_70</item>
         <item name="dsColorNeutral60">@color/ds_neutral_60</item>
+        <item name="dsColorNeutral50">@color/ds_neutral_50</item>
         <item name="dsColorNeutral20">@color/ds_neutral_20</item>
 
         <item name="colorPrimary">?attr/dsColorPrimary</item>
