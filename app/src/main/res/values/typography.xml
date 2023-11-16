@@ -5,27 +5,27 @@
         <item name="android:fontFamily">@font/plus_jakarta_sans</item>
     </style>
     <style name="BevestDesign.Typography.Headline1" parent="BevestDesign.Typography">
-        <item name="android:fontWeight">600</item>
+        <item name="android:textFontWeight">600</item>
         <item name="android:textSize">24sp</item>
         <item name="android:lineSpacingMultiplier">1.2</item>
     </style>
     <style name="BevestDesign.Typography.Headline2" parent="BevestDesign.Typography">
-        <item name="android:fontWeight">600</item>
+        <item name="android:textFontWeight">600</item>
         <item name="android:textSize">20sp</item>
         <item name="android:lineSpacingMultiplier">1.2</item>
     </style>
     <style name="BevestDesign.Typography.Headline3" parent="BevestDesign.Typography">
-        <item name="android:fontWeight">600</item>
+        <item name="android:textFontWeight">600</item>
         <item name="android:textSize">18sp</item>
         <item name="android:lineSpacingMultiplier">1.2</item>
     </style>
     <style name="BevestDesign.Typography.Headline4" parent="BevestDesign.Typography">
-        <item name="android:fontWeight">600</item>
+        <item name="android:textFontWeight">600</item>
         <item name="android:textSize">16sp</item>
         <item name="android:lineSpacingMultiplier">1.2</item>
     </style>
     <style name="BevestDesign.Typography.Headline5" parent="BevestDesign.Typography">
-        <item name="android:fontWeight">600</item>
+        <item name="android:textFontWeight">600</item>
         <item name="android:textSize">14sp</item>
         <item name="android:lineSpacingMultiplier">1.2</item>
     </style>
@@ -58,7 +58,7 @@
         <item name="android:lineSpacingMultiplier">1.5</item>
         <item name="android:letterSpacing">0.015</item>
         <item name="android:lineSpacingExtra">10dp</item>
-        <item name="fontWeight">600</item>
+        <item name="android:textFontWeight">600</item>
     </style>
     <style name="BevestDesign.Typography.BodySemiBold2" parent="BevestDesign.Typography">
         <item name="android:fontStyle">normal</item>
@@ -66,7 +66,7 @@
         <item name="android:lineSpacingMultiplier">1.5</item>
         <item name="android:letterSpacing">0.015</item>
         <item name="android:lineSpacingExtra">8dp</item>
-        <item name="fontWeight">600</item>
+        <item name="android:textFontWeight">600</item>
     </style>
     <style name="BevestDesign.Typography.BodySemiBold3" parent="BevestDesign.Typography">
         <item name="android:fontStyle">normal</item>
@@ -74,18 +74,18 @@
         <item name="android:lineSpacingMultiplier">1.5</item>
         <item name="android:letterSpacing">0.015</item>
         <item name="android:lineSpacingExtra">8dp</item>
-        <item name="fontWeight">600</item>
+        <item name="android:textFontWeight">600</item>
     </style>
 
     <!-- Button -->
     <style name="BevestDesign.Typography.ButtonLink" parent="BevestDesign.Typography">
-        <item name="fontWeight">600</item>
+        <item name="android:textFontWeight">600</item>
         <item name="android:textSize">16sp</item>
         <item name="android:lineSpacingMultiplier">1.5</item>
         <item name="android:letterSpacing">0.00125</item>
     </style>
     <style name="BevestDesign.Typography.ButtonLinkSmall" parent="BevestDesign.Typography">
-        <item name="fontWeight">600</item>
+        <item name="android:textFontWeight">600</item>
         <item name="android:textSize">14sp</item>
         <item name="android:lineSpacingMultiplier">1.5</item>
         <item name="android:letterSpacing">0.00125</item>
