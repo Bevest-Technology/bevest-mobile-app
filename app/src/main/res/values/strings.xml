@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Bevest Mobile Application</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="onboarding_title_1">Investasi Equity Crowdfunding dengan Praktis!</string>
+    <string name="onboarding_title_2">Keuntungan Anda, Kemajuan UMKM</string>
+    <string name="onboarding_title_3">Bikin Investasi Jadi Hip!</string>
+    <string name="onboarding_subtitle_1">Sekali klik investasi Crowfunding sesuai dengan level resiko kamu</string>
+    <string name="onboarding_subtitle_2">Dapat keuntungan sambil berkontribusi pada pertumbuhan bisnis UMKM</string>
+    <string name="onboarding_subtitle_3">Investasi dari Kecil, Hasilnya Besar! Mulai dari 10 Ribu</string>
 </resources>
