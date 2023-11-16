@@ -3,9 +3,11 @@
     <!-- Headline -->
     <style name="BevestDesign.Typography" parent="TextAppearance.AppCompat">
         <item name="android:fontFamily">@font/plus_jakarta_sans</item>
+        <item name="android:includeFontPadding">false</item>
     </style>
     <style name="BevestDesign.Typography.SemiBold" parent="TextAppearance.AppCompat">
         <item name="android:fontFamily">@font/plus_jakarta_sans_semibold</item>
+        <item name="android:includeFontPadding">false</item>
     </style>
     <style name="BevestDesign.Typography.Headline1" parent="BevestDesign.Typography.SemiBold">
         <item name="android:textSize">24sp</item>

@@ -1,5 +1,6 @@
 package com.bevesttech.bevest.ui.onboarding
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,12 +8,14 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
+import com.bevesttech.bevest.MainActivity
 import com.bevesttech.bevest.R
 import com.bevesttech.bevest.databinding.FragmentOnboardingBinding
 
 class OnboardingFragment : Fragment() {
     private var _binding: FragmentOnboardingBinding? = null
     private val binding get() = _binding!!
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -27,19 +30,36 @@ class OnboardingFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.vpPage.adapter = OnboardingViewPagerAdapter()
-        binding.vpPage.getChildAt(0).overScrollMode = RecyclerView.OVER_SCROLL_NEVER
 
-//        TabLayoutMediator(binding.tlIndicator, binding.vpPage) {tab, position -> }.attach()
+        with(binding) {
+            vpPage.adapter = OnboardingViewPagerAdapter()
+            vpPage.getChildAt(0).overScrollMode = RecyclerView.OVER_SCROLL_NEVER
 
-        binding.vpPage.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
-            override fun onPageSelected(position: Int) {
-                super.onPageSelected(position)
-                binding.indicator.ivIndicator1.setImageResource(if (position == 0) R.drawable.onboarding_selected_dot else R.drawable.onboarding_default_dot)
-                binding.indicator.ivIndicator2.setImageResource(if (position == 1) R.drawable.onboarding_selected_dot else R.drawable.onboarding_default_dot)
-                binding.indicator.ivIndicator3.setImageResource(if (position == 2) R.drawable.onboarding_selected_dot else R.drawable.onboarding_default_dot)
+            vpPage.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+                override fun onPageSelected(position: Int) {
+                    super.onPageSelected(position)
+                    indicator.ivIndicator1.setImageResource(if (position == 0) R.drawable.onboarding_selected_dot else R.drawable.onboarding_default_dot)
+                    indicator.ivIndicator2.setImageResource(if (position == 1) R.drawable.onboarding_selected_dot else R.drawable.onboarding_default_dot)
+                    indicator.ivIndicator3.setImageResource(if (position == 2) R.drawable.onboarding_selected_dot else R.drawable.onboarding_default_dot)
+                }
+            })
+
+            btnContinue.setOnClickListener {
+                if (vpPage.currentItem == MAX_STEP - 1) {
+                    Intent(context, MainActivity::class.java).also {
+                        startActivity(it)
+                    }
+                } else {
+                    vpPage.currentItem = vpPage.currentItem + 1
+                }
             }
-        })
+
+            btnSkip.setOnClickListener {
+                Intent(context, MainActivity::class.java).also {
+                    startActivity(it)
+                }
+            }
+        }
     }
 
     override fun onDestroyView() {
