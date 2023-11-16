@@ -62,6 +62,32 @@
         android:layout_height="wrap_content"
         android:text="Body SemiBold 3"
         style="@style/BevestDesign.Typography.BodySemiBold3"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:enabled="true"
+        android:text="Button"
+        style="@style/BevestDesign.Component.ButtonPrimary"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/ds_color_diabled"
+        android:enabled="false"
+        android:text="Button"
+        style="@style/BevestDesign.Component.ButtonPrimary"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:enabled="true"
+        android:text="Button"
+        style="@style/BevestDesign.Component.ButtonOutlined"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:enabled="false"
+        android:text="Button"
+        style="@style/BevestDesign.Component.ButtonOutlined"/>
+
 
 
 

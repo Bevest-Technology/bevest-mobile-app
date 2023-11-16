@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="BevestDesign.Component.ButtonPrimary" parent="Widget.Material3.Button">
+        <item name="backgroundTint">@color/selector_primary_button</item>
+        <item name="cornerRadius">15dp</item>
+        <item name="android:textAppearance">?attr/dsTypographyButtonNormal</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="BevestDesign.Component.ButtonOutlined" parent="BevestDesign.Component.ButtonPrimary">
+        <item name="backgroundTint">@color/selector_outlined_button</item>
+        <item name="android:textColor">@color/selector_text_button</item>
+        <item name="strokeWidth">1.5dp</item>
+        <item name="strokeColor">@color/selector_outlined_stroke</item>
+    </style>
+</resources>
