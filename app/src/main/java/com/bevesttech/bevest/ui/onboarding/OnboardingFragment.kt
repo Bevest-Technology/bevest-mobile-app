@@ -8,9 +8,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
-import com.bevesttech.bevest.MainActivity
 import com.bevesttech.bevest.R
 import com.bevesttech.bevest.databinding.FragmentOnboardingBinding
+import com.bevesttech.bevest.ui.login.LoginActivity
 
 class OnboardingFragment : Fragment() {
     private var _binding: FragmentOnboardingBinding? = null
@@ -46,7 +46,7 @@ class OnboardingFragment : Fragment() {
 
             btnContinue.setOnClickListener {
                 if (vpPage.currentItem == MAX_STEP - 1) {
-                    Intent(context, MainActivity::class.java).also {
+                    Intent(activity, LoginActivity::class.java).also {
                         startActivity(it)
                     }
                 } else {
@@ -55,7 +55,7 @@ class OnboardingFragment : Fragment() {
             }
 
             btnSkip.setOnClickListener {
-                Intent(context, MainActivity::class.java).also {
+                Intent(activity, LoginActivity::class.java).also {
                     startActivity(it)
                 }
             }
