@@ -17,4 +17,7 @@
     <string name="masuk_dengan_google">Masuk dengan Google</string>
     <string name="daftar">Daftar</string>
     <string name="belum_punya_akun">Belum punya akun?</string>
+    <string name="bevest_logo">Bevest Logo</string>
+    <string name="forgot_password_email_request_description">Masukkan Email yang tersambung dengan akun anda</string>
+    <string name="kirim">Kirim</string>
 </resources>
