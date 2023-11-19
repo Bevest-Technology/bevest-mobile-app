@@ -18,6 +18,8 @@
     <string name="daftar">Daftar</string>
     <string name="belum_punya_akun">Belum punya akun?</string>
     <string name="bevest_logo">Bevest Logo</string>
-    <string name="forgot_password_email_request_description">Masukkan Email yang tersambung dengan akun anda</string>
+    <string name="deskripsi_meminta_email">Masukkan Email yang tersambung dengan akun anda</string>
     <string name="kirim">Kirim</string>
+    <string name="masukkan_katasandi_baru">Masukkan kata sandi baru anda!</string>
+    <string name="konfirmasi_kata_sandi">Konfirmasi Kata Sandi</string>
 </resources>
