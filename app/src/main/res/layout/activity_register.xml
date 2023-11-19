@@ -39,6 +39,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/nama_lengkap"
+                android:textAppearance="@style/BevestDesign.Typography.Body1"
                 android:imeOptions="actionNext"
                 android:inputType="textPersonName"
                 android:maxLines="1" />
@@ -59,6 +60,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/email"
+                android:textAppearance="@style/BevestDesign.Typography.Body1"
                 android:imeOptions="actionNext"
                 android:inputType="textEmailAddress"
                 android:maxLines="1" />
@@ -102,7 +104,8 @@
                 android:id="@+id/edt_password_confirmation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Konfirmasi Kata Sandi"
+                android:hint="@string/konfirmasi_kata_sandi"
+                android:textAppearance="@style/BevestDesign.Typography.Body1"
                 android:imeOptions="actionSend"
                 android:inputType="textPassword|textNoSuggestions"
                 android:maxLines="1" />
