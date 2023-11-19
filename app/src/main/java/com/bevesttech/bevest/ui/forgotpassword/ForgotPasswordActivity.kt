@@ -17,6 +17,8 @@ class ForgotPasswordActivity : AppCompatActivity() {
     private val binding get() = _binding!!
 
     private lateinit var topAppBar: MaterialToolbar
+
+    private var isEmailConfirmed = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         _binding = ActivityForgotPasswordBinding.inflate(layoutInflater)
@@ -32,10 +34,17 @@ class ForgotPasswordActivity : AppCompatActivity() {
 
         val fragmentManager = supportFragmentManager
         val emailAtForgotPasswordFragment = EmailAtForgotPasswordFragment()
-        val fragment =
-            fragmentManager.findFragmentByTag(EmailAtForgotPasswordFragment::class.java.simpleName)
+        val newPasswordFragment = NewPasswordForgotPasswordFragment()
 
-        if (fragment !is EmailAtForgotPasswordFragment) {
+        if (isEmailConfirmed) {
+            fragmentManager.commit {
+                add(
+                    R.id.frame_container,
+                    newPasswordFragment,
+                    NewPasswordForgotPasswordFragment::class.java.simpleName
+                )
+            }
+        } else {
             fragmentManager.commit {
                 add(
                     R.id.frame_container,
