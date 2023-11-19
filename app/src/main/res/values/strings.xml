@@ -17,4 +17,7 @@
     <string name="masuk_dengan_google">Masuk dengan Google</string>
     <string name="daftar">Daftar</string>
     <string name="belum_punya_akun">Belum punya akun?</string>
+    <string name="nama_lengkap">Nama Lengkap</string>
+    <string name="daftar_dengan_google">Daftar dengan Google</string>
+    <string name="sudah_punya_akun">Sudah punya akun?</string>
 </resources>
