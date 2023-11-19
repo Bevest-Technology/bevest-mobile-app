@@ -22,4 +22,7 @@
     <string name="kirim">Kirim</string>
     <string name="masukkan_katasandi_baru">Masukkan kata sandi baru anda!</string>
     <string name="konfirmasi_kata_sandi">Konfirmasi Kata Sandi</string>
+    <string name="nama_lengkap">Nama Lengkap</string>
+    <string name="daftar_dengan_google">Daftar dengan Google</string>
+    <string name="sudah_punya_akun">Sudah punya akun?</string>
 </resources>
