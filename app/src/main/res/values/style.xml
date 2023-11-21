@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <style name="BevestDesign.Component.ButtonFilled" parent="Widget.AppCompat.Button">
         <item name="android:background">@drawable/button_filled_selector</item>
         <item name="android:textAppearance">?attr/dsTypographyButtonNormal</item>
@@ -22,6 +23,8 @@
         <item name="hintTextColor">@color/edittext_hinttext_selector</item>
         <item name="android:textColorHint">@color/edittext_hinttext_selector</item>
         <item name="strokeWidth">1.5dp</item>
+        <item name="hintTextAppearance">?attr/dsTypographyBody1</item>
+        <item name="android:textAppearance">?attr/dsTypographyBody1</item>
         <item name="boxCornerRadiusBottomStart">8dp</item>
         <item name="boxCornerRadiusBottomEnd">8dp</item>
         <item name="boxCornerRadiusTopEnd">8dp</item>

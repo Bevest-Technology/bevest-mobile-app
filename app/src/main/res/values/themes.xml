@@ -30,6 +30,7 @@
         <item name="colorError">?attr/dsColorNegative100</item>
         <item name="android:statusBarColor">@color/white</item>
         <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowBackground">@color/white</item>
 
         <item name="dsTypographyHeadline1">@style/BevestDesign.Typography.Headline1</item>
         <item name="dsTypographyHeadline2">@style/BevestDesign.Typography.Headline2</item>
@@ -49,8 +50,6 @@
         <item name="dsTypographyPlaceHolder">@style/BevestDesign.Typography.Fields.PlaceHolder</item>
         <item name="dsTypographyBotNavTitle">@style/BevestDesign.Typography.Fields.BottomNav.Title</item>
     </style>
-
-
 
     <style name="Theme.BevestMobileApplication" parent="Base.Theme.BevestMobileApplication" />
 </resources>

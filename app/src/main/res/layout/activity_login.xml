@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="16dp"
+    android:padding="16dp"
     tools:context=".ui.login.LoginActivity">
 
     <androidx.appcompat.widget.AppCompatImageView
@@ -31,6 +31,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/email"
+            android:textAppearance="@style/BevestDesign.Typography.Body1"
             android:imeOptions="actionNext"
             android:inputType="textEmailAddress"
             android:maxLines="1" />
@@ -53,6 +54,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/kata_sandi"
+            android:textAppearance="@style/BevestDesign.Typography.Body1"
             android:imeOptions="actionSend"
             android:inputType="textPassword|textNoSuggestions"
             android:maxLines="1" />

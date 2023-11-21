@@ -29,4 +29,7 @@
     <string name="pemilik_bisnis">Pemilik Bisnis</string>
     <string name="deskripsi_chose_investor">Mulai dari 10 Ribu kamu bisa menjadi investor UMKM dan mendapatkan keuntungan</string>
     <string name="deskripsi_choose_pemilik_bisnis">Bergabung menjadi mitra dan dapatkan kesempatan untuk mengexpand bisnismu</string>
+    <string name="nama_lengkap">Nama Lengkap</string>
+    <string name="daftar_dengan_google">Daftar dengan Google</string>
+    <string name="sudah_punya_akun">Sudah punya akun?</string>
 </resources>
