@@ -2,9 +2,11 @@
 <resources>
     <attr name="dsColorPrimary" format="color"/>
     <attr name="dsColorSecondary" format="color"/>
+    <attr name="dsColorOrange60" format="color" />
     <attr name="dsColorDisabled" format="color"/>
     <attr name="dsColorActive" format="color"/>
     <attr name="dsColorBlue60" format="color"/>
+    <attr name="dsColorBlue30" format="color"/>
     <attr name="dsColorBlue20" format="color"/>
     <attr name="dsColorNegative100" format="color"/>
     <attr name="dsColorNegative60" format="color"/>

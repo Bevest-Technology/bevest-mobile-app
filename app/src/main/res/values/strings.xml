@@ -22,6 +22,13 @@
     <string name="kirim">Kirim</string>
     <string name="masukkan_katasandi_baru">Masukkan kata sandi baru anda!</string>
     <string name="konfirmasi_kata_sandi">Konfirmasi Kata Sandi</string>
+    <string name="pilih_role">Pilih Role</string>
+    <string name="saya_ingin_mendaftar_sebagai">Saya ingin mendaftar sebagai</string>
+    <string name="bevest_mascott">Bevest Mascott</string>
+    <string name="investor">Investor</string>
+    <string name="pemilik_bisnis">Pemilik Bisnis</string>
+    <string name="deskripsi_chose_investor">Mulai dari 10 Ribu kamu bisa menjadi investor UMKM dan mendapatkan keuntungan</string>
+    <string name="deskripsi_choose_pemilik_bisnis">Bergabung menjadi mitra dan dapatkan kesempatan untuk mengexpand bisnismu</string>
     <string name="nama_lengkap">Nama Lengkap</string>
     <string name="daftar_dengan_google">Daftar dengan Google</string>
     <string name="sudah_punya_akun">Sudah punya akun?</string>
