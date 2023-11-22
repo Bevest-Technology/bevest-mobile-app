@@ -32,4 +32,6 @@
     <string name="nama_lengkap">Nama Lengkap</string>
     <string name="daftar_dengan_google">Daftar dengan Google</string>
     <string name="sudah_punya_akun">Sudah punya akun?</string>
+    <string name="email_tidak_valid">Email tidak valid</string>
+    <string name="kata_sandi_minimal">Kata sandi minimal 8 karakter</string>
 </resources>
