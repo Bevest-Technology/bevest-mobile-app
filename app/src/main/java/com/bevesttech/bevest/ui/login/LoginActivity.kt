@@ -5,9 +5,8 @@ import android.os.Bundle
 import android.view.inputmethod.EditorInfo
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import com.bevesttech.bevest.MainActivity
 import com.bevesttech.bevest.databinding.ActivityLoginBinding
-import com.bevesttech.bevest.ui.ViewModelFactory
+import com.bevesttech.bevest.utils.ViewModelFactory
 import com.bevesttech.bevest.ui.chooserole.ChooseRoleActivity
 import com.bevesttech.bevest.ui.forgotpassword.ForgotPasswordActivity
 import com.bevesttech.bevest.ui.register.RegisterActivity

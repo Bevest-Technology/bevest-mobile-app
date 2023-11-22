@@ -7,6 +7,7 @@ import com.bevesttech.bevest.R
 import com.bevesttech.bevest.utils.Utils
 
 class LoginViewModel : ViewModel() {
+
     private val _loginFormState = MutableLiveData<LoginFormState>()
     val loginFormState: LiveData<LoginFormState> = _loginFormState
 

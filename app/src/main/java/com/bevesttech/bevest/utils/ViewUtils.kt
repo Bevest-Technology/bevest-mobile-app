@@ -1,9 +1,12 @@
 package com.bevesttech.bevest.utils
 
+import android.app.Activity
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
 import android.widget.EditText
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 
 fun View.gone() {
     this.visibility = View.GONE
@@ -31,4 +34,12 @@ fun EditText.afterTextChanged(afterTextChanged: (String) -> Unit) {
 
         override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
     })
+}
+
+fun AppCompatActivity.setupAppBar(toolbar: Toolbar, titleText: String) {
+    this.setSupportActionBar(toolbar)
+    this.supportActionBar?.apply {
+        title = titleText
+        setDisplayHomeAsUpEnabled(true)
+    }
 }
