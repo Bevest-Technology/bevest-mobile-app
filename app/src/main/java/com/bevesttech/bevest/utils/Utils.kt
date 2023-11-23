@@ -2,6 +2,8 @@ package com.bevesttech.bevest.utils
 
 import android.util.Patterns
 
+enum class Role { BUSINESS, INVESTOR }
+
 object Utils {
     fun isValidEmail(email: String): Boolean {
         return if (email.contains('@')) {

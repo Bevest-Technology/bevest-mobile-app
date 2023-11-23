@@ -3,15 +3,23 @@ package com.bevesttech.bevest.ui.register
 import android.content.Intent
 import android.os.Bundle
 import android.view.inputmethod.EditorInfo
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import com.bevesttech.bevest.MainActivity
 import com.bevesttech.bevest.R
+import com.bevesttech.bevest.data.Result
 import com.bevesttech.bevest.databinding.ActivityRegisterBinding
+import com.bevesttech.bevest.ui.chooserole.ChooseRoleActivity
 import com.bevesttech.bevest.utils.ViewModelFactory
 import com.bevesttech.bevest.utils.afterTextChanged
+import com.bevesttech.bevest.utils.blockInput
 import com.bevesttech.bevest.utils.disabled
+import com.bevesttech.bevest.utils.enabled
+import com.bevesttech.bevest.utils.gone
+import com.bevesttech.bevest.utils.hideKeyboard
 import com.bevesttech.bevest.utils.setupAppBar
+import com.bevesttech.bevest.utils.unblockInput
+import com.bevesttech.bevest.utils.visible
 
 class RegisterActivity : AppCompatActivity() {
     private lateinit var binding: ActivityRegisterBinding
@@ -95,8 +103,44 @@ class RegisterActivity : AppCompatActivity() {
             btnLogin.setOnClickListener { finish() }
 
             btnRegister.setOnClickListener {
-                Intent(this@RegisterActivity, MainActivity::class.java).also {
-                    startActivity(it)
+                with(binding) {
+                    hideKeyboard()
+
+                    val emailField = edtEmail.text.toString()
+                    val passwordField = edtPassword.text.toString()
+
+                    viewModel.signUp(emailField, passwordField)
+                        .observe(this@RegisterActivity) { result ->
+                            when (result) {
+                                is Result.Loading -> {
+                                    progressIndicator.visible()
+                                    blockInput()
+                                    btnRegister.disabled()
+                                }
+
+                                is Result.Success -> {
+                                    progressIndicator.gone()
+                                    unblockInput()
+                                    Intent(
+                                        this@RegisterActivity,
+                                        ChooseRoleActivity::class.java
+                                    ).also {
+                                        startActivity(it)
+                                    }
+                                }
+
+                                is Result.Error -> {
+                                    progressIndicator.gone()
+                                    unblockInput()
+                                    btnRegister.enabled()
+                                    Toast.makeText(
+                                        this@RegisterActivity,
+                                        result.error.toString(),
+                                        Toast.LENGTH_SHORT
+                                    ).show()
+                                }
+                            }
+                        }
                 }
             }
         }
