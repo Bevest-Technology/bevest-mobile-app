@@ -8,7 +8,7 @@ import com.google.firebase.auth.FirebaseUser
 
 interface AuthRepository {
     val currentUser: FirebaseUser?
-    fun login(email: String, password: String): LiveData<Result<FirebaseUser>>
+    fun login(email: String, password: String): LiveData<Result<LoggedInUser>>
     fun signup(name: String, email: String, password: String): LiveData<Result<LoggedInUser>>
     fun logout()
 }

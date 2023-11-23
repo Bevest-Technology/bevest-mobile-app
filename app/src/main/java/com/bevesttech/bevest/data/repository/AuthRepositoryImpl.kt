@@ -1,13 +1,15 @@
 package com.bevesttech.bevest.data.repository
 
+import android.util.Log
+import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.liveData
 import com.bevesttech.bevest.data.Result
 import com.bevesttech.bevest.data.model.LoggedInUser
 import com.bevesttech.bevest.data.source.remote.UserRemoteDataSource
-import com.bevesttech.bevest.utils.await
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import kotlinx.coroutines.tasks.await
 
 class AuthRepositoryImpl constructor(
     private val firebaseAuth: FirebaseAuth,
@@ -16,14 +18,17 @@ class AuthRepositoryImpl constructor(
     override val currentUser: FirebaseUser?
         get() = firebaseAuth.currentUser
 
-    override fun login(email: String, password: String): LiveData<Result<FirebaseUser>> = liveData {
+    override fun login(email: String, password: String): LiveData<Result<LoggedInUser>> = liveData {
         try {
             emit(Result.Loading)
             val result = firebaseAuth.signInWithEmailAndPassword(email, password).await()
-            emit(Result.Success(result.user!!))
+            result.user!!.let {
+                val user = userRemoteDataSource.getUserByUID(it.uid)
+                emit(Result.Success(user!!))
+            }
         } catch (e: Exception) {
             e.printStackTrace()
-            Result.Error(e.message.toString())
+            emit(Result.Error(e.message.toString()))
         }
     }
 
@@ -38,7 +43,7 @@ class AuthRepositoryImpl constructor(
             result.user!!.let {
                 val user = LoggedInUser(
                     uid = it.uid,
-                    displayName = it.displayName,
+                    displayName = name,
                     photoUrl = it.photoUrl?.path,
                     email = it.email,
                     role = null,

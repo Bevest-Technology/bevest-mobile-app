@@ -4,12 +4,15 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.bevesttech.bevest.R
+import com.bevesttech.bevest.data.repository.AuthRepository
 import com.bevesttech.bevest.utils.Utils
 
-class LoginViewModel : ViewModel() {
+class LoginViewModel(private val userRepository: AuthRepository) : ViewModel() {
 
     private val _loginFormState = MutableLiveData<LoginFormState>()
     val loginFormState: LiveData<LoginFormState> = _loginFormState
+
+    fun login(email: String, password: String) = userRepository.login(email, password)
 
     fun loginDataChanged(email: String, password: String) {
         if (!Utils.isValidEmail(email)) {
@@ -20,4 +23,6 @@ class LoginViewModel : ViewModel() {
             _loginFormState.value = LoginFormState(isDataValid = true)
         }
     }
+
+    fun logout() = userRepository.logout()
 }

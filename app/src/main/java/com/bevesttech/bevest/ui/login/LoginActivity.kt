@@ -3,15 +3,23 @@ package com.bevesttech.bevest.ui.login
 import android.content.Intent
 import android.os.Bundle
 import android.view.inputmethod.EditorInfo
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import com.bevesttech.bevest.data.Result
 import com.bevesttech.bevest.databinding.ActivityLoginBinding
-import com.bevesttech.bevest.utils.ViewModelFactory
 import com.bevesttech.bevest.ui.chooserole.ChooseRoleActivity
 import com.bevesttech.bevest.ui.forgotpassword.ForgotPasswordActivity
 import com.bevesttech.bevest.ui.register.RegisterActivity
+import com.bevesttech.bevest.utils.ViewModelFactory
 import com.bevesttech.bevest.utils.afterTextChanged
+import com.bevesttech.bevest.utils.blockInput
 import com.bevesttech.bevest.utils.disabled
+import com.bevesttech.bevest.utils.enabled
+import com.bevesttech.bevest.utils.gone
+import com.bevesttech.bevest.utils.hideKeyboard
+import com.bevesttech.bevest.utils.unblockInput
+import com.bevesttech.bevest.utils.visible
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
@@ -49,8 +57,7 @@ class LoginActivity : AppCompatActivity() {
                 setOnEditorActionListener { _, actionId, _ ->
                     when (actionId) {
                         EditorInfo.IME_ACTION_DONE -> {
-                            // TODO: HANDLING LOGIN ACTION
-                            true
+                            loginAction()
                         }
                     }
                     false
@@ -78,9 +85,7 @@ class LoginActivity : AppCompatActivity() {
     private fun setListener() {
         with(binding) {
             btnLogin.setOnClickListener {
-                Intent(this@LoginActivity, ChooseRoleActivity::class.java).also {
-                    startActivity(it)
-                }
+                loginAction()
             }
 
             btnRegister.setOnClickListener {
@@ -90,8 +95,55 @@ class LoginActivity : AppCompatActivity() {
             }
 
             btnForgetPassword.setOnClickListener {
-                Intent(this@LoginActivity, ForgotPasswordActivity::class.java).also {
-                    startActivity(it)
+//                Intent(this@LoginActivity, ForgotPasswordActivity::class.java).also {
+//                    startActivity(it)
+//                }
+                viewModel.logout()
+            }
+        }
+    }
+
+    private fun loginAction() {
+        with(binding) {
+            hideKeyboard()
+
+            val emailField = edtEmail.text.toString()
+            val passwordField = edtPassword.text.toString()
+
+            viewModel.login(emailField, passwordField).observe(this@LoginActivity) { result ->
+                when (result) {
+                    is Result.Loading -> {
+                        progressIndicator.visible()
+                        blockInput()
+                        btnLogin.disabled()
+                    }
+
+                    is Result.Success -> {
+                        progressIndicator.gone()
+                        unblockInput()
+//                        Toast.makeText(
+//                            this@LoginActivity,
+//                            result.data.displayName,
+//                            Toast.LENGTH_SHORT
+//                        ).show()
+                        Intent(
+                            this@LoginActivity,
+                            ChooseRoleActivity::class.java
+                        ).also {
+                            startActivity(it)
+                        }
+                    }
+
+                    is Result.Error -> {
+                        progressIndicator.gone()
+                        unblockInput()
+                        btnLogin.enabled()
+                        Toast.makeText(
+                            this@LoginActivity,
+                            result.error.toString(),
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
                 }
             }
         }

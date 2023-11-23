@@ -86,8 +86,7 @@ class RegisterActivity : AppCompatActivity() {
                 setOnEditorActionListener { _, actionId, _ ->
                     when (actionId) {
                         EditorInfo.IME_ACTION_DONE -> {
-                            // TODO: HANDLING REGISTER ACTION
-                            true
+                            signUpAction()
                         }
                     }
                     false
@@ -103,46 +102,51 @@ class RegisterActivity : AppCompatActivity() {
             btnLogin.setOnClickListener { finish() }
 
             btnRegister.setOnClickListener {
-                with(binding) {
-                    hideKeyboard()
+                signUpAction()
+            }
+        }
+    }
 
-                    val emailField = edtEmail.text.toString()
-                    val passwordField = edtPassword.text.toString()
+    private fun signUpAction() {
+        with(binding) {
+            hideKeyboard()
 
-                    viewModel.signUp(emailField, passwordField)
-                        .observe(this@RegisterActivity) { result ->
-                            when (result) {
-                                is Result.Loading -> {
-                                    progressIndicator.visible()
-                                    blockInput()
-                                    btnRegister.disabled()
-                                }
+            val nameField = edtName.text.toString()
+            val emailField = edtEmail.text.toString()
+            val passwordField = edtPassword.text.toString()
 
-                                is Result.Success -> {
-                                    progressIndicator.gone()
-                                    unblockInput()
-                                    Intent(
-                                        this@RegisterActivity,
-                                        ChooseRoleActivity::class.java
-                                    ).also {
-                                        startActivity(it)
-                                    }
-                                }
+            viewModel.signUp(nameField, emailField, passwordField)
+                .observe(this@RegisterActivity) { result ->
+                    when (result) {
+                        is Result.Loading -> {
+                            progressIndicator.visible()
+                            blockInput()
+                            btnRegister.disabled()
+                        }
 
-                                is Result.Error -> {
-                                    progressIndicator.gone()
-                                    unblockInput()
-                                    btnRegister.enabled()
-                                    Toast.makeText(
-                                        this@RegisterActivity,
-                                        result.error.toString(),
-                                        Toast.LENGTH_SHORT
-                                    ).show()
-                                }
+                        is Result.Success -> {
+                            progressIndicator.gone()
+                            unblockInput()
+                            Intent(
+                                this@RegisterActivity,
+                                ChooseRoleActivity::class.java
+                            ).also {
+                                startActivity(it)
                             }
                         }
+
+                        is Result.Error -> {
+                            progressIndicator.gone()
+                            unblockInput()
+                            btnRegister.enabled()
+                            Toast.makeText(
+                                this@RegisterActivity,
+                                result.error.toString(),
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
+                    }
                 }
-            }
         }
     }
 }

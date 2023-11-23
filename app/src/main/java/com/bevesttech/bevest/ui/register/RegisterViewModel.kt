@@ -12,7 +12,7 @@ class RegisterViewModel(private val userRepository: AuthRepository) : ViewModel(
     private val _registerFormState = MutableLiveData<RegisterFormState>()
     val registerFormState: LiveData<RegisterFormState> = _registerFormState
 
-    fun signUp(email: String, password: String) = userRepository.signup("user", email, password)
+    fun signUp(name: String, email: String, password: String) = userRepository.signup(name, email, password)
 
     fun registerDataChanged(name: String, email: String, password: String, confPassword: String) {
         if (name.length < 3) {

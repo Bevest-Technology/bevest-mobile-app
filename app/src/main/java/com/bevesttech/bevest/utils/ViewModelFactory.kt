@@ -10,7 +10,7 @@ import com.bevesttech.bevest.ui.register.RegisterViewModel
 class ViewModelFactory(val context: Context) : ViewModelProvider.Factory {
     @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel> create(modelClass: Class<T>): T = when(modelClass){
-        LoginViewModel::class.java -> LoginViewModel()
+        LoginViewModel::class.java -> LoginViewModel(Injection.provideAuthRepository())
         RegisterViewModel::class.java -> RegisterViewModel(Injection.provideAuthRepository())
         else -> throw IllegalArgumentException("Unknown ViewModel class")
     } as T
