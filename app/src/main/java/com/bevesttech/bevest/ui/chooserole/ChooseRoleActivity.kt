@@ -44,6 +44,7 @@ class ChooseRoleActivity : AppCompatActivity() {
 
     private fun setListener() {
         binding.apply {
+            topAppbar.setNavigationOnClickListener { finish() }
             chooseInvestor.setOnClickListener { viewModel.setInvestor() }
             choosePemilikBisnis.setOnClickListener { viewModel.setPemilikBisnis() }
         }

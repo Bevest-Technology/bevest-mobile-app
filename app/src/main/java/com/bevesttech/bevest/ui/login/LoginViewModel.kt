@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import com.bevesttech.bevest.R
 import com.bevesttech.bevest.data.model.LoggedInUser
 import com.bevesttech.bevest.data.repository.AuthRepository
+import com.bevesttech.bevest.utils.Role
 import com.bevesttech.bevest.utils.Utils
 
 class LoginViewModel(private val userRepository: AuthRepository) : ViewModel() {
@@ -17,7 +18,7 @@ class LoginViewModel(private val userRepository: AuthRepository) : ViewModel() {
 
     fun loginWithGoogle(idToken: String) = userRepository.loginWithGoogle(idToken)
 
-    fun isUserHaveRole(loggedInUser: LoggedInUser) = loggedInUser.role.isNullOrEmpty()
+    fun isUserHaveRole(loggedInUser: LoggedInUser) = loggedInUser.role != null && loggedInUser.role != Role.NONE.name
 
     fun loginDataChanged(email: String, password: String) {
         if (!Utils.isValidEmail(email)) {

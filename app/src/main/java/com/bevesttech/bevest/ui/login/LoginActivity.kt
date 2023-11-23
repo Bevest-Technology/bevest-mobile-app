@@ -162,7 +162,7 @@ class LoginActivity : AppCompatActivity() {
                         progressIndicator.gone()
                         unblockInput()
 
-                        if (viewModel.isUserHaveRole(response.data)) {
+                        if (!viewModel.isUserHaveRole(response.data)) {
                             Intent(
                                 this@LoginActivity,
                                 ChooseRoleActivity::class.java
