@@ -3,21 +3,30 @@ package com.bevesttech.bevest.ui.chooserole
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.liveData
+import com.bevesttech.bevest.data.repository.AuthRepository
+import com.bevesttech.bevest.utils.Role
+import kotlinx.coroutines.Dispatchers
 
-class ChooseRoleViewModel:ViewModel() {
-    private val _isInvestor = MutableLiveData<Boolean>()
-    val isInvestor: LiveData<Boolean> = _isInvestor
+class ChooseRoleViewModel(private val authRepository: AuthRepository) : ViewModel() {
+    private val _roleChoosed = MutableLiveData<Role>()
+    val roleChoosed: LiveData<Role> = _roleChoosed
 
-    private val _isPemilikBisnis = MutableLiveData<Boolean>()
-    val isPemilikBisnis: LiveData<Boolean> = _isPemilikBisnis
+    init {
+        _roleChoosed.value = Role.NONE
+    }
+
+    fun updateUserRole(role: Role) = liveData(Dispatchers.IO) {
+        authRepository.updateUserRole(role).collect { response ->
+            emit(response)
+        }
+    }
 
     fun setPemilikBisnis() {
-        _isInvestor.value = false
-        _isPemilikBisnis.value = true
+        _roleChoosed.value = Role.BUSINESS
     }
 
     fun setInvestor() {
-        _isInvestor.value = true
-        _isPemilikBisnis.value = false
+        _roleChoosed.value = Role.INVESTOR
     }
 }

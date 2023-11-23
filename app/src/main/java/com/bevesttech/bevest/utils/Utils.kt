@@ -2,7 +2,7 @@ package com.bevesttech.bevest.utils
 
 import android.util.Patterns
 
-enum class Role { BUSINESS, INVESTOR }
+enum class Role { BUSINESS, INVESTOR, NONE }
 
 object Utils {
     fun isValidEmail(email: String): Boolean {

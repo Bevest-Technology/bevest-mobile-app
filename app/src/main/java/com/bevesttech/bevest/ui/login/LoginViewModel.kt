@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.bevesttech.bevest.R
+import com.bevesttech.bevest.data.model.LoggedInUser
 import com.bevesttech.bevest.data.repository.AuthRepository
 import com.bevesttech.bevest.utils.Utils
 
@@ -13,6 +14,10 @@ class LoginViewModel(private val userRepository: AuthRepository) : ViewModel() {
     val loginFormState: LiveData<LoginFormState> = _loginFormState
 
     fun login(email: String, password: String) = userRepository.login(email, password)
+
+    fun loginWithGoogle(idToken: String) = userRepository.loginWithGoogle(idToken)
+
+    fun isUserHaveRole(loggedInUser: LoggedInUser) = loggedInUser.role.isNullOrEmpty()
 
     fun loginDataChanged(email: String, password: String) {
         if (!Utils.isValidEmail(email)) {
