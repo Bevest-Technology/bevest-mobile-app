@@ -38,4 +38,8 @@
     <string name="on_call_progress">Tim kami sedang proses menghubungi anda</string>
     <string name="selamat">Selamat!!</string>
     <string name="deskripsi_jumlah_valuasi">Berdasarkan profile bisnismu, valuasi kamu sebesar</string>
+    <string name="email_tidak_valid">Email tidak valid</string>
+    <string name="kata_sandi_minimal">Kata sandi minimal 8 karakter</string>
+    <string name="nama_lengkap_error_min_3">Nama harus lebih dari 3 huruf</string>
+    <string name="kata_sandi_tidak_sama">Kata sandi tidak sama</string>
 </resources>
