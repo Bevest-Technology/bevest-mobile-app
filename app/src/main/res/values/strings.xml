@@ -32,4 +32,10 @@
     <string name="nama_lengkap">Nama Lengkap</string>
     <string name="daftar_dengan_google">Daftar dengan Google</string>
     <string name="sudah_punya_akun">Sudah punya akun?</string>
+    <string name="deskripsi_wawancara">Tim kami akan segera melakukan wawancara dengan nomor WhatsApp</string>
+    <string name="change_phone_number">Ganti Nomor Whatsapp</string>
+    <string name="no_whatsapp">No. Whatsapp</string>
+    <string name="on_call_progress">Tim kami sedang proses menghubungi anda</string>
+    <string name="selamat">Selamat!!</string>
+    <string name="deskripsi_jumlah_valuasi">Berdasarkan profile bisnismu, valuasi kamu sebesar</string>
 </resources>
