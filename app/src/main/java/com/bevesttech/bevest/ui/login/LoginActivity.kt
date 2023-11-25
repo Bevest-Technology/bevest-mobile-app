@@ -161,6 +161,7 @@ class LoginActivity : AppCompatActivity() {
                     is Result.Success -> {
                         progressIndicator.gone()
                         unblockInput()
+                        btnLogin.enabled()
 
                         if (!viewModel.isUserHaveRole(response.data)) {
                             Intent(

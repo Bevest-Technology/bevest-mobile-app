@@ -61,7 +61,7 @@ class ChooseRoleActivity : AppCompatActivity() {
                     }
 
                     Role.INVESTOR -> {
-                        chooseInvestor.isChecked = true
+                        choosePemilikBisnis.isChecked = true
                     }
 
                     Role.NONE -> {

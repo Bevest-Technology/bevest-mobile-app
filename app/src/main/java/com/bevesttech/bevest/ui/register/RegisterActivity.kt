@@ -220,6 +220,8 @@ class RegisterActivity : AppCompatActivity() {
                         is Result.Success -> {
                             progressIndicator.gone()
                             unblockInput()
+                            btnRegister.enabled()
+
                             Intent(
                                 this@RegisterActivity,
                                 ChooseRoleActivity::class.java
