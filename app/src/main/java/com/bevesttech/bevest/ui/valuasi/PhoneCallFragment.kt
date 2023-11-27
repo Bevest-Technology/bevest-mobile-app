@@ -38,6 +38,8 @@ class PhoneCallFragment : Fragment(), View.OnClickListener {
         val fragmentManager = parentFragmentManager
         val callProcessFragment = CallProcessFragment()
         val changePhoneNumberFragment = ChangePhoneNumberFragment()
+        val valuasiSuccessFragment = ValuasiSuccessFragment()
+        val valuasiFailedFragment = ValuasiFailedFragment()
 
         when (view.id) {
             R.id.btn_lanjut -> {
