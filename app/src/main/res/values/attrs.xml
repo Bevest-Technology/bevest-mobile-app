@@ -21,6 +21,7 @@
     <attr name="dsColorNeutral60" format="color"/>
     <attr name="dsColorNeutral50" format="color"/>
     <attr name="dsColorNeutral20" format="color"/>
+    <attr name="colorTransparent" format="color"/>
 
     <attr name="dsTypographyHeadline1" format="reference"/>
     <attr name="dsTypographyHeadline2" format="reference"/>

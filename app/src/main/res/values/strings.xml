@@ -48,4 +48,22 @@
     <string name="deskripsi_valuasi_gagal">Berdasarkan profile bisnismu, valuasi kamu belum bisa kami tentukan</string>
     <string name="ajukan_kembali">Ajukan Kembali</string>
     <string name="baca_bevest_academy">Baca Bevest Academy</string>
+    <string name="profile_bisnis">Profile Bisnis</string>
+    <string name="hint_deskripsi_profile_bisnis"><![CDATA[Deskripsi & Latar Belakang Bisnis]]></string>
+    <string name="hint_profile_owner">Profile Owner</string>
+    <string name="hint_visi_misi_perusahaan">Visi Misi Perusahaan</string>
+    <string name="alamat_lengkap">Alamat Lengkap</string>
+    <string name="total_cabang">Total Cabang</string>
+    <string name="foto_profile_logo_circle_1_1">Foto Profile/Logo (Circle,1:1)</string>
+    <string name="foto_banner_landscape_16_9">Foto Banner (Landscape,16:9)</string>
+    <string name="foto_product_lanscape_16_9">Foto Product (Lanscape, 16:9)</string>
+    <string name="video_optional_lanscape_16_9">Video (Optional, Lanscape, 16:9)</string>
+    <string name="keuangan">Keuangan</string>
+    <string name="total_saham_yang_dibagikan">Total Saham yang Dibagikan (%)</string>
+    <string name="total_keuntungan_tahun_sebelumnya_juta">Total Keuntungan Tahun sebelumnya (Juta)</string>
+    <string name="keuntungan_tahun_sebelumnya">% Keuntungan Tahun sebelumnya</string>
+    <string name="perkiraan_balik_modal_bulan">Perkiraan Balik Modal (Bulan)</string>
+    <string name="laporan_keuangan_tahun_sebelumnya_pdf">Laporan Keuangan Tahun Sebelumnya (PDF)</string>
+    <string name="rencana_anggaran_pendanaan_pdf">Rencana Anggaran Pendanaan (PDF)</string>
+    <string name="laporan_keuangan_tahun_ini_pdf">Laporan Keuangan Tahun Ini (PDF)</string>
 </resources>

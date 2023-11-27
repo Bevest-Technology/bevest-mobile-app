@@ -23,4 +23,5 @@
     <color name="ds_neutral_60">#858F9B</color>
     <color name="ds_neutral_50">#A1ADBA</color>
     <color name="ds_neutral_20">#F6F7F8</color>
+    <color name="color_transparent">#34FFFFFF</color>
 </resources>
