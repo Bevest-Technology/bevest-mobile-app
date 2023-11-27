@@ -16,11 +16,16 @@
         android:theme="@style/Theme.BevestMobileApplication"
         tools:targetApi="31">
         <activity
+            android:name=".ui.bisnislisting.BisnisListingActivity"
+            android:exported="false"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+        <activity
             android:name=".ui.bevestacademy.ArticleActivity"
             android:exported="false" />
         <activity
             android:name=".ui.valuasi.ValuasiActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:configChanges="orientation|screenSize|keyboardHidden"/>
         <activity
             android:name=".ui.chooserole.ChooseRoleActivity"
             android:exported="false" />
