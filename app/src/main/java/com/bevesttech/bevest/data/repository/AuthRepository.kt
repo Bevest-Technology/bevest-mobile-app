@@ -17,4 +17,7 @@ interface AuthRepository {
     fun updateUserRole(role: Role): Flow<Result<Unit>>
     fun logout()
 
+    //Forgot Password
+    fun forgotPassword(email: String): LiveData<Result<String>>
+
 }

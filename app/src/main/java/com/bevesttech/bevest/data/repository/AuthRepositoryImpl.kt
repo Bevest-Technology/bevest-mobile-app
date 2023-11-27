@@ -105,6 +105,17 @@ class AuthRepositoryImpl constructor(
         firebaseAuth.signOut()
     }
 
+    override fun forgotPassword(email: String): LiveData<Result<String>> = liveData {
+        try {
+            emit(Result.Loading)
+            firebaseAuth.sendPasswordResetEmail(email).await().also {
+                emit(Result.Success("Please check your email!"))
+            }
+        } catch (e: Exception) {
+            emit(Result.Error(e.message.toString()))
+        }
+    }
+
     companion object {
         @Volatile
         private var instance: AuthRepositoryImpl? = null
