@@ -1,8 +1,54 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.BevestMobileApplication" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    <style name="Base.Theme.BevestMobileApplication" parent="Theme.Material3.Light.NoActionBar">
+        <!-- Color -->
+        <item name="dsColorPrimary">@color/ds_primary</item>
+        <item name="dsColorSecondary">@color/ds_secondary</item>
+        <item name="dsColorDisabled">@color/ds_color_diabled</item>
+        <item name="dsColorActive">@color/ds_color_active</item>
+        <item name="dsColorBlue60">@color/ds_blue_60</item>
+        <item name="dsColorBlue30">@color/ds_blue_30</item>
+        <item name="dsColorBlue20">@color/ds_blue_20</item>
+        <item name="dsColorOrange60">@color/ds_orange_60</item>
+        <item name="dsColorPositive100">@color/ds_positive_100</item>
+        <item name="dsColorPositive60">@color/ds_positive_60</item>
+        <item name="dsColorPositive20">@color/ds_positive_20</item>
+        <item name="dsColorNegative100">@color/ds_negative_100</item>
+        <item name="dsColorNegative60">@color/ds_negative_60</item>
+        <item name="dsColorNegative20">@color/ds_negative_20</item>
+        <item name="dsColorNeutral100">@color/ds_neutral_100</item>
+        <item name="dsColorNeutral90">@color/ds_neutral_90</item>
+        <item name="dsColorNeutral80">@color/ds_neutral_80</item>
+        <item name="dsColorNeutral70">@color/ds_neutral_70</item>
+        <item name="dsColorNeutral60">@color/ds_neutral_60</item>
+        <item name="dsColorNeutral50">@color/ds_neutral_50</item>
+        <item name="dsColorNeutral20">@color/ds_neutral_20</item>
+
+        <item name="colorPrimary">?attr/dsColorPrimary</item>
+        <item name="android:colorPrimary">?attr/dsColorPrimary</item>
+        <item name="android:textColor">?attr/dsColorNeutral100</item>
+        <item name="colorError">?attr/dsColorNegative100</item>
+        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowBackground">@color/white</item>
+
+        <item name="dsTypographyHeadline1">@style/BevestDesign.Typography.Headline1</item>
+        <item name="dsTypographyHeadline2">@style/BevestDesign.Typography.Headline2</item>
+        <item name="dsTypographyHeadline3">@style/BevestDesign.Typography.Headline3</item>
+        <item name="dsTypographyHeadline4">@style/BevestDesign.Typography.Headline4</item>
+        <item name="dsTypographyHeadline5">@style/BevestDesign.Typography.Headline5</item>
+        <item name="dsTypographyBody1">@style/BevestDesign.Typography.Body1</item>
+        <item name="dsTypographyBody2">@style/BevestDesign.Typography.Body2</item>
+        <item name="dsTypographyBody3">@style/BevestDesign.Typography.Body3</item>
+        <item name="dsTypographyBodySemiBold1">@style/BevestDesign.Typography.BodySemiBold1</item>
+        <item name="dsTypographyBodySemiBold2">@style/BevestDesign.Typography.BodySemiBold2</item>
+        <item name="dsTypographyBodySemiBold3">@style/BevestDesign.Typography.BodySemiBold3</item>
+        <item name="dsTypographyButtonNormal">@style/BevestDesign.Typography.ButtonLink</item>
+        <item name="dsTypographyButtonSmall">@style/BevestDesign.Typography.ButtonLinkSmall</item>
+        <item name="dsTypographyLabel">@style/BevestDesign.Typography.Fields.Label</item>
+        <item name="dsTypographyHint">@style/BevestDesign.Typography.Fields.Hint</item>
+        <item name="dsTypographyPlaceHolder">@style/BevestDesign.Typography.Fields.PlaceHolder</item>
+        <item name="dsTypographyBotNavTitle">@style/BevestDesign.Typography.Fields.BottomNav.Title</item>
     </style>
 
     <style name="Theme.BevestMobileApplication" parent="Base.Theme.BevestMobileApplication" />

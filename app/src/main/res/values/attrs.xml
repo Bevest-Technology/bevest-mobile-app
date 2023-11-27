@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="dsColorPrimary" format="color"/>
+    <attr name="dsColorSecondary" format="color"/>
+    <attr name="dsColorOrange60" format="color" />
+    <attr name="dsColorDisabled" format="color"/>
+    <attr name="dsColorActive" format="color"/>
+    <attr name="dsColorBlue60" format="color"/>
+    <attr name="dsColorBlue30" format="color"/>
+    <attr name="dsColorBlue20" format="color"/>
+    <attr name="dsColorNegative100" format="color"/>
+    <attr name="dsColorNegative60" format="color"/>
+    <attr name="dsColorNegative20" format="color"/>
+    <attr name="dsColorPositive100" format="color"/>
+    <attr name="dsColorPositive60" format="color"/>
+    <attr name="dsColorPositive20" format="color"/>
+    <attr name="dsColorNeutral100" format="color"/>
+    <attr name="dsColorNeutral90" format="color"/>
+    <attr name="dsColorNeutral80" format="color"/>
+    <attr name="dsColorNeutral70" format="color"/>
+    <attr name="dsColorNeutral60" format="color"/>
+    <attr name="dsColorNeutral50" format="color"/>
+    <attr name="dsColorNeutral20" format="color"/>
+
+    <attr name="dsTypographyHeadline1" format="reference"/>
+    <attr name="dsTypographyHeadline2" format="reference"/>
+    <attr name="dsTypographyHeadline3" format="reference"/>
+    <attr name="dsTypographyHeadline4" format="reference"/>
+    <attr name="dsTypographyHeadline5" format="reference"/>
+    <attr name="dsTypographyBody1" format="reference"/>
+    <attr name="dsTypographyBody2" format="reference"/>
+    <attr name="dsTypographyBody3" format="reference"/>
+    <attr name="dsTypographyBodySemiBold1" format="reference"/>
+    <attr name="dsTypographyBodySemiBold2" format="reference"/>
+    <attr name="dsTypographyBodySemiBold3" format="reference"/>
+    <attr name="dsTypographyButtonNormal" format="reference"/>
+    <attr name="dsTypographyButtonSmall" format="reference"/>
+    <attr name="dsTypographyLabel" format="reference"/>
+    <attr name="dsTypographyHint" format="reference"/>
+    <attr name="dsTypographyPlaceHolder" format="reference"/>
+    <attr name="dsTypographyBotNavTitle" format="reference"/>
+
+</resources>

@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.chooserole.ChooseRoleActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/top_appbar"
+            style="@style/BevestDesign.Component.Toolbar"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/progress_indicator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/appbar_layout"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/progress_indicator"
+        android:paddingBottom="190dp">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv_deskripsi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/saya_ingin_mendaftar_sebagai"
+                android:textColor="@color/ds_neutral_60"
+                style="@style/BevestDesign.Typography.BodySemiBold2"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="@id/choose_investor"
+                app:layout_constraintEnd_toEndOf="@id/choose_pemilik_bisnis"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/choose_investor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/BevestDesign.Component.CardView.Choose"
+                android:layout_marginTop="19dp"
+                app:layout_constraintTop_toBottomOf="@id/tv_deskripsi"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/choose_pemilik_bisnis">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="82dp"
+                        android:layout_height="120dp"
+                        android:layout_marginTop="23dp"
+                        android:layout_marginBottom="21dp"
+                        android:layout_marginHorizontal="37dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/bevest_orange_mascot"
+                        android:contentDescription="@string/bevest_mascott"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:text="@string/investor"
+                        android:layout_gravity="center_horizontal"
+                        style="@style/BevestDesign.Typography.BodySemiBold1"
+                        android:textColor="@color/ds_orange_60"/>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/choose_pemilik_bisnis"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/BevestDesign.Component.CardView.Choose"
+                android:layout_marginTop="19dp"
+                app:layout_constraintTop_toBottomOf="@id/tv_deskripsi"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/choose_investor">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="82dp"
+                        android:layout_height="120dp"
+                        android:layout_marginTop="23dp"
+                        android:layout_marginBottom="21dp"
+                        android:layout_marginHorizontal="37dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/bevest_blue_mascot"
+                        android:contentDescription="@string/bevest_mascott"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:text="@string/pemilik_bisnis"
+                        android:layout_gravity="center_horizontal"
+                        style="@style/BevestDesign.Typography.BodySemiBold1"
+                        android:textColor="@color/ds_blue_60"/>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/deskripsi_choose_investor"
+                android:layout_width="156dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                style="@style/BevestDesign.Component.CardView.Deskripsi"
+                app:layout_constraintStart_toStartOf="@+id/choose_investor"
+                app:layout_constraintEnd_toEndOf="@id/choose_investor"
+                app:layout_constraintTop_toBottomOf="@id/choose_investor">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="6dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/ds_neutral_70"
+                    style="@style/BevestDesign.Typography.Body3"
+                    android:text="@string/deskripsi_chose_investor"/>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/deskripsi_choose_pemilik_bisnis"
+                android:layout_width="156dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                style="@style/BevestDesign.Component.CardView.Deskripsi"
+                app:layout_constraintStart_toStartOf="@+id/choose_pemilik_bisnis"
+                app:layout_constraintEnd_toEndOf="@id/choose_pemilik_bisnis"
+                app:layout_constraintTop_toBottomOf="@id/choose_pemilik_bisnis">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="6dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/ds_neutral_70"
+                    style="@style/BevestDesign.Typography.Body3"
+                    android:text="@string/deskripsi_choose_pemilik_bisnis"/>
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_lanjut"
+        style="@style/BevestDesign.Component.ButtonFilled"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginHorizontal="16dp"
+        android:text="@string/lanjut"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
