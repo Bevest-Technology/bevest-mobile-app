@@ -42,4 +42,10 @@
     <string name="kata_sandi_minimal">Kata sandi minimal 8 karakter</string>
     <string name="nama_lengkap_error_min_3">Nama harus lebih dari 3 huruf</string>
     <string name="kata_sandi_tidak_sama">Kata sandi tidak sama</string>
+    <string name="article_headline">Tentang Platform Equity Crowdfunding Bevest, Investasi Gen Z Mulai dari Rp10 Ribu</string>
+    <string name="article_body"><![CDATA[Bevest merupakan platform investasi yang berdiri sejak tahun 2023. Dalam menyelenggarakan investasi, Bevast menggunakan skema urun dana dan sudah mendapatkan izin resmi dari Otoritas Jasa Keuangan (OJK) sebagai Penyelenggara Securities Crowdfunding dengan No. SK: 38/D.04/2021.  Hal ini menjadikan Bevast sebagai platform urun dana yang terjamin legal dan aman. Dengan demikian, Anda tidak perlu ragu untuk berinvestasi di Bevast. Untuk info lebih lengkap mengenai investasi urun dana, Cara Daftar Akun Bevast  Cara registrasi akun di Bevast sangatlah mudah dan cepat. Anda hanya perlu menyiapkan KTP saja. Berikut panduan lengkapnya. Cara daftar akun Bevest: \n 1. Download aplikasi Bevest dari Google Play atau App Store.\n 2. Buka aplikasi Bevest, isi nama lengkap, nomor HP, dan email aktif.\n 3. Cek inbox email dan lakukan aktivasi akun.\n 4. Siapkan KTP, ikuti instruksi foto yang diberikan.\n 5. Tunggu hingga akun berhasil terverifikasi.\n 6. Lengkapi profil akun Anda dengan rinci dan detail.\n 7. Lakukan tanda tangan digital sesuai instruksi.\n 8. Selesai! Anda bisa berinvestasi di Bevast.\n Sebagai informasi, proses verifikasi akun Bevast membutuhkan waktu paling lama 1×24 jam. Tak hanya mudah, alur pendaftarannya juga cepat.]]></string>
+    <string name="maaf">Yahh,, Mohon maaf</string>
+    <string name="deskripsi_valuasi_gagal">Berdasarkan profile bisnismu, valuasi kamu belum bisa kami tentukan</string>
+    <string name="ajukan_kembali">Ajukan Kembali</string>
+    <string name="baca_bevest_academy">Baca Bevest Academy</string>
 </resources>

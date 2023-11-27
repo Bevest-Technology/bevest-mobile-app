@@ -20,7 +20,7 @@ class ValuasiActivity : AppCompatActivity() {
 
         if (fragment !is PhoneCallFragment) {
             fragmentManager.commit {
-                add(
+                replace(
                     R.id.fragment_valuasi_container,
                     phoneCallFragment,
                     PhoneCallFragment::class.java.simpleName

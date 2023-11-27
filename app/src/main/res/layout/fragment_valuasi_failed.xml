@@ -5,22 +5,22 @@
     android:layout_height="match_parent"
     android:background="@color/ds_blue_20"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.valuasi.ValuasiSuccessFragment">
+    tools:context=".ui.valuasi.ValuasiFailedFragment">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        android:paddingBottom="32dp">
+        android:paddingBottom="120dp"
+        app:layout_constraintTop_toTopOf="parent">
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="150dp">
+            android:paddingBottom="100dp">
             <ImageView
                 android:id="@+id/iv_mascott"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/bevest_blue_mascot_open"
+                android:src="@drawable/bevest_blue_mascot_sad"
                 android:layout_marginTop="100dp"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -30,7 +30,7 @@
                 android:id="@+id/tv_sukses"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/selamat"
+                android:text="@string/maaf"
                 style="@style/BevestDesign.Typography.BodySemiBold1"
                 android:textColor="@color/ds_blue_60"
                 android:layout_marginHorizontal="16dp"
@@ -43,7 +43,7 @@
                 android:id="@+id/tv_deskripsi_valuasi"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/deskripsi_jumlah_valuasi"
+                android:text="@string/deskripsi_valuasi_gagal"
                 style="@style/BevestDesign.Typography.BodySemiBold1"
                 android:textAlignment="center"
                 android:textColor="@color/ds_blue_60"
@@ -52,30 +52,30 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_sukses"/>
-
-            <TextView
-                android:id="@+id/tv_total_valuasi"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/BevestDesign.Typography.Headline3"
-                android:textColor="@color/ds_orange_60"
-                tools:text="RP. 800.000"
-                app:layout_constraintTop_toBottomOf="@id/tv_deskripsi_valuasi"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginTop="40dp"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_lanjut"
+        android:id="@+id/btn_ajukan_kembali"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         style="@style/BevestDesign.Component.ButtonFilled"
-        android:text="@string/lanjut"
+        android:text="@string/ajukan_kembali"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@id/btn_bevest_academy"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_bevest_academy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/BevestDesign.Component.ButtonOutlined"
+        android:text="@string/baca_bevest_academy"
         android:layout_marginHorizontal="16dp"
         android:layout_marginBottom="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
