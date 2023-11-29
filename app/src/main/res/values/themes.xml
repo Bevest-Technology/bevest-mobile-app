@@ -23,6 +23,7 @@
         <item name="dsColorNeutral60">@color/ds_neutral_60</item>
         <item name="dsColorNeutral50">@color/ds_neutral_50</item>
         <item name="dsColorNeutral20">@color/ds_neutral_20</item>
+        <item name="dsColorNeutral30">@color/ds_neutral_30</item>
 
         <item name="colorPrimary">?attr/dsColorPrimary</item>
         <item name="android:colorPrimary">?attr/dsColorPrimary</item>

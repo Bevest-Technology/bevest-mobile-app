@@ -31,6 +31,20 @@
         <item name="boxCornerRadiusTopStart">8dp</item>
     </style>
 
+    <style name="BevestDesign.Component.DropDown" parent="Widget.Material3.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
+        <item name="boxStrokeColor">@color/edittext_box_selector</item>
+        <item name="hintTextColor">@color/edittext_hinttext_selector</item>
+        <item name="android:textColorHint">@color/edittext_hinttext_selector</item>
+        <item name="strokeWidth">1.5dp</item>
+        <item name="drawableTint">?attr/dsColorNeutral50</item>
+        <item name="hintTextAppearance">?attr/dsTypographyBody1</item>
+        <item name="android:textAppearance">?attr/dsTypographyBody1</item>
+        <item name="boxCornerRadiusBottomStart">8dp</item>
+        <item name="boxCornerRadiusBottomEnd">8dp</item>
+        <item name="boxCornerRadiusTopEnd">8dp</item>
+        <item name="boxCornerRadiusTopStart">8dp</item>
+    </style>
+
     <style name="BevestDesign.Component.Toolbar" parent="Widget.AppCompat.Toolbar">
         <item name="navigationIcon">@drawable/vector_back</item>
         <item name="titleTextColor">@color/ds_primary</item>
