@@ -21,7 +21,7 @@ class HaveBusinessEntityFragment : Fragment() {
         savedInstanceState: Bundle?,
     ): View? {
         _binding = FragmentHaveBusinessEntityBinding.inflate(inflater, container, false)
-        return inflater.inflate(R.layout.fragment_have_business_entity, container, false)
+        return binding.root
     }
 
     companion object {

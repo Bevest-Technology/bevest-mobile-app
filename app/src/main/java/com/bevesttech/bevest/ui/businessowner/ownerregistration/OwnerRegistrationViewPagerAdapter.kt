@@ -11,8 +11,8 @@ class OwnerRegistrationViewPagerAdapter(activity: AppCompatActivity) : FragmentS
         var fragment: Fragment? = null
         when (position) {
             0 -> fragment = HaveBusinessEntityFragment()
-            1 -> fragment = HaveBusinessEntityFragment()
-            2 -> fragment = HaveBusinessEntityFragment()
+            1 -> fragment = PersonalIdentityFragment()
+            2 -> fragment = BusinessEntityDataFragment()
         }
         return fragment as Fragment
     }

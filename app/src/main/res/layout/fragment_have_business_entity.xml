@@ -12,7 +12,7 @@
         style="@style/BevestDesign.Typography.BodySemiBold2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sudah Memiliki Badan Usaha (PT/CV)" />
+        android:text="@string/sudah_memiliki_badan_usaha_question" />
 
     <RadioGroup
         android:id="@+id/rg_have_business_entity"

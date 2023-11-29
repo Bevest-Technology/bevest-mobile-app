@@ -67,4 +67,39 @@
     <string name="rencana_anggaran_pendanaan_pdf">Rencana Anggaran Pendanaan (PDF)</string>
     <string name="laporan_keuangan_tahun_ini_pdf">Laporan Keuangan Tahun Ini (PDF)</string>
     <string name="data_pemilik_usaha">Data Pemilik Usaha</string>
+    <string name="sudah_memiliki_badan_usaha_question">Sudah Memiliki Badan Usaha (PT/CV)</string>
+    <string name="nama_lengkap_owner">Nama Lengkap Owner</string>
+    <string name="no_whatsapp_aktif">No. Whatsapp Aktif</string>
+    <string name="identitas_pribadi">Identitas Pribadi</string>
+    <string name="unggah_foto_owner">Unggah Foto Owner</string>
+    <string name="data_badan_usaha">Data Badan Usaha</string>
+    <string name="nama_badan_usaha">Nama Badan Usaha</string>
+    <string name="nama_brand">Nama Brand</string>
+    <string name="alamat_bisnis">Alamat Bisnis</string>
+    <string name="unggah_bukti_brand_usaha_banner">Unggah Bukti Brand Usaha /Banner</string>
+    <string name="kategori_bisnis">Kategori Bisnis</string>
+
+    <string-array name="kategori_bisnis_list">
+        <item>Penyediaan Akomodasi dan Makan Minum Peternakan</item>
+        <item>Pertanian, Perburuan dan Kehutanan</item>
+        <item>Perantara Keuangan</item>
+        <item>Jasa Kesehatan dan Kegiatan Sosial</item>
+        <item>Perikanan</item>
+        <item>Perdagangan Besar dan Eceran</item>
+        <item>Industri Pengolahan</item>
+        <item>Konstruksi</item>
+        <item>Transportasi, Pergudangan dan Komunikasi</item>
+        <item>Pertambangan dan Penggalian Pertambangan Listrik, Air dan Gas</item>
+        <item>Real Estate</item>
+        <item>Usaha Persewaan dan Jasa Perusahaan Jasa Pendidikan</item>
+        <item>Jasa Kemasyarakatan dan Perorangan lainnya Property</item>
+        <item>Food And Beverage</item>
+        <item>Peternakan</item>
+        <item>Perkebunan/Argo</item>
+        <item>Teknologi Start Up</item>
+        <item>Project Financing</item>
+        <item>Service/Layanan</item>
+        <item>Manufaktur/Produksi</item>
+        <item>Retail/Distribusi/Logistik</item>
+    </string-array>
 </resources>
