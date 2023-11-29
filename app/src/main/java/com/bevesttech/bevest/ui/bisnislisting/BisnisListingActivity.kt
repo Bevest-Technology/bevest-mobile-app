@@ -16,14 +16,14 @@ class BisnisListingActivity : AppCompatActivity() {
 
         val fragmentManager = supportFragmentManager
         val profileBisnisFragment = ProfileBisnisFragment()
-        val keuanganFragment = KeuanganFragment()
 
         if (savedInstanceState == null) {
             fragmentManager.commit {
                 add(
                     R.id.fragment_bisnislisting_container,
                     profileBisnisFragment,
-                    ProfileBisnisFragment::class.java.simpleName)
+                    ProfileBisnisFragment::class.java.simpleName
+                )
             }
         }
     }

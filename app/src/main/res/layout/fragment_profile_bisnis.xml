@@ -32,6 +32,7 @@
                 style="@style/BevestDesign.Component.EditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_profile_bisnis">
@@ -99,7 +100,7 @@
                     android:layout_height="wrap_content"
                     android:hint="@string/alamat_lengkap"
                     android:inputType="textMultiLine"
-                    android:maxLines="1"
+                    android:maxLines="5"
                     android:textAppearance="@style/BevestDesign.Typography.Body1" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -146,12 +147,27 @@
                         android:minLines="5"
                         android:textAppearance="@style/BevestDesign.Typography.Body1" />
                 </com.google.android.material.textfield.TextInputLayout>
+                <ImageView
+                    android:id="@+id/iv_profile"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:src="@tools:sample/avatars"
+                    android:layout_centerVertical="true"
+                    android:layout_alignTop="@id/til_foto_profile"
+                    android:layout_alignBottom="@id/til_foto_profile"
+                    android:layout_alignStart="@id/til_foto_profile"
+                    android:layout_alignEnd="@id/til_foto_profile"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_marginVertical="16dp"
+                    android:scaleType="fitCenter"/>
+
 
                 <ImageButton
                     android:id="@+id/btn_foto_profile"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignEnd="@id/til_foto_profile"
+                    android:layout_marginEnd="32dp"
                     android:layout_centerVertical="true"
                     android:backgroundTint="@color/color_transparent"
                     android:src="@drawable/ic_upload" />
@@ -182,11 +198,26 @@
                         android:textAppearance="@style/BevestDesign.Typography.Body1" />
                 </com.google.android.material.textfield.TextInputLayout>
 
+                <ImageView
+                    android:id="@+id/iv_banner"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:src="@tools:sample/avatars"
+                    android:layout_alignTop="@id/til_foto_banner"
+                    android:layout_alignBottom="@id/til_foto_banner"
+                    android:layout_alignStart="@id/til_foto_banner"
+                    android:layout_alignEnd="@id/til_foto_banner"
+                    android:layout_centerVertical="true"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_marginVertical="16dp"
+                    android:scaleType="fitXY"/>
+
                 <ImageButton
                     android:id="@+id/btn_foto_banner"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignEnd="@id/til_foto_banner"
+                    android:layout_marginEnd="32dp"
                     android:layout_centerVertical="true"
                     android:backgroundTint="@color/color_transparent"
                     android:src="@drawable/ic_upload" />
@@ -217,11 +248,26 @@
                         android:textAppearance="@style/BevestDesign.Typography.Body1" />
                 </com.google.android.material.textfield.TextInputLayout>
 
+                <ImageView
+                    android:id="@+id/iv_product"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:src="@tools:sample/avatars"
+                    android:layout_alignTop="@id/til_foto_product"
+                    android:layout_alignBottom="@id/til_foto_product"
+                    android:layout_alignStart="@id/til_foto_product"
+                    android:layout_alignEnd="@id/til_foto_product"
+                    android:layout_centerVertical="true"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_marginVertical="16dp"
+                    android:scaleType="fitXY"/>
+
                 <ImageButton
                     android:id="@+id/btn_foto_product"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignEnd="@id/til_foto_product"
+                    android:layout_marginEnd="32dp"
                     android:layout_centerVertical="true"
                     android:backgroundTint="@color/color_transparent"
                     android:src="@drawable/ic_upload" />
@@ -252,11 +298,26 @@
                         android:textAppearance="@style/BevestDesign.Typography.Body1" />
                 </com.google.android.material.textfield.TextInputLayout>
 
+                <ImageView
+                    android:id="@+id/iv_video"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:src="@tools:sample/avatars"
+                    android:layout_alignTop="@id/til_video"
+                    android:layout_alignBottom="@id/til_video"
+                    android:layout_alignStart="@id/til_video"
+                    android:layout_alignEnd="@id/til_video"
+                    android:layout_centerVertical="true"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_marginVertical="16dp"
+                    android:scaleType="fitXY"/>
+
                 <ImageButton
                     android:id="@+id/btn_video"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignEnd="@id/til_video"
+                    android:layout_marginEnd="32dp"
                     android:layout_centerVertical="true"
                     android:backgroundTint="@color/color_transparent"
                     android:src="@drawable/ic_upload" />
