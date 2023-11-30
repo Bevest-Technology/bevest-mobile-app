@@ -7,6 +7,9 @@ import com.bevesttech.bevest.data.repository.AuthRepository
 import com.bevesttech.bevest.utils.Utils.uriToFile
 
 class BisnisListingViewModel(private val authRepository: AuthRepository) : ViewModel() {
+
+    //Profile Bisnis
+
     private var _profileBisnis: ProfileBisnisModel = ProfileBisnisModel()
     val profileBisnis get() = _profileBisnis
 
@@ -17,8 +20,6 @@ class BisnisListingViewModel(private val authRepository: AuthRepository) : ViewM
     val fotoBannerUri get() = _fotoBannerUri
     private var _fotoProductUri: Uri? = null
     val fotoProductUri get() = _fotoProductUri
-    private var _videoUri: Uri? = null
-    val videoUri get() = _videoUri
 
     fun setFotoProfileUri(uri: Uri) {
         _fotoProfileUri = uri
@@ -32,10 +33,6 @@ class BisnisListingViewModel(private val authRepository: AuthRepository) : ViewM
         _fotoProductUri = uri
     }
 
-    fun setVideoUri(uri: Uri) {
-        _videoUri = uri
-    }
-
     fun setProfileBisnis(
         deskripsi: String,
         profileOwner: String,
@@ -44,7 +41,8 @@ class BisnisListingViewModel(private val authRepository: AuthRepository) : ViewM
         totalCabang: Int,
         fotoProfile: Uri,
         fotoBanner: Uri,
-        fotoProduct: Uri
+        fotoProduct: Uri,
+        video: String? = null
     ) {
         val data = ProfileBisnisModel(
             deskripsi = deskripsi,
@@ -54,10 +52,56 @@ class BisnisListingViewModel(private val authRepository: AuthRepository) : ViewM
             totalCabang = totalCabang,
             fotoProfile = fotoProfile,
             fotoBanner = fotoBanner,
-            fotoProduct = fotoProduct
+            fotoProduct = fotoProduct,
+            video = video
         )
         _profileBisnis = data
     }
+
+    //Keuangan
+
+    private var _keuangan: KeuanganModel = KeuanganModel()
+    val keuangan get() = _keuangan
+
+    private var _pdfLaporanTahunIniUri: Uri? = null
+    val pdfLaporanTahunIniUri get() = _pdfLaporanTahunIniUri
+
+    private var _pdfLaporanTahunLaluUri: Uri? = null
+    val pdfLaporanTahunLaluUri get() = _pdfLaporanTahunLaluUri
+
+    private var _pdfRencanaAnggaranUri: Uri? = null
+    val pdfRencanaAnggaranUri get() = _pdfRencanaAnggaranUri
+    fun setPdfLaporanTahunIniUri(uri: Uri) {
+        _pdfLaporanTahunIniUri = uri
+    }
+    fun setPdfLaporanTahunLaluUri(uri: Uri) {
+        _pdfLaporanTahunLaluUri = uri
+    }
+    fun setPdfRencanaAnggaranUri(uri: Uri) {
+        _pdfRencanaAnggaranUri = uri
+    }
+
+    fun setKeuangan(
+        totalSaham: Int,
+        totalKeuntungan: Int,
+        keuntunganSebelumnya: Int,
+        perkiraanBalikModal: Int,
+        laporanKeuanganTahunLalu: Uri,
+        laporanKeuanganTahunIni: Uri,
+        rencanaAnggaran: Uri,
+    ){
+        val data = KeuanganModel(
+            totalSaham,
+            totalKeuntungan,
+            keuntunganSebelumnya,
+            perkiraanBalikModal,
+            laporanKeuanganTahunLalu,
+            laporanKeuanganTahunIni,
+            rencanaAnggaran
+        )
+        _keuangan = data
+    }
+
 }
 
-enum class Type { PRODUCT, PROFILE, BANNER, VIDEO }
+enum class Type { PRODUCT, PROFILE, BANNER }

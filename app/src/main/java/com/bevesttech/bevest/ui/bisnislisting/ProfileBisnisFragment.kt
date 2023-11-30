@@ -23,9 +23,6 @@ class ProfileBisnisFragment : Fragment(), View.OnClickListener {
     private var _binding: FragmentProfileBisnisBinding? = null
     private val binding get() = _binding!!
 
-    private var currentImgUri: Uri? = null
-    private var file: File? = null
-
     private val viewModel: BisnisListingViewModel by viewModels { ViewModelFactory(requireActivity()) }
 
     override fun onCreateView(
@@ -50,12 +47,18 @@ class ProfileBisnisFragment : Fragment(), View.OnClickListener {
         val productUri = viewModel.fotoProductUri
         if (profileUri != null) {
             Glide.with(requireActivity()).load(profileUri).circleCrop().into(binding.ivProfile)
+            binding.edtFotoProfile.setText(" ")
+            binding.edtFotoProfile.error = null
         }
         if (bannerUri != null) {
             Glide.with(requireActivity()).load(bannerUri).into(binding.ivBanner)
+            binding.edtFotoBanner.setText(" ")
+            binding.edtFotoBanner.error = null
         }
         if (productUri != null) {
-            Glide.with(requireActivity()).load(profileUri).into(binding.ivProduct)
+            Glide.with(requireActivity()).load(productUri).into(binding.ivProduct)
+            binding.edtFotoProduct.setText(" ")
+            binding.edtFotoProduct.error = null
         }
     }
 
@@ -63,7 +66,6 @@ class ProfileBisnisFragment : Fragment(), View.OnClickListener {
         binding.btnFotoProfile.setOnClickListener(this)
         binding.btnFotoBanner.setOnClickListener(this)
         binding.btnFotoProduct.setOnClickListener(this)
-        binding.btnVideo.setOnClickListener(this)
         binding.btnLanjut.setOnClickListener(this)
     }
 
@@ -81,10 +83,6 @@ class ProfileBisnisFragment : Fragment(), View.OnClickListener {
                 startGallery(Type.PRODUCT)
             }
 
-            R.id.btn_video -> {
-                startGallery(Type.VIDEO)
-            }
-
             R.id.btn_lanjut -> {
                 checkField()
             }
@@ -93,23 +91,40 @@ class ProfileBisnisFragment : Fragment(), View.OnClickListener {
 
     private fun checkField() {
         with(binding) {
+            var isChecked = true
             if (edtDeskripsiBisnis.text.isNullOrEmpty()) {
                 edtDeskripsiBisnis.error = getString(R.string.field_tidak_boleh_kosong)
-            } else if (edtProfileOwner.text.isNullOrEmpty()) {
+                isChecked = false
+            }
+            if (edtProfileOwner.text.isNullOrEmpty()) {
                 edtProfileOwner.error = getString(R.string.field_tidak_boleh_kosong)
-            } else if (edtVisimisiPerusahaan.text.isNullOrEmpty()) {
+                isChecked = false
+            }
+            if (edtVisimisiPerusahaan.text.isNullOrEmpty()) {
                 edtVisimisiPerusahaan.error = getString(R.string.field_tidak_boleh_kosong)
-            } else if (edtAlamat.text.isNullOrEmpty()) {
+                isChecked = false
+            }
+            if (edtAlamat.text.isNullOrEmpty()) {
                 edtAlamat.error = getString(R.string.field_tidak_boleh_kosong)
-            } else if (edtTotalCabang.text.isNullOrEmpty()) {
+                isChecked = false
+            }
+            if (edtTotalCabang.text.isNullOrEmpty()) {
                 edtTotalCabang.error = getString(R.string.field_tidak_boleh_kosong)
-            } else if (viewModel.fotoProfileUri == null) {
+                isChecked = false
+            }
+            if (viewModel.fotoProfileUri == null) {
                 edtFotoProfile.error = getString(R.string.field_tidak_boleh_kosong)
-            } else if (viewModel.fotoProductUri == null) {
+                isChecked = false
+            }
+            if (viewModel.fotoProductUri == null) {
                 edtFotoProduct.error = getString(R.string.field_tidak_boleh_kosong)
-            } else if (viewModel.fotoBannerUri == null) {
+                isChecked = false
+            }
+            if (viewModel.fotoBannerUri == null) {
                 edtFotoBanner.error = getString(R.string.field_tidak_boleh_kosong)
-            } else {
+                isChecked = false
+            }
+            if (isChecked){
                 viewModel.setProfileBisnis(
                     deskripsi = edtDeskripsiBisnis.text.toString(),
                     profileOwner = edtProfileOwner.text.toString(),
@@ -118,7 +133,8 @@ class ProfileBisnisFragment : Fragment(), View.OnClickListener {
                     totalCabang = edtTotalCabang.text.toString().toInt(),
                     fotoProfile = viewModel.fotoProfileUri!!,
                     fotoBanner = viewModel.fotoBannerUri!!,
-                    fotoProduct = viewModel.fotoProductUri!!
+                    fotoProduct = viewModel.fotoProductUri!!,
+                    video = edtVideo.text.toString()
                 )
                 val fragmentManager = parentFragmentManager
                 val keuanganFragment = KeuanganFragment()
@@ -147,10 +163,6 @@ class ProfileBisnisFragment : Fragment(), View.OnClickListener {
             Type.PRODUCT -> {
                 launchFotoProduct.launch(PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly))
             }
-
-            Type.VIDEO -> {
-                launchVideo.launch(PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.VideoOnly))
-            }
         }
     }
 
@@ -159,7 +171,7 @@ class ProfileBisnisFragment : Fragment(), View.OnClickListener {
     ) { uri: Uri? ->
         if (uri != null) {
             viewModel.setFotoProfileUri(uri)
-            Glide.with(requireActivity()).load(uri).circleCrop().into(binding.ivProfile)
+            setView()
         }
     }
     private val launchFotoBanner = registerForActivityResult(
@@ -167,7 +179,7 @@ class ProfileBisnisFragment : Fragment(), View.OnClickListener {
     ) { uri: Uri? ->
         if (uri != null) {
             viewModel.setFotoBannerUri(uri)
-            Glide.with(requireActivity()).load(uri).into(binding.ivBanner)
+            setView()
         }
     }
     private val launchFotoProduct = registerForActivityResult(
@@ -175,14 +187,7 @@ class ProfileBisnisFragment : Fragment(), View.OnClickListener {
     ) { uri: Uri? ->
         if (uri != null) {
             viewModel.setFotoProductUri(uri)
-            Glide.with(requireActivity()).load(uri).into(binding.ivProduct)
-        }
-    }
-    private val launchVideo = registerForActivityResult(
-        ActivityResultContracts.PickVisualMedia()
-    ) { uri: Uri? ->
-        if (uri != null) {
-            viewModel.setVideoUri(uri)
+            setView()
         }
     }
 

@@ -2,6 +2,7 @@ package com.bevesttech.bevest.ui.bisnislisting
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.fragment.app.commit
 import com.bevesttech.bevest.R
 import com.bevesttech.bevest.databinding.ActivityBisnisListingBinding
@@ -24,6 +25,16 @@ class BisnisListingActivity : AppCompatActivity() {
                     profileBisnisFragment,
                     ProfileBisnisFragment::class.java.simpleName
                 )
+            }
+        }
+
+        binding.topAppbar.setNavigationOnClickListener {
+            val fragment = fragmentManager.findFragmentByTag(KeuanganFragment::class.java.simpleName)
+
+            if (fragment is KeuanganFragment) {
+                fragmentManager.popBackStack()
+            } else {
+                finish()
             }
         }
     }

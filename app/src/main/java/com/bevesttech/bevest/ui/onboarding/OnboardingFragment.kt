@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.bevesttech.bevest.R
 import com.bevesttech.bevest.databinding.FragmentOnboardingBinding
+import com.bevesttech.bevest.ui.bisnislisting.BisnisListingActivity
 import com.bevesttech.bevest.ui.login.LoginActivity
 
 class OnboardingFragment : Fragment() {
@@ -55,7 +56,7 @@ class OnboardingFragment : Fragment() {
             }
 
             btnSkip.setOnClickListener {
-                Intent(activity, LoginActivity::class.java).also {
+                Intent(activity, BisnisListingActivity::class.java).also {
                     startActivity(it)
                 }
             }

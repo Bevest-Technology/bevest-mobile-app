@@ -11,5 +11,5 @@ data class ProfileBisnisModel(
     val fotoProfile: Uri? = null,
     val fotoBanner: Uri? = null,
     val fotoProduct: Uri? = null,
-    val video: Uri? = null,
+    val video: String? = null,
 )

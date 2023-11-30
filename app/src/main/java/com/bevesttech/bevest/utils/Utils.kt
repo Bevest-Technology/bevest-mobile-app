@@ -1,7 +1,10 @@
 package com.bevesttech.bevest.utils
 
 import android.content.Context
+import android.database.Cursor
 import android.net.Uri
+import android.provider.OpenableColumns
+import android.util.Log
 import android.util.Patterns
 import com.google.common.base.Strings.isNullOrEmpty
 import java.io.File
@@ -38,5 +41,29 @@ object Utils {
     fun createCustomTempFile(context: Context): File {
         val filesDir = context.externalCacheDir
         return File.createTempFile(timeStamp, ".jpg", filesDir)
+    }
+
+    fun getFileName(uri: Uri, context: Context): String {
+        var fileName: String? = null
+        if (uri.scheme.equals("content")) {
+            val cursor: Cursor? = context.contentResolver.query(uri, null, null, null, null)
+            try {
+                if (cursor != null && cursor.moveToFirst()) {
+                    fileName = cursor.getString(cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME))
+                }
+            } catch (e: Exception) {
+                Log.e("Utils", "getFileName: ${e.message.toString()}", )
+            } finally {
+                cursor?.close()
+            }
+            if (fileName == null) {
+                fileName = uri.path
+                val cutt: Int = fileName!!.lastIndexOf('/')
+                if (cutt != -1) {
+                    fileName = fileName.substring(cutt+1)
+                }
+            }
+        }
+        return fileName?:uri.toString()
     }
 }
