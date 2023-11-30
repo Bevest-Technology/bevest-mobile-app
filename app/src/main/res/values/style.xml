@@ -29,6 +29,7 @@
         <item name="boxCornerRadiusBottomEnd">8dp</item>
         <item name="boxCornerRadiusTopEnd">8dp</item>
         <item name="boxCornerRadiusTopStart">8dp</item>
+        <item name="android:paddingBottom">8dp</item>
     </style>
 
     <style name="BevestDesign.Component.DropDown" parent="Widget.Material3.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">

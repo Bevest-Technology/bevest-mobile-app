@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.bevesttech.bevest.di.Injection
+import com.bevesttech.bevest.ui.bisnislisting.BisnisListingViewModel
 import com.bevesttech.bevest.ui.chooserole.ChooseRoleViewModel
 import com.bevesttech.bevest.ui.forgotpassword.ForgotPasswordViewModel
 import com.bevesttech.bevest.ui.login.LoginViewModel
@@ -16,6 +17,7 @@ class ViewModelFactory(val context: Context) : ViewModelProvider.Factory {
         RegisterViewModel::class.java -> RegisterViewModel(Injection.provideAuthRepository())
         ChooseRoleViewModel::class.java -> ChooseRoleViewModel(Injection.provideAuthRepository())
         ForgotPasswordViewModel::class.java -> ForgotPasswordViewModel(Injection.provideAuthRepository())
+        BisnisListingViewModel::class.java -> BisnisListingViewModel(Injection.provideAuthRepository())
         else -> throw IllegalArgumentException("Unknown ViewModel class")
     } as T
 }

@@ -66,6 +66,8 @@
     <string name="laporan_keuangan_tahun_sebelumnya_pdf">Laporan Keuangan Tahun Sebelumnya (PDF)</string>
     <string name="rencana_anggaran_pendanaan_pdf">Rencana Anggaran Pendanaan (PDF)</string>
     <string name="laporan_keuangan_tahun_ini_pdf">Laporan Keuangan Tahun Ini (PDF)</string>
+    <string name="field_tidak_boleh_kosong">Field ini tidak boleh kosong!</string>
+
     <string name="data_pemilik_usaha">Data Pemilik Usaha</string>
     <string name="sudah_memiliki_badan_usaha_question">Sudah Memiliki Badan Usaha (PT/CV)</string>
     <string name="nama_lengkap_owner">Nama Lengkap Owner</string>
