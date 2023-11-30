@@ -56,7 +56,7 @@ class OnboardingFragment : Fragment() {
             }
 
             btnSkip.setOnClickListener {
-                Intent(activity, BisnisListingActivity::class.java).also {
+                Intent(activity, LoginActivity::class.java).also {
                     startActivity(it)
                 }
             }
