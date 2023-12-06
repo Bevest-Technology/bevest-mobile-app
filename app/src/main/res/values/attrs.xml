@@ -8,6 +8,7 @@
     <attr name="dsColorBlue60" format="color"/>
     <attr name="dsColorBlue30" format="color"/>
     <attr name="dsColorBlue20" format="color"/>
+    <attr name="dsColorBlue10" format="color"/>
     <attr name="dsColorNegative100" format="color"/>
     <attr name="dsColorNegative60" format="color"/>
     <attr name="dsColorNegative20" format="color"/>
