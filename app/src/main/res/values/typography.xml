@@ -91,7 +91,7 @@
 
     <!-- Navigation -->
     <style name="BevestDesign.Typography.Fields.BottomNav.Title" parent="BevestDesign.Typography">
-        <item name="android:textStyle">normal</item>
+        <item name="android:textStyle">bold</item>
         <item name="android:textSize">10sp</item>
         <item name="android:lineSpacingMultiplier">1.5</item>
         <item name="android:letterSpacing">0.0015</item>

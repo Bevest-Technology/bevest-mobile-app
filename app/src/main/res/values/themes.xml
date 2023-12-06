@@ -9,6 +9,7 @@
         <item name="dsColorBlue60">@color/ds_blue_60</item>
         <item name="dsColorBlue30">@color/ds_blue_30</item>
         <item name="dsColorBlue20">@color/ds_blue_20</item>
+        <item name="dsColorBlue10">@color/ds_blue_10</item>
         <item name="dsColorOrange60">@color/ds_orange_60</item>
         <item name="dsColorPositive100">@color/ds_positive_100</item>
         <item name="dsColorPositive60">@color/ds_positive_60</item>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="4dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginBottom="4dp"
+    android:backgroundTint="@color/ds_primary"
+    card_view:cardCornerRadius="15dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_keterangan"
+            android:layout_width="67dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/ds_positive_60"
+            card_view:cardCornerRadius="100dp"
+            card_view:layout_constraintBottom_toBottomOf="parent"
+            card_view:layout_constraintStart_toStartOf="parent"
+            card_view:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tv_keterangan"
+                style="@style/BevestDesign.Typography.Fields.BottomNav.Title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="4dp"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                tools:text="Hadir" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/tv_title"
+            style="@style/BevestDesign.Typography.BodySemiBold1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:textColor="@color/white"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintStart_toEndOf="@id/card_keterangan"
+            card_view:layout_constraintTop_toTopOf="parent"
+            tools:text="Workshop UMKM GO Digital" />
+
+        <ImageView
+            android:id="@+id/ic_location"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="4dp"
+            android:contentDescription="@string/icon_location"
+            android:src="@drawable/ic_location"
+            card_view:layout_constraintStart_toStartOf="@id/tv_title"
+            card_view:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+        <ImageView
+            android:id="@+id/ic_calendar"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="4dp"
+            android:contentDescription="@string/icon_location"
+            android:src="@drawable/ic_calendar"
+            card_view:layout_constraintStart_toStartOf="@id/tv_title"
+            card_view:layout_constraintTop_toBottomOf="@id/ic_location" />
+
+        <TextView
+            android:id="@+id/tv_location"
+            style="@style/BevestDesign.Typography.Fields.BottomNav.Title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            card_view:layout_constraintBottom_toBottomOf="@id/ic_location"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintStart_toEndOf="@id/ic_location"
+            card_view:layout_constraintTop_toTopOf="@id/ic_location"
+            tools:text="MICC Bandar Lampung" />
+
+        <TextView
+            android:id="@+id/tv_date"
+            style="@style/BevestDesign.Typography.Fields.BottomNav.Title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            card_view:layout_constraintBottom_toBottomOf="@id/ic_calendar"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintStart_toEndOf="@id/ic_calendar"
+            card_view:layout_constraintTop_toTopOf="@id/ic_calendar"
+            tools:text="28 November 2023" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
