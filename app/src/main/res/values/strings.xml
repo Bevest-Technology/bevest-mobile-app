@@ -224,4 +224,5 @@
     <string name="jumlah_dokumen_kredit">Jumlah Dokumen Kredit</string>
     <string name="media_sosial_opsional">Media Sosial (Opsional)</string>
     <string name="website_opsional">Website (Opsional)</string>
+    <string name="berhasil_unggah_foto_owner">Berhasil unggah foto owner</string>
 </resources>

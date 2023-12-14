@@ -20,6 +20,10 @@ fun View.visible() {
     this.visibility = View.VISIBLE
 }
 
+fun View.invisible() {
+    this.visibility = View.INVISIBLE
+}
+
 fun View.enabled() {
     this.isEnabled = true
 }
@@ -27,6 +31,8 @@ fun View.enabled() {
 fun View.disabled() {
     this.isEnabled = false
 }
+
+
 
 fun EditText.afterTextChanged(afterTextChanged: (String) -> Unit) {
     this.addTextChangedListener(object : TextWatcher {

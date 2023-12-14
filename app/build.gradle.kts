@@ -70,4 +70,12 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.6.2")
     //glide
     implementation("com.github.bumptech.glide:glide:4.16.0")
+
+    //camerax
+//    val camerax = "1.3.1"
+//    implementation("androidx.camera:camera-core:${camerax}")
+//    implementation("androidx.camera:camera-camera2:${camerax}")
+//    implementation("androidx.camera:camera-lifecycle:${camerax}")
+//    implementation("androidx.camera:camera-view:${camerax}")
+//    implementation("androidx.camera:camera-extensions:${camerax}")
 }
