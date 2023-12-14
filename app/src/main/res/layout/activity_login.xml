@@ -142,6 +142,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingBottom="4dp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/btn_login_with_google">
@@ -160,6 +161,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="4dp"
                     android:padding="0dp"
+                    android:layout_marginBottom="8dp"
                     android:minWidth="0dp"
                     android:text="@string/daftar" />
             </androidx.appcompat.widget.LinearLayoutCompat>

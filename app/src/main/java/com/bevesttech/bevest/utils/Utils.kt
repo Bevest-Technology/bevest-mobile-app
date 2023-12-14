@@ -6,7 +6,6 @@ import android.net.Uri
 import android.provider.OpenableColumns
 import android.util.Log
 import android.util.Patterns
-import com.google.common.base.Strings.isNullOrEmpty
 import java.io.File
 import java.io.FileOutputStream
 import java.io.InputStream
@@ -15,6 +14,7 @@ import java.util.Date
 import java.util.Locale
 
 enum class Role { BUSINESS, INVESTOR, NONE }
+enum class Onboarding { FINISH, ACTIVE }
 
 object Utils {
     private const val FILENAME_FORMAT = "yyyyMMdd_HHmmss"
@@ -32,7 +32,11 @@ object Utils {
         val outputStream = FileOutputStream(myFile)
         val buffer = ByteArray(1024)
         var length: Int
-        while (inputStream.read(buffer).also { length = it } > 0) outputStream.write(buffer, 0, length)
+        while (inputStream.read(buffer).also { length = it } > 0) outputStream.write(
+            buffer,
+            0,
+            length
+        )
         outputStream.close()
         inputStream.close()
         return myFile
@@ -52,7 +56,7 @@ object Utils {
                     fileName = cursor.getString(cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME))
                 }
             } catch (e: Exception) {
-                Log.e("Utils", "getFileName: ${e.message.toString()}", )
+                Log.e("Utils", "getFileName: ${e.message.toString()}")
             } finally {
                 cursor?.close()
             }
@@ -60,10 +64,10 @@ object Utils {
                 fileName = uri.path
                 val cutt: Int = fileName!!.lastIndexOf('/')
                 if (cutt != -1) {
-                    fileName = fileName.substring(cutt+1)
+                    fileName = fileName.substring(cutt + 1)
                 }
             }
         }
-        return fileName?:uri.toString()
+        return fileName ?: uri.toString()
     }
 }
