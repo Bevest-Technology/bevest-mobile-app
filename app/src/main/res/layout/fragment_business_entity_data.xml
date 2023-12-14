@@ -37,8 +37,7 @@
         android:id="@+id/til_brand_name"
         style="@style/BevestDesign.Component.EditText"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp">
+        android:layout_height="wrap_content">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edt_brand_name"
@@ -56,8 +55,7 @@
         style="@style/BevestDesign.Component.DropDown"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/kategori_bisnis"
-        android:layout_marginTop="16dp">
+        android:hint="@string/kategori_bisnis">
 
         <AutoCompleteTextView
             android:id="@+id/act_business_category"
@@ -72,8 +70,7 @@
         android:id="@+id/til_address"
         style="@style/BevestDesign.Component.EditText"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp">
+        android:layout_height="wrap_content">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edt_address"
@@ -89,8 +86,7 @@
     <RelativeLayout
         android:id="@+id/layout_business_banner"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp">
+        android:layout_height="wrap_content">
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/til_business_banner"

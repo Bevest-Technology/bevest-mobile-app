@@ -25,6 +25,7 @@ class PersonalIdentityFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         with(binding) {
+            cardUploadOwnerPhoto.tvHint.text = getString(R.string.unggah_foto_owner)
             edtOwnerName.requestFocus()
             activity?.window?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
         }

@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.businessowner.ownerregistration.OwnerKtpDetailFragment">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        tools:context=".ui.businessowner.ownerregistration.PersonalIdentityFragment">
+
+        <TextView
+            android:id="@+id/tv_question"
+            style="@style/BevestDesign.Typography.BodySemiBold2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/identitas_pribadi" />
+
+        <TextView
+            style="@style/BevestDesign.Typography.Body2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/ds_neutral_50"
+            android:text="@string/isikan_data_sesuai_dengan_ktp"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_nik"
+            style="@style/BevestDesign.Component.EditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_nik"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/nik"
+                android:imeOptions="actionNext"
+                android:inputType="number"
+                android:maxLength="16"
+                android:maxLines="1"
+                android:textAppearance="@style/BevestDesign.Typography.Body1" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_tempat_lahir"
+            style="@style/BevestDesign.Component.EditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_tempat_lahir"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/tempat_lahir"
+                android:imeOptions="actionNext"
+                android:inputType="textPostalAddress"
+                android:maxLines="1"
+                android:textAppearance="@style/BevestDesign.Typography.Body1" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_jenis_kelamin"
+            style="@style/BevestDesign.Component.EditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_jenis_kelamin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/jenis_kelamin"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:maxLines="1"
+                android:textAppearance="@style/BevestDesign.Typography.Body1" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_alamat"
+            style="@style/BevestDesign.Component.EditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_alamat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/alamat"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:maxLines="1"
+                android:textAppearance="@style/BevestDesign.Typography.Body1" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_rt_rw"
+            style="@style/BevestDesign.Component.EditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_rt_r"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/rt_rw"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:maxLines="1"
+                android:textAppearance="@style/BevestDesign.Typography.Body1" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_agama"
+            style="@style/BevestDesign.Component.EditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_agama"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/agama"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:maxLines="1"
+                android:textAppearance="@style/BevestDesign.Typography.Body1" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_status_perkawinan"
+            style="@style/BevestDesign.Component.EditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_status_perkawinan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/status_perkawinan"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:maxLines="1"
+                android:textAppearance="@style/BevestDesign.Typography.Body1" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_pekerjaan"
+            style="@style/BevestDesign.Component.EditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_pekerjaan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/pekerjaan"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:maxLines="1"
+                android:textAppearance="@style/BevestDesign.Typography.Body1" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_kewarganegaraan"
+            style="@style/BevestDesign.Component.EditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="100dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_kewraganegaraan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/kewarganegaraan"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:maxLines="1"
+                android:textAppearance="@style/BevestDesign.Typography.Body1" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.core.widget.NestedScrollView>

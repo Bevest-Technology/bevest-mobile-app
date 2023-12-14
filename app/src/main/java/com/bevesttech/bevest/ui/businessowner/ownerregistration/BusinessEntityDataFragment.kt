@@ -16,7 +16,7 @@ class BusinessEntityDataFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
-    ): View? {
+    ): View {
         _binding = FragmentBusinessEntityDataBinding.inflate(inflater, container, false)
         return binding.root
     }

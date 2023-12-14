@@ -5,23 +5,32 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import com.bevesttech.bevest.R
 import com.bevesttech.bevest.databinding.FragmentHaveBusinessEntityBinding
+import com.bevesttech.bevest.utils.ViewModelFactory
 
 class HaveBusinessEntityFragment : Fragment() {
     private var _binding: FragmentHaveBusinessEntityBinding? = null
     private val binding get() = _binding!!
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
+    private val sharedViewModel: OwnerRegistrationViewModel by activityViewModels { ViewModelFactory(requireActivity()) }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
-    ): View? {
+    ): View {
         _binding = FragmentHaveBusinessEntityBinding.inflate(inflater, container, false)
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.apply {
+            viewModel = sharedViewModel
+            lifecycleOwner = viewLifecycleOwner
+            fragment = this@HaveBusinessEntityFragment
+        }
     }
 
     companion object {

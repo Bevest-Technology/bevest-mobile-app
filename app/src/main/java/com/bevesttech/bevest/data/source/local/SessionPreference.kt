@@ -49,20 +49,6 @@ class SessionPreference private constructor(private val dataStore: DataStore<Pre
         }
     }
 
-    fun isUserLoggedIn(): Flow<Boolean> {
-        return dataStore.data.map { preferences ->
-
-            !preferences[USER_UID_KEY].isNullOrEmpty()
-        }
-    }
-
-    fun isRoleAlreadySet(): Flow<Boolean> {
-        return dataStore.data.map { preferences ->
-            Log.d("SESSION PREFERENCES", preferences[USER_UID_KEY].isNullOrEmpty().toString())
-            !preferences[USER_ROLE_KEY].isNullOrEmpty()
-        }
-    }
-
     fun getUserSession(): Flow<LoggedInUser> {
         return dataStore.data.map { preferences ->
             LoggedInUser(

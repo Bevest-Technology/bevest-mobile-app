@@ -19,7 +19,7 @@
         style="@style/BevestDesign.Component.EditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp">
+        android:layout_marginTop="8dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edt_owner_name"
@@ -36,8 +36,7 @@
         android:id="@+id/til_active_whatsapp_number"
         style="@style/BevestDesign.Component.EditText"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp">
+        android:layout_height="wrap_content">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edt_active_whatsapp_number"
@@ -54,8 +53,7 @@
         android:id="@+id/til_address"
         style="@style/BevestDesign.Component.EditText"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp">
+        android:layout_height="wrap_content">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edt_address"
@@ -68,53 +66,11 @@
             android:textAppearance="@style/BevestDesign.Typography.Body1" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <RelativeLayout
-        android:id="@+id/layout_owner_profile_photo"
+    <include
+        android:id="@+id/card_upload_owner_photo"
+        layout="@layout/item_upload_file"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp">
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_owner_profile_photo"
-            style="@style/BevestDesign.Component.EditText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edt_owner_profile_photo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:enabled="false"
-                android:hint="@string/unggah_foto_owner"
-                android:inputType="textMultiLine"
-                android:minLines="5"
-                android:textAppearance="@style/BevestDesign.Typography.Body1" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <ImageView
-            android:id="@+id/iv_owner_profile_photo"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignStart="@id/til_owner_profile_photo"
-            android:layout_alignTop="@id/til_owner_profile_photo"
-            android:layout_alignEnd="@id/til_owner_profile_photo"
-            android:layout_alignBottom="@id/til_owner_profile_photo"
-            android:layout_centerVertical="true"
-            android:layout_marginHorizontal="8dp"
-            android:layout_marginVertical="16dp"
-            android:scaleType="fitCenter"
-            android:adjustViewBounds="true"
-            tools:src="@tools:sample/avatars" />
-
-        <ImageButton
-            android:id="@+id/btn_foto_profile"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignEnd="@id/til_owner_profile_photo"
-            android:layout_centerVertical="true"
-            android:layout_marginEnd="16dp"
-            android:backgroundTint="@color/color_transparent"
-            android:src="@drawable/ic_upload" />
-    </RelativeLayout>
+        android:layout_marginTop="8dp"/>
 
 </androidx.appcompat.widget.LinearLayoutCompat>

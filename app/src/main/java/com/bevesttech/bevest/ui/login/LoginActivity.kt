@@ -201,7 +201,6 @@ class LoginActivity : AppCompatActivity() {
                         }
                         finishAffinity()
                     }
-
                 }
 
                 is Result.Error -> {

@@ -7,16 +7,19 @@ import android.view.MotionEvent
 import android.view.View
 import android.view.View.OnTouchListener
 import android.window.OnBackInvokedDispatcher
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.viewpager2.widget.ViewPager2
 import com.bevesttech.bevest.R
 import com.bevesttech.bevest.databinding.ActivityOwnerRegistrationBinding
+import com.bevesttech.bevest.utils.ViewModelFactory
 import com.bevesttech.bevest.utils.setupAppBar
 
 class OwnerRegistrationActivity : AppCompatActivity() {
     private lateinit var binding: ActivityOwnerRegistrationBinding
     private lateinit var sectionPagerAdapter: OwnerRegistrationViewPagerAdapter
+    private val sharedViewModel: OwnerRegistrationViewModel by viewModels { ViewModelFactory(this) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,6 +35,17 @@ class OwnerRegistrationActivity : AppCompatActivity() {
             setupAppBar(toolbar, getString(R.string.data_pemilik_usaha))
 
             setViewPager()
+            setNextButtonState()
+        }
+    }
+
+    private fun setNextButtonState() {
+        with(binding) {
+            if (viewPager.currentItem == 0) {
+                sharedViewModel.haveBusinessEntity.observe(this@OwnerRegistrationActivity) {
+                    btnNext.isEnabled = it != -1
+                }
+            }
         }
     }
 
@@ -58,6 +72,12 @@ class OwnerRegistrationActivity : AppCompatActivity() {
                     viewPager.currentItem = 1
                 }
             }
+
+            step3.stepItem.setOnClickListener {
+                if (viewPager.currentItem > 2) {
+                    viewPager.currentItem = 2
+                }
+            }
         }
     }
 
@@ -75,6 +95,7 @@ class OwnerRegistrationActivity : AppCompatActivity() {
                     step1.stepItem.background = stepItemState(0, position)
                     step2.stepItem.background = stepItemState(1, position)
                     step3.stepItem.background = stepItemState(2, position)
+                    step4.stepItem.background = stepItemState(3, position)
                 }
             })
         }
@@ -88,6 +109,6 @@ class OwnerRegistrationActivity : AppCompatActivity() {
     }
 
     companion object {
-        const val MAX_PAGE = 3
+        const val MAX_PAGE = 4
     }
 }

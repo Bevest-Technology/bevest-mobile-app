@@ -70,4 +70,8 @@ object Utils {
         }
         return fileName ?: uri.toString()
     }
+
+    fun isBusiness(role: String): Boolean {
+        return role == Role.BUSINESS.name
+    }
 }

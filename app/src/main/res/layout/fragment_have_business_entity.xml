@@ -1,36 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp"
     tools:context=".ui.businessowner.ownerregistration.HaveBusinessEntityFragment">
 
-    <TextView
-        android:id="@+id/tv_question"
-        style="@style/BevestDesign.Typography.BodySemiBold2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/sudah_memiliki_badan_usaha_question" />
+    <data>
+        <variable
+            name="viewModel"
+            type="com.bevesttech.bevest.ui.businessowner.ownerregistration.OwnerRegistrationViewModel"/>
 
-    <RadioGroup
-        android:id="@+id/rg_have_business_entity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        <variable
+            name="fragment"
+            type="com.bevesttech.bevest.ui.businessowner.ownerregistration.HaveBusinessEntityFragment"/>
+    </data>
 
-        <RadioButton
-            android:id="@+id/rb_already"
-            android:layout_width="match_parent"
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tv_question"
+            style="@style/BevestDesign.Typography.BodySemiBold2"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Sudah"
-            android:textAppearance="@style/BevestDesign.Typography.Body2" />
+            android:text="@string/sudah_memiliki_badan_usaha_question" />
 
-        <RadioButton
-            android:id="@+id/rb_not_yet"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Belum"
-            android:textAppearance="@style/BevestDesign.Typography.Body2" />
-    </RadioGroup>
-</androidx.appcompat.widget.LinearLayoutCompat>
+        <RadioGroup
+            android:id="@+id/rg_have_business_entity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/rb_already"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/sudah"
+                android:checked="@{viewModel.haveBusinessEntity == 1}"
+                android:onClick="@{() -> viewModel.setHaveBusinessEntity(1)}"
+                android:textAppearance="@style/BevestDesign.Typography.Body2" />
+
+            <RadioButton
+                android:id="@+id/rb_not_yet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/belum"
+                android:checked="@{viewModel.haveBusinessEntity == 0}"
+                android:onClick="@{() -> viewModel.setHaveBusinessEntity(0)}"
+                android:textAppearance="@style/BevestDesign.Typography.Body2" />
+        </RadioGroup>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>
