@@ -1,6 +1,5 @@
-package com.bevesttech.bevest.ui.businessowner.ownerregistration
+package com.bevesttech.bevest.ui.businessowner.businessdataregistration
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -26,7 +25,11 @@ class BusinessEntityDataFragment : Fragment() {
 
         val kategoriBisnis: Array<String> = resources.getStringArray(R.array.kategori_bisnis_list)
         val arrayAdapterKategoriBisnis: ArrayAdapter<String> = ArrayAdapter(requireContext(), android.R.layout.simple_expandable_list_item_1, kategoriBisnis)
-        binding.actBusinessCategory.setAdapter(arrayAdapterKategoriBisnis)
+
+        with(binding) {
+            cardUploadBusinessBanner.tvHint.text = getString(R.string.unggah_bukti_brand_usaha_banner)
+            actBusinessCategory.setAdapter(arrayAdapterKategoriBisnis)
+        }
     }
 
     override fun onDestroyView() {

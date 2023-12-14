@@ -210,4 +210,18 @@
     <string name="status_perkawinan">Status Perkawinan</string>
     <string name="pekerjaan">Pekerjaan</string>
     <string name="kewarganegaraan">Kewarganegaraan</string>
+    <string name="data_bisnis">Data Bisnis</string>
+    <string name="data_bisnis_umum">Data Bisnis Umum</string>
+    <string name="produk_utama">Produk Utama</string>
+    <string name="penjualan_rata_rata_per_tahun">Penjualan Rata-Rata Per Tahun</string>
+    <string name="jenis_badan_hukum">Jenis Badan Hukum</string>
+    <string name="sistem_penjualan">Sistem Penjualan</string>
+    <string name="target_pasar">Target Pasar</string>
+    <string name="data_valuasi_penjualan">Data Valuasi Penjualan</string>
+    <string name="nilai_jaminan_aset_kredit">Nilai Jaminan Aset Kredit</string>
+    <string name="jumlah_karyawan">Jumlah Karyawan</string>
+    <string name="data_bisnis_penunjang">Data Bisnis Penunjang</string>
+    <string name="jumlah_dokumen_kredit">Jumlah Dokumen Kredit</string>
+    <string name="media_sosial_opsional">Media Sosial (Opsional)</string>
+    <string name="website_opsional">Website (Opsional)</string>
 </resources>

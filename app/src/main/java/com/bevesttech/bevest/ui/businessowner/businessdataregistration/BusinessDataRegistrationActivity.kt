@@ -1,31 +1,21 @@
-package com.bevesttech.bevest.ui.businessowner.ownerregistration
+package com.bevesttech.bevest.ui.businessowner.businessdataregistration
 
-import android.annotation.SuppressLint
-import android.content.Intent
 import android.graphics.drawable.Drawable
 import android.os.Bundle
-import android.view.MotionEvent
-import android.view.View
-import android.view.View.OnTouchListener
-import android.window.OnBackInvokedDispatcher
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.viewpager2.widget.ViewPager2
 import com.bevesttech.bevest.R
-import com.bevesttech.bevest.databinding.ActivityOwnerRegistrationBinding
-import com.bevesttech.bevest.ui.businessowner.businessdataregistration.BusinessDataRegistrationActivity
-import com.bevesttech.bevest.utils.ViewModelFactory
+import com.bevesttech.bevest.databinding.ActivityBusinessDataRegistrationBinding
+import com.bevesttech.bevest.ui.businessowner.ownerregistration.OwnerRegistrationViewPagerAdapter
 import com.bevesttech.bevest.utils.setupAppBar
 
-class OwnerRegistrationActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityOwnerRegistrationBinding
-    private lateinit var sectionPagerAdapter: OwnerRegistrationViewPagerAdapter
-    private val sharedViewModel: OwnerRegistrationViewModel by viewModels { ViewModelFactory(this) }
-
+class BusinessDataRegistrationActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityBusinessDataRegistrationBinding
+    private lateinit var sectionPagerAdapter: BusinessDataRegistrationViewPagerAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityOwnerRegistrationBinding.inflate(layoutInflater)
+        binding = ActivityBusinessDataRegistrationBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         setView()
@@ -34,7 +24,7 @@ class OwnerRegistrationActivity : AppCompatActivity() {
 
     private fun setView() {
         with(binding) {
-            setupAppBar(toolbar, getString(R.string.data_pemilik_usaha))
+            setupAppBar(toolbar, getString(R.string.data_bisnis))
 
             setViewPager()
             setNextButtonState()
@@ -44,9 +34,9 @@ class OwnerRegistrationActivity : AppCompatActivity() {
     private fun setNextButtonState() {
         with(binding) {
             if (viewPager.currentItem == 0) {
-                sharedViewModel.haveBusinessEntity.observe(this@OwnerRegistrationActivity) {
-                    btnNext.isEnabled = it != -1
-                }
+//                sharedViewModel.haveBusinessEntity.observe(this@OwnerRegistrationActivity) {
+//                    btnNext.isEnabled = it != -1
+//                }
             }
         }
     }
@@ -57,10 +47,7 @@ class OwnerRegistrationActivity : AppCompatActivity() {
 
             btnNext.setOnClickListener {
                 if (viewPager.currentItem == MAX_PAGE - 1) {
-                    Intent(this@OwnerRegistrationActivity, BusinessDataRegistrationActivity::class.java).also {
-                        startActivity(it)
-                        finish()
-                    }
+
                 } else {
                     viewPager.currentItem += 1
                 }
@@ -88,7 +75,7 @@ class OwnerRegistrationActivity : AppCompatActivity() {
 
     private fun setViewPager() {
         with(binding) {
-            sectionPagerAdapter = OwnerRegistrationViewPagerAdapter(this@OwnerRegistrationActivity)
+            sectionPagerAdapter = BusinessDataRegistrationViewPagerAdapter(this@BusinessDataRegistrationActivity)
             viewPager.adapter = sectionPagerAdapter
             viewPager.isUserInputEnabled = false
 
@@ -108,7 +95,7 @@ class OwnerRegistrationActivity : AppCompatActivity() {
 
     private fun stepItemState(stepPosition: Int, pagePosition: Int): Drawable? {
         return ContextCompat.getDrawable(
-            this@OwnerRegistrationActivity,
+            this@BusinessDataRegistrationActivity,
             if (stepPosition <= pagePosition) R.drawable.stepbarindicator_active else R.drawable.stepbarindicator_default
         )
     }

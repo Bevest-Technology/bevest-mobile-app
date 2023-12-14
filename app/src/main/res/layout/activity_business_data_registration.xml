@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.businessowner.ownerregistration.OwnerRegistrationActivity">
+    tools:context=".ui.businessowner.businessdataregistration.BusinessDataRegistrationActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbar"
@@ -56,10 +56,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/appbar">
 
-            <androidx.viewpager2.widget.ViewPager2
-                android:id="@+id/viewPager"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
     </ScrollView>
 
     <androidx.appcompat.widget.AppCompatButton

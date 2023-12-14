@@ -6,59 +6,59 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:padding="16dp"
-    tools:context=".ui.businessowner.businessdataregistration.BusinessEntityDataFragment">
+    tools:context=".ui.businessowner.businessdataregistration.BusinessGeneralDataFragment">
 
     <TextView
         android:id="@+id/tv_question"
         style="@style/BevestDesign.Typography.BodySemiBold2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/data_badan_usaha" />
+        android:text="@string/data_bisnis_umum" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_business_name"
+        android:id="@+id/til_produk_utama"
         style="@style/BevestDesign.Component.EditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edt_business_name"
+            android:id="@+id/edt_produk_utama"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/nama_badan_usaha"
+            android:hint="@string/produk_utama"
             android:imeOptions="actionNext"
-            android:inputType="textPersonName"
+            android:inputType="text"
             android:maxLines="1"
             android:textAppearance="@style/BevestDesign.Typography.Body1" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_brand_name"
+        android:id="@+id/til_target_pasar"
         style="@style/BevestDesign.Component.EditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edt_brand_name"
+            android:id="@+id/edt_target_pasar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/nama_brand"
+            android:hint="@string/target_pasar"
             android:imeOptions="actionNext"
-            android:inputType="number|phone"
+            android:inputType="number"
             android:maxLines="1"
             android:textAppearance="@style/BevestDesign.Typography.Body1" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_business_category"
+        android:id="@+id/til_badan_hukum"
         style="@style/BevestDesign.Component.DropDown"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/kategori_bisnis">
+        android:hint="@string/jenis_badan_hukum">
 
         <AutoCompleteTextView
-            android:id="@+id/act_business_category"
+            android:id="@+id/act_badan_hukum"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="16dp"
@@ -67,28 +67,18 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_address"
-        style="@style/BevestDesign.Component.EditText"
+        android:id="@+id/til_sistem_penjualan"
+        style="@style/BevestDesign.Component.DropDown"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp">
+        android:hint="@string/sistem_penjualan">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edt_address"
+        <AutoCompleteTextView
+            android:id="@+id/act_sistem_penjualan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/alamat_bisnis"
-            android:imeOptions="actionNext"
-            android:inputType="textMultiLine"
-            android:maxLines="3"
+            android:padding="16dp"
+            android:inputType="none"
             android:textAppearance="@style/BevestDesign.Typography.Body1" />
     </com.google.android.material.textfield.TextInputLayout>
-
-    <include
-        android:id="@+id/card_upload_business_banner"
-        layout="@layout/item_upload_file"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"/>
-
 </androidx.appcompat.widget.LinearLayoutCompat>
