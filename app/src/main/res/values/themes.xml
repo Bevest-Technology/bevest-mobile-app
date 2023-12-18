@@ -54,5 +54,11 @@
         <item name="dsTypographyBotNavTitle">@style/BevestDesign.Typography.Fields.BottomNav.Title</item>
     </style>
 
+    <style name="DialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/slide_in_bottom</item>
+        <item name="android:windowExitAnimation">@anim/slide_out_bottom</item>
+    </style>
+
     <style name="Theme.BevestMobileApplication" parent="Base.Theme.BevestMobileApplication" />
+
 </resources>

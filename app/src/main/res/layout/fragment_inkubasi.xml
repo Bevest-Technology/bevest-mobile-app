@@ -52,7 +52,7 @@
                         <ImageView
                             android:layout_width="112dp"
                             android:layout_height="91dp"
-                            android:src="@drawable/bevest_logo"/>
+                            android:src="@drawable/bevest_logo_vector"/>
                         <ImageView
                             android:layout_width="32dp"
                             android:layout_height="32dp"
@@ -64,6 +64,7 @@
                             android:src="@drawable/lpdp_logo"/>
                     </androidx.appcompat.widget.LinearLayoutCompat>
                     <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_cek_proggress"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         style="@style/BevestDesign.Component.ButtonOutlined"

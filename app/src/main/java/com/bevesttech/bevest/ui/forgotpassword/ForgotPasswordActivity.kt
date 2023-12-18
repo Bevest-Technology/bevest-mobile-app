@@ -9,6 +9,7 @@ import android.view.MenuItem
 import androidx.fragment.app.commit
 import com.bevesttech.bevest.R
 import com.bevesttech.bevest.databinding.ActivityForgotPasswordBinding
+import com.bevesttech.bevest.ui.business.BusinessFragment
 import com.bevesttech.bevest.ui.login.LoginActivity
 import com.google.android.material.appbar.MaterialToolbar
 
