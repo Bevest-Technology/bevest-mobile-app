@@ -92,6 +92,10 @@
     <string name="upload">Upload</string>
     <string name="simpan">Simpan</string>
     <string name="laporan_keuangan_laba_rugi_pdf">Laporan Keuangan Laba Rugi (PDF)</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="security">Security</string>
+    <string name="faq">FAQ</string>
+    <string name="keluar">Keluar</string>
 
     <string-array name="kategori_bisnis_list">
         <item>Penyediaan Akomodasi dan Makan Minum Peternakan</item>
