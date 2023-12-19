@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Headline -->
+    <style name="BevestDesign.Typography" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/plus_jakarta_sans</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+    <style name="BevestDesign.Typography.SemiBold" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/plus_jakarta_sans_semibold</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+    <style name="BevestDesign.Typography.Headline1" parent="BevestDesign.Typography.SemiBold">
+        <item name="android:textSize">24sp</item>
+        <item name="android:lineSpacingMultiplier">1.2</item>
+    </style>
+    <style name="BevestDesign.Typography.Headline2" parent="BevestDesign.Typography.SemiBold">
+        <item name="android:textSize">20sp</item>
+        <item name="android:lineSpacingMultiplier">1.2</item>
+    </style>
+    <style name="BevestDesign.Typography.Headline3" parent="BevestDesign.Typography.SemiBold">
+        <item name="android:textSize">18sp</item>
+        <item name="android:lineSpacingMultiplier">1.2</item>
+    </style>
+    <style name="BevestDesign.Typography.Headline4" parent="BevestDesign.Typography.SemiBold">
+        <item name="android:textSize">16sp</item>
+        <item name="android:lineSpacingMultiplier">1.2</item>
+    </style>
+    <style name="BevestDesign.Typography.Headline5" parent="BevestDesign.Typography.SemiBold">
+        <item name="android:textSize">14sp</item>
+        <item name="android:lineSpacingMultiplier">1.2</item>
+    </style>
+
+    <!-- Body -->
+    <style name="BevestDesign.Typography.Body1" parent="BevestDesign.Typography">
+        <item name="android:fontStyle">normal</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:letterSpacing">0.015</item>
+    </style>
+    <style name="BevestDesign.Typography.Body2" parent="BevestDesign.Typography">
+        <item name="android:fontStyle">normal</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:letterSpacing">0.015</item>
+    </style>
+    <style name="BevestDesign.Typography.Body3" parent="BevestDesign.Typography">
+        <item name="android:fontStyle">normal</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:letterSpacing">0.015</item>
+    </style>
+    <style name="BevestDesign.Typography.BodySemiBold1" parent="BevestDesign.Typography.SemiBold">
+        <item name="android:fontStyle">normal</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:letterSpacing">0.015</item>
+    </style>
+    <style name="BevestDesign.Typography.BodySemiBold2" parent="BevestDesign.Typography.SemiBold">
+        <item name="android:fontStyle">normal</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:letterSpacing">0.015</item>
+    </style>
+    <style name="BevestDesign.Typography.BodySemiBold3" parent="BevestDesign.Typography.SemiBold">
+        <item name="android:fontStyle">normal</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:letterSpacing">0.015</item>
+    </style>
+
+    <!-- Button -->
+    <style name="BevestDesign.Typography.ButtonLink" parent="BevestDesign.Typography.SemiBold">
+        <item name="android:textSize">16sp</item>
+        <item name="android:letterSpacing">0.00125</item>
+    </style>
+    <style name="BevestDesign.Typography.ButtonLinkSmall" parent="BevestDesign.Typography.SemiBold">
+        <item name="android:textSize">14sp</item>
+        <item name="android:letterSpacing">0.00125</item>
+    </style>
+
+    <!-- Fields -->
+    <style name="BevestDesign.Typography.Fields.Label" parent="BevestDesign.Typography">
+        <item name="android:textSize">14sp</item>
+        <item name="android:lineSpacingMultiplier">1.5</item>
+        <item name="android:letterSpacing">0.0015</item>
+    </style>
+    <style name="BevestDesign.Typography.Fields.PlaceHolder" parent="BevestDesign.Typography">
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">24sp</item>
+        <item name="lineHeight">24dp</item>
+    </style>
+    <style name="BevestDesign.Typography.Fields.Hint" parent="BevestDesign.Typography">
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">16sp</item>
+        <item name="lineHeight">16dp</item>
+    </style>
+
+    <!-- Navigation -->
+    <style name="BevestDesign.Typography.Fields.BottomNav.Title" parent="BevestDesign.Typography">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:lineSpacingMultiplier">1.5</item>
+        <item name="android:letterSpacing">0.0015</item>
+    </style>
+</resources>

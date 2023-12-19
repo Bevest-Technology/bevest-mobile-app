@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginHorizontal="16dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.bisnislisting.KeuanganFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="32dp">
+
+            <TextView
+                android:id="@+id/tv_profile_bisnis"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/BevestDesign.Typography.BodySemiBold1"
+                android:textColor="@color/ds_neutral_80"
+                android:text="@string/keuangan"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="24dp"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_total_saham"
+                style="@style/BevestDesign.Component.EditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_profile_bisnis">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_total_saham"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/total_saham_yang_dibagikan"
+                    android:textAppearance="@style/BevestDesign.Typography.Body1"
+                    android:inputType="number"
+                    android:maxLines="1" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_total_keuntungan"
+                style="@style/BevestDesign.Component.EditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/til_total_saham">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_total_keuntungan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/total_keuntungan_tahun_sebelumnya_juta"
+                    android:textAppearance="@style/BevestDesign.Typography.Body1"
+                    android:inputType="number"
+                    android:maxLines="1" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_keuntungan_sebelumnya"
+                style="@style/BevestDesign.Component.EditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/til_total_keuntungan">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_keuntungan_sebelumnya"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/keuntungan_tahun_sebelumnya"
+                    android:textAppearance="@style/BevestDesign.Typography.Body1"
+                    android:inputType="number"
+                    android:maxLines="1" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_balik_modal"
+                style="@style/BevestDesign.Component.EditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/til_keuntungan_sebelumnya">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_balik_modal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/perkiraan_balik_modal_bulan"
+                    android:textAppearance="@style/BevestDesign.Typography.Body1"
+                    android:inputType="numberDecimal"
+                    android:maxLines="1" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_laporan_tahun_lalu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/til_balik_modal">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_laporan_tahun_lalu"
+                    style="@style/BevestDesign.Component.EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edt_laporan_tahun_lalu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:enabled="false"
+                        android:hint="@string/laporan_keuangan_tahun_sebelumnya_pdf"
+                        android:inputType="textMultiLine"
+                        android:minLines="5"
+                        android:textAppearance="@style/BevestDesign.Typography.Body1" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <ImageButton
+                    android:id="@+id/btn_laporan_tahun_lalu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignEnd="@id/til_laporan_tahun_lalu"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="32dp"
+                    android:backgroundTint="@color/color_transparent"
+                    android:src="@drawable/ic_upload" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_laporan_tahun_ini"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/layout_laporan_tahun_lalu">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_laporan_tahun_ini"
+                    style="@style/BevestDesign.Component.EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edt_laporan_tahun_ini"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:enabled="false"
+                        android:hint="@string/laporan_keuangan_tahun_ini_pdf"
+                        android:inputType="textMultiLine"
+                        android:minLines="5"
+                        android:textAppearance="@style/BevestDesign.Typography.Body1" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <ImageButton
+                    android:id="@+id/btn_laporan_tahun_ini"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignEnd="@id/til_laporan_tahun_ini"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="32dp"
+                    android:backgroundTint="@color/color_transparent"
+                    android:src="@drawable/ic_upload" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_rencana_anggaran"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/layout_laporan_tahun_ini">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_rencana_anggaran"
+                    style="@style/BevestDesign.Component.EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edt_rencana_anggaran"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:enabled="false"
+                        android:hint="@string/rencana_anggaran_pendanaan_pdf"
+                        android:inputType="textMultiLine"
+                        android:minLines="5"
+                        android:textAppearance="@style/BevestDesign.Typography.Body1" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <ImageButton
+                    android:id="@+id/btn_rencana_anggaran"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignEnd="@id/til_rencana_anggaran"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="32dp"
+                    android:backgroundTint="@color/color_transparent"
+                    android:src="@drawable/ic_upload" />
+            </RelativeLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_lanjut"
+                style="@style/BevestDesign.Component.ButtonFilled"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/lanjut"
+                app:layout_constraintTop_toBottomOf="@id/layout_rencana_anggaran" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,3 +1,123 @@
 <resources>
     <string name="app_name">Bevest Mobile Application</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="onboarding_title_1">Investasi Equity Crowdfunding dengan Praktis!</string>
+    <string name="onboarding_title_2">Keuntungan Anda, Kemajuan UMKM</string>
+    <string name="onboarding_title_3">Bikin Investasi Jadi Hip!</string>
+    <string name="onboarding_subtitle_1">Sekali klik investasi Crowfunding sesuai dengan level resiko kamu</string>
+    <string name="onboarding_subtitle_2">Dapat keuntungan sambil berkontribusi pada pertumbuhan bisnis UMKM</string>
+    <string name="onboarding_subtitle_3">Investasi dari Kecil, Hasilnya Besar! Mulai dari 10 Ribu</string>
+    <string name="lewati">Lewati</string>
+    <string name="lanjut">Lanjut</string>
+    <string name="email">Email</string>
+    <string name="kata_sandi">Kata Sandi</string>
+    <string name="lupa_kata_sandi">Lupa Kata Sandi?</string>
+    <string name="masuk">Masuk</string>
+    <string name="masuk_dengan_google">Masuk dengan Google</string>
+    <string name="daftar">Daftar</string>
+    <string name="belum_punya_akun">Belum punya akun?</string>
+    <string name="bevest_logo">Bevest Logo</string>
+    <string name="deskripsi_meminta_email">Masukkan Email yang tersambung dengan akun anda</string>
+    <string name="kirim">Kirim</string>
+    <string name="masukkan_katasandi_baru">Masukkan kata sandi baru anda!</string>
+    <string name="konfirmasi_kata_sandi">Konfirmasi Kata Sandi</string>
+    <string name="pilih_role">Pilih Role</string>
+    <string name="saya_ingin_mendaftar_sebagai">Saya ingin mendaftar sebagai</string>
+    <string name="bevest_mascott">Bevest Mascott</string>
+    <string name="investor">Investor</string>
+    <string name="pemilik_bisnis">Pemilik Bisnis</string>
+    <string name="deskripsi_chose_investor">Mulai dari 10 Ribu kamu bisa menjadi investor UMKM dan mendapatkan keuntungan</string>
+    <string name="deskripsi_choose_pemilik_bisnis">Bergabung menjadi mitra dan dapatkan kesempatan untuk mengexpand bisnismu</string>
+    <string name="nama_lengkap">Nama Lengkap</string>
+    <string name="daftar_dengan_google">Daftar dengan Google</string>
+    <string name="sudah_punya_akun">Sudah punya akun?</string>
+    <string name="deskripsi_wawancara">Tim kami akan segera melakukan wawancara dengan nomor WhatsApp</string>
+    <string name="change_phone_number">Ganti Nomor Whatsapp</string>
+    <string name="no_whatsapp">No. Whatsapp</string>
+    <string name="on_call_progress">Tim kami sedang proses menghubungi anda</string>
+    <string name="selamat">Selamat!!</string>
+    <string name="deskripsi_jumlah_valuasi">Berdasarkan profile bisnismu, valuasi kamu sebesar</string>
+    <string name="email_tidak_valid">Email tidak valid</string>
+    <string name="kata_sandi_minimal">Kata sandi minimal 8 karakter</string>
+    <string name="nama_lengkap_error_min_3">Nama harus lebih dari 3 huruf</string>
+    <string name="kata_sandi_tidak_sama">Kata sandi tidak sama</string>
+    <string name="article_headline">Tentang Platform Equity Crowdfunding Bevest, Investasi Gen Z Mulai dari Rp10 Ribu</string>
+    <string name="article_body"><![CDATA[Bevest merupakan platform investasi yang berdiri sejak tahun 2023. Dalam menyelenggarakan investasi, Bevast menggunakan skema urun dana dan sudah mendapatkan izin resmi dari Otoritas Jasa Keuangan (OJK) sebagai Penyelenggara Securities Crowdfunding dengan No. SK: 38/D.04/2021.  Hal ini menjadikan Bevast sebagai platform urun dana yang terjamin legal dan aman. Dengan demikian, Anda tidak perlu ragu untuk berinvestasi di Bevast. Untuk info lebih lengkap mengenai investasi urun dana, Cara Daftar Akun Bevast  Cara registrasi akun di Bevast sangatlah mudah dan cepat. Anda hanya perlu menyiapkan KTP saja. Berikut panduan lengkapnya. Cara daftar akun Bevest: \n 1. Download aplikasi Bevest dari Google Play atau App Store.\n 2. Buka aplikasi Bevest, isi nama lengkap, nomor HP, dan email aktif.\n 3. Cek inbox email dan lakukan aktivasi akun.\n 4. Siapkan KTP, ikuti instruksi foto yang diberikan.\n 5. Tunggu hingga akun berhasil terverifikasi.\n 6. Lengkapi profil akun Anda dengan rinci dan detail.\n 7. Lakukan tanda tangan digital sesuai instruksi.\n 8. Selesai! Anda bisa berinvestasi di Bevast.\n Sebagai informasi, proses verifikasi akun Bevast membutuhkan waktu paling lama 1×24 jam. Tak hanya mudah, alur pendaftarannya juga cepat.]]></string>
+    <string name="maaf">Yahh,, Mohon maaf</string>
+    <string name="deskripsi_valuasi_gagal">Berdasarkan profile bisnismu, valuasi kamu belum bisa kami tentukan</string>
+    <string name="ajukan_kembali">Ajukan Kembali</string>
+    <string name="baca_bevest_academy">Baca Bevest Academy</string>
+    <string name="profile_bisnis">Profile Bisnis</string>
+    <string name="hint_deskripsi_profile_bisnis"><![CDATA[Deskripsi & Latar Belakang Bisnis]]></string>
+    <string name="hint_profile_owner">Profile Owner</string>
+    <string name="hint_visi_misi_perusahaan">Visi Misi Perusahaan</string>
+    <string name="alamat_lengkap">Alamat Lengkap</string>
+    <string name="total_cabang">Total Cabang</string>
+    <string name="foto_profile_logo_circle_1_1">Foto Profile/Logo (Circle,1:1)</string>
+    <string name="foto_banner_landscape_16_9">Foto Banner (Landscape,16:9)</string>
+    <string name="foto_product_lanscape_16_9">Foto Product (Lanscape, 16:9)</string>
+    <string name="video_optional_lanscape_16_9">Video (Optional, Lanscape, 16:9)</string>
+    <string name="keuangan">Keuangan</string>
+    <string name="total_saham_yang_dibagikan">Total Saham yang Dibagikan (%)</string>
+    <string name="total_keuntungan_tahun_sebelumnya_juta">Total Keuntungan Tahun sebelumnya (Juta)</string>
+    <string name="keuntungan_tahun_sebelumnya">% Keuntungan Tahun sebelumnya</string>
+    <string name="perkiraan_balik_modal_bulan">Perkiraan Balik Modal (Bulan)</string>
+    <string name="laporan_keuangan_tahun_sebelumnya_pdf">Laporan Keuangan Tahun Sebelumnya (PDF)</string>
+    <string name="rencana_anggaran_pendanaan_pdf">Rencana Anggaran Pendanaan (PDF)</string>
+    <string name="laporan_keuangan_tahun_ini_pdf">Laporan Keuangan Tahun Ini (PDF)</string>
+    <string name="field_tidak_boleh_kosong">Field ini tidak boleh kosong!</string>
+
+    <string name="data_pemilik_usaha">Data Pemilik Usaha</string>
+    <string name="sudah_memiliki_badan_usaha_question">Sudah Memiliki Badan Usaha (PT/CV)</string>
+    <string name="nama_lengkap_owner">Nama Lengkap Owner</string>
+    <string name="no_whatsapp_aktif">No. Whatsapp Aktif</string>
+    <string name="identitas_pribadi">Identitas Pribadi</string>
+    <string name="unggah_foto_owner">Unggah Foto Owner</string>
+    <string name="data_badan_usaha">Data Badan Usaha</string>
+    <string name="nama_badan_usaha">Nama Badan Usaha</string>
+    <string name="nama_brand">Nama Brand</string>
+    <string name="alamat_bisnis">Alamat Bisnis</string>
+    <string name="unggah_bukti_brand_usaha_banner">Unggah Bukti Brand Usaha /Banner</string>
+    <string name="kategori_bisnis">Kategori Bisnis</string>
+    <string name="icon_location">icon_location</string>
+    <string name="inkubasi">Inkubasi</string>
+    <string name="cek_proggress">Cek Proggress</string>
+    <string name="agenda_inkubasi">Agenda Inkubasi</string>
+    <string name="mohon_maaf_agenda_ninkubasi_belum_tersedia">Mohon Maaf, Agenda\nInkubasi belum tersedia</string>
+    <string name="bisnis">Bisnis</string>
+    <string name="laporan_keuangan_tahunan">Laporan Keuangan Tahunan</string>
+    <string name="total_laba_bersih_juta">Total Laba Bersih (Juta)</string>
+    <string name="laporan_keuangan_neraca_pdf">Laporan Keuangan Neraca (PDF)</string>
+    <string name="upload">Upload</string>
+    <string name="simpan">Simpan</string>
+    <string name="laporan_keuangan_laba_rugi_pdf">Laporan Keuangan Laba Rugi (PDF)</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="security">Security</string>
+    <string name="faq">FAQ</string>
+    <string name="keluar">Keluar</string>
+
+    <string-array name="kategori_bisnis_list">
+        <item>Penyediaan Akomodasi dan Makan Minum Peternakan</item>
+        <item>Pertanian, Perburuan dan Kehutanan</item>
+        <item>Perantara Keuangan</item>
+        <item>Jasa Kesehatan dan Kegiatan Sosial</item>
+        <item>Perikanan</item>
+        <item>Perdagangan Besar dan Eceran</item>
+        <item>Industri Pengolahan</item>
+        <item>Konstruksi</item>
+        <item>Transportasi, Pergudangan dan Komunikasi</item>
+        <item>Pertambangan dan Penggalian Pertambangan Listrik, Air dan Gas</item>
+        <item>Real Estate</item>
+        <item>Usaha Persewaan dan Jasa Perusahaan Jasa Pendidikan</item>
+        <item>Jasa Kemasyarakatan dan Perorangan lainnya Property</item>
+        <item>Food And Beverage</item>
+        <item>Peternakan</item>
+        <item>Perkebunan/Argo</item>
+        <item>Teknologi Start Up</item>
+        <item>Project Financing</item>
+        <item>Service/Layanan</item>
+        <item>Manufaktur/Produksi</item>
+        <item>Retail/Distribusi/Logistik</item>
+    </string-array>
 </resources>

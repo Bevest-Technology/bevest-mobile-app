@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginHorizontal="16dp"
+    tools:context=".ui.bisnislisting.ProfileBisnisFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="32dp">
+
+            <TextView
+                android:id="@+id/tv_profile_bisnis"
+                style="@style/BevestDesign.Typography.BodySemiBold1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/profile_bisnis"
+                android:textColor="@color/ds_neutral_80"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_deskripsi_bisnis"
+                style="@style/BevestDesign.Component.EditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_profile_bisnis">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_deskripsi_bisnis"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hint_deskripsi_profile_bisnis"
+                    android:inputType="textMultiLine"
+                    android:minLines="5"
+                    android:textAppearance="@style/BevestDesign.Typography.Body1" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_profile_owner"
+                style="@style/BevestDesign.Component.EditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/til_deskripsi_bisnis">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_profile_owner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hint_profile_owner"
+                    android:inputType="textMultiLine"
+                    android:minLines="5"
+                    android:textAppearance="@style/BevestDesign.Typography.Body1" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_visimisi_perusahaan"
+                style="@style/BevestDesign.Component.EditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/til_profile_owner">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_visimisi_perusahaan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hint_visi_misi_perusahaan"
+                    android:inputType="textMultiLine"
+                    android:minLines="5"
+                    android:textAppearance="@style/BevestDesign.Typography.Body1" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_alamat"
+                style="@style/BevestDesign.Component.EditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/til_visimisi_perusahaan">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_alamat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/alamat_lengkap"
+                    android:inputType="textMultiLine"
+                    android:maxLines="5"
+                    android:textAppearance="@style/BevestDesign.Typography.Body1" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_total_cabang"
+                style="@style/BevestDesign.Component.EditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/til_alamat">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_total_cabang"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/total_cabang"
+                    android:inputType="numberDecimal"
+                    android:maxLines="1"
+                    android:textAppearance="@style/BevestDesign.Typography.Body1" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_foto_profile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/til_total_cabang">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_foto_profile"
+                    style="@style/BevestDesign.Component.EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edt_foto_profile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:enabled="false"
+                        android:hint="@string/foto_profile_logo_circle_1_1"
+                        android:inputType="textMultiLine"
+                        android:minLines="5"
+                        android:textAppearance="@style/BevestDesign.Typography.Body1" />
+                </com.google.android.material.textfield.TextInputLayout>
+                <ImageView
+                    android:id="@+id/iv_profile"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:src="@tools:sample/avatars"
+                    android:layout_centerVertical="true"
+                    android:layout_alignTop="@id/til_foto_profile"
+                    android:layout_alignBottom="@id/til_foto_profile"
+                    android:layout_alignStart="@id/til_foto_profile"
+                    android:layout_alignEnd="@id/til_foto_profile"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginTop="24dp"
+                    android:scaleType="fitCenter"/>
+
+
+                <ImageButton
+                    android:id="@+id/btn_foto_profile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignEnd="@id/til_foto_profile"
+                    android:layout_marginEnd="32dp"
+                    android:layout_centerVertical="true"
+                    android:backgroundTint="@color/color_transparent"
+                    android:src="@drawable/ic_upload" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_foto_banner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/layout_foto_profile">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_foto_banner"
+                    style="@style/BevestDesign.Component.EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edt_foto_banner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:enabled="false"
+                        android:hint="@string/foto_banner_landscape_16_9"
+                        android:inputType="textMultiLine"
+                        android:minLines="5"
+                        android:textAppearance="@style/BevestDesign.Typography.Body1" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <ImageView
+                    android:id="@+id/iv_banner"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:src="@tools:sample/avatars"
+                    android:layout_alignTop="@id/til_foto_banner"
+                    android:layout_alignBottom="@id/til_foto_banner"
+                    android:layout_alignStart="@id/til_foto_banner"
+                    android:layout_alignEnd="@id/til_foto_banner"
+                    android:layout_centerVertical="true"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginTop="24dp"
+                    android:scaleType="fitXY"/>
+
+                <ImageButton
+                    android:id="@+id/btn_foto_banner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignEnd="@id/til_foto_banner"
+                    android:layout_marginEnd="32dp"
+                    android:layout_centerVertical="true"
+                    android:backgroundTint="@color/color_transparent"
+                    android:src="@drawable/ic_upload" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_foto_product"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/layout_foto_banner">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_foto_product"
+                    style="@style/BevestDesign.Component.EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edt_foto_product"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:enabled="false"
+                        android:hint="@string/foto_product_lanscape_16_9"
+                        android:inputType="textMultiLine"
+                        android:minLines="5"
+                        android:textAppearance="@style/BevestDesign.Typography.Body1" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <ImageView
+                    android:id="@+id/iv_product"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:src="@tools:sample/avatars"
+                    android:layout_alignTop="@id/til_foto_product"
+                    android:layout_alignBottom="@id/til_foto_product"
+                    android:layout_alignStart="@id/til_foto_product"
+                    android:layout_alignEnd="@id/til_foto_product"
+                    android:layout_centerVertical="true"
+                    android:layout_marginHorizontal="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginTop="20dp"
+                    android:scaleType="fitXY"/>
+
+                <ImageButton
+                    android:id="@+id/btn_foto_product"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignEnd="@id/til_foto_product"
+                    android:layout_marginEnd="32dp"
+                    android:layout_centerVertical="true"
+                    android:backgroundTint="@color/color_transparent"
+                    android:src="@drawable/ic_upload" />
+            </RelativeLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_video"
+                style="@style/BevestDesign.Component.EditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/layout_foto_product"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_video"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/video_optional_lanscape_16_9"
+                    android:inputType="textMultiLine"
+                    android:minLines="5"
+                    android:textAppearance="@style/BevestDesign.Typography.Body1" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_lanjut"
+                style="@style/BevestDesign.Component.ButtonFilled"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/lanjut"
+                app:layout_constraintTop_toBottomOf="@id/til_video" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/gif_page_img"
+        android:layout_width="287dp"
+        android:layout_height="328dp"
+        android:layout_gravity="center"
+        android:layout_marginVertical="30dp"
+        android:src="@drawable/onboarding_1"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginHorizontal="16dp"
+        style="@style/BevestDesign.Typography.Headline2"
+        android:fontFamily="@font/plus_jakarta_sans_bold"
+        android:textAlignment="center"
+        android:text="Investasi Equity Crowdfunding dengan Praktis!"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_subtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        style="@style/BevestDesign.Typography.Body2"
+        android:textAlignment="center"
+        android:text="Sekali klik investasi Crowfunding sesuai dengan level resiko kamu"/>
+
+</androidx.appcompat.widget.LinearLayoutCompat>
