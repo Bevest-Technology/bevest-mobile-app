@@ -85,6 +85,17 @@
     <string name="cek_proggress">Cek Proggress</string>
     <string name="agenda_inkubasi">Agenda Inkubasi</string>
     <string name="mohon_maaf_agenda_ninkubasi_belum_tersedia">Mohon Maaf, Agenda\nInkubasi belum tersedia</string>
+    <string name="bisnis">Bisnis</string>
+    <string name="laporan_keuangan_tahunan">Laporan Keuangan Tahunan</string>
+    <string name="total_laba_bersih_juta">Total Laba Bersih (Juta)</string>
+    <string name="laporan_keuangan_neraca_pdf">Laporan Keuangan Neraca (PDF)</string>
+    <string name="upload">Upload</string>
+    <string name="simpan">Simpan</string>
+    <string name="laporan_keuangan_laba_rugi_pdf">Laporan Keuangan Laba Rugi (PDF)</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="security">Security</string>
+    <string name="faq">FAQ</string>
+    <string name="keluar">Keluar</string>
 
     <string-array name="kategori_bisnis_list">
         <item>Penyediaan Akomodasi dan Makan Minum Peternakan</item>

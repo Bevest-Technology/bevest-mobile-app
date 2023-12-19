@@ -6,9 +6,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/iv_wallet"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/wallet"
+        android:layout_width="157dp"
+        android:layout_height="175dp"
+        android:src="@drawable/bevest_blue_mascot_cry"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
