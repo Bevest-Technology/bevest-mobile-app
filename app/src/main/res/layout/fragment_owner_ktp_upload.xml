@@ -30,4 +30,11 @@
         android:src="@drawable/ktp_criteria"
         android:layout_gravity="center"/>
 
+    <include
+        android:id="@+id/card_upload_ktp"
+        layout="@layout/item_upload_file"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"/>
+
 </androidx.appcompat.widget.LinearLayoutCompat>

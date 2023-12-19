@@ -1,22 +1,25 @@
 package com.bevesttech.bevest.ui.businessowner.ownerregistration
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.graphics.drawable.Drawable
 import android.os.Bundle
-import android.view.MotionEvent
-import android.view.View
-import android.view.View.OnTouchListener
-import android.window.OnBackInvokedDispatcher
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.viewpager2.widget.ViewPager2
 import com.bevesttech.bevest.R
+import com.bevesttech.bevest.data.Result
 import com.bevesttech.bevest.databinding.ActivityOwnerRegistrationBinding
 import com.bevesttech.bevest.ui.businessowner.businessdataregistration.BusinessDataRegistrationActivity
 import com.bevesttech.bevest.utils.ViewModelFactory
+import com.bevesttech.bevest.utils.blockInput
+import com.bevesttech.bevest.utils.disabled
+import com.bevesttech.bevest.utils.enabled
+import com.bevesttech.bevest.utils.gone
 import com.bevesttech.bevest.utils.setupAppBar
+import com.bevesttech.bevest.utils.unblockInput
+import com.bevesttech.bevest.utils.visible
 
 class OwnerRegistrationActivity : AppCompatActivity() {
     private lateinit var binding: ActivityOwnerRegistrationBinding
@@ -30,6 +33,11 @@ class OwnerRegistrationActivity : AppCompatActivity() {
 
         setView()
         setListener()
+        setObserver()
+    }
+
+    private fun setObserver() {
+
     }
 
     private fun setView() {
@@ -43,10 +51,8 @@ class OwnerRegistrationActivity : AppCompatActivity() {
 
     private fun setNextButtonState() {
         with(binding) {
-            if (viewPager.currentItem == 0) {
-                sharedViewModel.haveBusinessEntity.observe(this@OwnerRegistrationActivity) {
-                    btnNext.isEnabled = it != -1
-                }
+            if (viewPager.currentItem == MAX_PAGE - 1) {
+                btnNext.text = getString(R.string.submit_data)
             }
         }
     }
@@ -56,13 +62,61 @@ class OwnerRegistrationActivity : AppCompatActivity() {
             toolbar.setNavigationOnClickListener { finish() }
 
             btnNext.setOnClickListener {
-                if (viewPager.currentItem == MAX_PAGE - 1) {
-                    Intent(this@OwnerRegistrationActivity, BusinessDataRegistrationActivity::class.java).also {
-                        startActivity(it)
-                        finish()
+                if (viewPager.currentItem == 0) {
+                    viewPager.currentItem = 1
+                } else if (viewPager.currentItem == 1) {
+                    sharedViewModel.validateOwnerPersonalIdentity()
+
+                    sharedViewModel.ownerPersonalIdentityFormState.observe(this@OwnerRegistrationActivity) { state ->
+                        if (state.isDataValid) {
+                            viewPager.currentItem = 2
+                        }
                     }
-                } else {
-                    viewPager.currentItem += 1
+                } else if (viewPager.currentItem == 2) {
+                    if (sharedViewModel.hasUploadKtp.value == true) {
+                        viewPager.currentItem = 3
+                    } else {
+                        Toast.makeText(
+                            this@OwnerRegistrationActivity,
+                            getString(R.string.ambil_foto_ktp_terlebih_dahulu), Toast.LENGTH_SHORT
+                        ).show()
+                    }
+                } else if (viewPager.currentItem == 3) {
+                    sharedViewModel.validateKtpDetail()
+
+                    sharedViewModel.detailKtpFormState.observe(this@OwnerRegistrationActivity) { state ->
+                        if (state.isDataValid) {
+                            sharedViewModel.setOwnerRegistrationData().observe(this@OwnerRegistrationActivity) { result ->
+                                when(result) {
+                                    is Result.Loading -> {
+                                        progressIndicator.visible()
+                                        blockInput()
+                                        btnNext.disabled()
+                                    }
+
+                                    is Result.Success -> {
+                                        progressIndicator.gone()
+                                        unblockInput()
+
+                                        Intent(this@OwnerRegistrationActivity, BusinessDataRegistrationActivity::class.java).also {
+                                            startActivity(it)
+                                        }
+                                    }
+
+                                    is Result.Error -> {
+                                        progressIndicator.gone()
+                                        unblockInput()
+                                        btnNext.enabled()
+                                        Toast.makeText(
+                                            this@OwnerRegistrationActivity,
+                                            result.error.toString(),
+                                            Toast.LENGTH_SHORT
+                                        ).show()
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
 

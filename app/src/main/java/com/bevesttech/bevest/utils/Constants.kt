@@ -4,6 +4,7 @@ object Constants {
 
     // firebase collection
     const val USERS_COL = "users"
+    const val BUSINESS_OWNER_COL = "business_owner"
 
     // firebase field
     const val ROLE_FIELD = "role"

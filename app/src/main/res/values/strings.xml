@@ -111,6 +111,29 @@
         <item>Manufaktur/Produksi</item>
         <item>Retail/Distribusi/Logistik</item>
     </string-array>
+    <string-array name="gender_list">
+        <item>Laki-Laki</item>
+        <item>Perempuan</item>
+    </string-array>
+    <string-array name="religion_list">
+        <item>Islam</item>
+        <item>Katolik</item>
+        <item>Protestan</item>
+        <item>Hindu</item>
+        <item>Buddha</item>
+        <item>Konghucu</item>
+        <item>Lainnya</item>
+    </string-array>
+    <string-array name="marital_status_list">
+        <item>Belum Kawin</item>
+        <item>Kawin</item>
+        <item>Cerai Hidup</item>
+        <item>Cerai Mati</item>
+    </string-array>
+    <string-array name="citizenship_status_list">
+        <item>WNI</item>
+        <item>WNA</item>
+    </string-array>
     <string name="large_text">
         "Material is the metaphor.\n\n"
 
@@ -225,4 +248,12 @@
     <string name="media_sosial_opsional">Media Sosial (Opsional)</string>
     <string name="website_opsional">Website (Opsional)</string>
     <string name="berhasil_unggah_foto_owner">Berhasil unggah foto owner</string>
+    <string name="nama_tidak_boleh_kosong">Nama tidak boleh kosong</string>
+    <string name="nomor_whatsapp_tidak_boleh_kosong">Nomor Whatsapp tidak boleh kosong</string>
+    <string name="alamat_tidak_boleh_kosong">Alamat tidak boleh kosong</string>
+    <string name="ambil_foto_ktp">Ambil foto KTP</string>
+    <string name="ambil_foto_ktp_terlebih_dahulu">Ambil foto KTP terlebih dahulu</string>
+    <string name="berhasil_unggah_foto_ktp">Berhasil unggah foto KTP</string>
+    <string name="tidak_boleh_kosong">Tidak boleh kosong</string>
+    <string name="submit_data">Submit Data</string>
 </resources>

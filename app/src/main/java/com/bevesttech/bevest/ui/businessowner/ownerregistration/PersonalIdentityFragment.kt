@@ -13,17 +13,18 @@ import android.widget.Toast
 import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
-import androidx.databinding.adapters.ViewGroupBindingAdapter.setListener
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import com.bevesttech.bevest.R
 import com.bevesttech.bevest.databinding.FragmentPersonalIdentityBinding
-import com.bevesttech.bevest.utils.gone
+import com.bevesttech.bevest.utils.ViewModelFactory
 import com.bevesttech.bevest.utils.invisible
 import com.bevesttech.bevest.utils.visible
 
 class PersonalIdentityFragment : Fragment() {
     private var _binding: FragmentPersonalIdentityBinding? = null
     private val binding get() = _binding!!
+    private val sharedViewModel: OwnerRegistrationViewModel by activityViewModels { ViewModelFactory(requireActivity()) }
     private var currentImageUri: Uri? = null
 
     override fun onCreateView(
@@ -44,10 +45,29 @@ class PersonalIdentityFragment : Fragment() {
         with(binding) {
             cardUploadOwnerPhoto.tvHint.text = getString(R.string.unggah_foto_owner)
             edtOwnerName.requestFocus()
-            activity?.window?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
+            activity?.window?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN)
+            viewModel = sharedViewModel
+            lifecycleOwner = viewLifecycleOwner
         }
 
         setListener()
+        setObserver()
+    }
+
+    private fun setObserver() {
+        sharedViewModel.ownerPersonalIdentityFormState.observe(viewLifecycleOwner) { state ->
+            with(binding) {
+                if (state.fullNameError != null) {
+                    edtOwnerName.error = getString(state.fullNameError)
+                }
+                if (state.whatsappError != null) {
+                    edtActiveWhatsappNumber.error = getString(state.whatsappError)
+                }
+                if (state.fullAddressError != null) {
+                    edtAddress.error = getString(state.fullAddressError)
+                }
+            }
+        }
     }
 
     private fun setListener() {
@@ -68,9 +88,11 @@ class PersonalIdentityFragment : Fragment() {
             ActivityResultContracts.RequestPermission()
         ) { isGranted: Boolean ->
             if (isGranted) {
-                Toast.makeText(requireContext(), "Permission request granted", Toast.LENGTH_LONG).show()
+                Toast.makeText(requireContext(), "Permission request granted", Toast.LENGTH_LONG)
+                    .show()
             } else {
-                Toast.makeText(requireContext(), "Permission request denied", Toast.LENGTH_LONG).show()
+                Toast.makeText(requireContext(), "Permission request denied", Toast.LENGTH_LONG)
+                    .show()
             }
         }
 
@@ -104,11 +126,12 @@ class PersonalIdentityFragment : Fragment() {
                 }
 
                 cardUploadOwnerPhoto.tvHint.apply {
-                    text =  getString(R.string.berhasil_unggah_foto_owner)
+                    text = getString(R.string.berhasil_unggah_foto_owner)
                     setTextColor(ContextCompat.getColor(context, R.color.ds_primary))
                 }
 
-                cardUploadOwnerPhoto.root.strokeColor = ContextCompat.getColor(requireContext(), R.color.ds_primary)
+                cardUploadOwnerPhoto.root.strokeColor =
+                    ContextCompat.getColor(requireContext(), R.color.ds_primary)
 
                 cardUploadOwnerPhoto.ibUpload.invisible()
             }
@@ -117,6 +140,7 @@ class PersonalIdentityFragment : Fragment() {
 
     companion object {
         private const val REQUIRED_PERMISSION = Manifest.permission.CAMERA
+
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
             PersonalIdentityFragment().apply {
