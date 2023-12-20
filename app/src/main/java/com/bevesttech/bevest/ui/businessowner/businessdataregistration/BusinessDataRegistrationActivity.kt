@@ -1,18 +1,35 @@
 package com.bevesttech.bevest.ui.businessowner.businessdataregistration
 
+import android.content.Intent
 import android.graphics.drawable.Drawable
 import android.os.Bundle
+import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.viewpager2.widget.ViewPager2
+import com.bevesttech.bevest.MainActivity
 import com.bevesttech.bevest.R
 import com.bevesttech.bevest.databinding.ActivityBusinessDataRegistrationBinding
-import com.bevesttech.bevest.ui.businessowner.ownerregistration.OwnerRegistrationViewPagerAdapter
+import com.bevesttech.bevest.utils.ViewModelFactory
 import com.bevesttech.bevest.utils.setupAppBar
+import com.bevesttech.bevest.data.Result
+import com.bevesttech.bevest.utils.blockInput
+import com.bevesttech.bevest.utils.disabled
+import com.bevesttech.bevest.utils.enabled
+import com.bevesttech.bevest.utils.gone
+import com.bevesttech.bevest.utils.unblockInput
+import com.bevesttech.bevest.utils.visible
 
 class BusinessDataRegistrationActivity : AppCompatActivity() {
     private lateinit var binding: ActivityBusinessDataRegistrationBinding
     private lateinit var sectionPagerAdapter: BusinessDataRegistrationViewPagerAdapter
+    private val sharedViewModel: BusinessDataRegistrationViewModel by viewModels {
+        ViewModelFactory(
+            this
+        )
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityBusinessDataRegistrationBinding.inflate(layoutInflater)
@@ -46,28 +63,84 @@ class BusinessDataRegistrationActivity : AppCompatActivity() {
             toolbar.setNavigationOnClickListener { finish() }
 
             btnNext.setOnClickListener {
-                if (viewPager.currentItem == MAX_PAGE - 1) {
+                if (viewPager.currentItem == 0) {
+                    sharedViewModel.validateBusinessEntityData()
 
-                } else {
-                    viewPager.currentItem += 1
+                    sharedViewModel.businessEntityDataFormState.observe(this@BusinessDataRegistrationActivity) {
+                        if (it.isDataValid) {
+                            viewPager.currentItem = 1
+                        }
+                    }
+                } else if (viewPager.currentItem == 1) {
+                    sharedViewModel.validateBusinessGeneralData()
+
+                    sharedViewModel.businessGeneralDataFormState.observe(this@BusinessDataRegistrationActivity) {
+                        if (it.isDataValid) {
+                            viewPager.currentItem = 2
+                        }
+                    }
+                } else if (viewPager.currentItem == 2) {
+                    sharedViewModel.validateBusinessSalesValuation()
+
+                    sharedViewModel.businessSalesValuationFormState.observe(this@BusinessDataRegistrationActivity) {
+                        if (it.isDataValid) {
+                            viewPager.currentItem = 3
+                        }
+                    }
+                } else if (viewPager.currentItem == 3) {
+                    sharedViewModel.validateBusinessDataOptional()
+
+                    sharedViewModel.businessDataOptionalFormState.observe(this@BusinessDataRegistrationActivity) {
+                        if (it.isDataValid) {
+                            sharedViewModel.setBusinessCoreData().observe(this@BusinessDataRegistrationActivity) { result ->
+                                when(result) {
+                                    is Result.Loading  -> {
+                                        progressIndicator.visible()
+                                        blockInput()
+                                        btnNext.disabled()
+                                    }
+
+                                    is Result.Success -> {
+                                        progressIndicator.gone()
+                                        unblockInput()
+
+                                        Intent(this@BusinessDataRegistrationActivity, MainActivity::class.java).also {
+                                            startActivity(it)
+                                        }
+                                    }
+
+                                    is Result.Error -> {
+                                        progressIndicator.gone()
+                                        unblockInput()
+                                        btnNext.enabled()
+                                        Toast.makeText(
+                                            this@BusinessDataRegistrationActivity,
+                                            result.error.toString(),
+                                            Toast.LENGTH_SHORT
+                                        ).show()
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
-            }
 
-            step1.stepItem.setOnClickListener {
-                if (viewPager.currentItem > 0) {
-                    viewPager.currentItem = 0
+                step1.stepItem.setOnClickListener {
+                    if (viewPager.currentItem > 0) {
+                        viewPager.currentItem = 0
+                    }
                 }
-            }
 
-            step2.stepItem.setOnClickListener {
-                if (viewPager.currentItem > 1) {
-                    viewPager.currentItem = 1
+                step2.stepItem.setOnClickListener {
+                    if (viewPager.currentItem > 1) {
+                        viewPager.currentItem = 1
+                    }
                 }
-            }
 
-            step3.stepItem.setOnClickListener {
-                if (viewPager.currentItem > 2) {
-                    viewPager.currentItem = 2
+                step3.stepItem.setOnClickListener {
+                    if (viewPager.currentItem > 2) {
+                        viewPager.currentItem = 2
+                    }
                 }
             }
         }
@@ -75,7 +148,8 @@ class BusinessDataRegistrationActivity : AppCompatActivity() {
 
     private fun setViewPager() {
         with(binding) {
-            sectionPagerAdapter = BusinessDataRegistrationViewPagerAdapter(this@BusinessDataRegistrationActivity)
+            sectionPagerAdapter =
+                BusinessDataRegistrationViewPagerAdapter(this@BusinessDataRegistrationActivity)
             viewPager.adapter = sectionPagerAdapter
             viewPager.isUserInputEnabled = false
 

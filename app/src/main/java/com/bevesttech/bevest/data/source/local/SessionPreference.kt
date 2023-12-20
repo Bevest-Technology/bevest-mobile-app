@@ -52,7 +52,7 @@ class SessionPreference private constructor(private val dataStore: DataStore<Pre
     fun getUserSession(): Flow<LoggedInUser> {
         return dataStore.data.map { preferences ->
             LoggedInUser(
-                uid = preferences[USER_NAME_KEY],
+                uid = preferences[USER_UID_KEY],
                 displayName = preferences[USER_NAME_KEY],
                 email = preferences[USER_EMAIL_KEY],
                 photoUrl = preferences[USER_PHOTO_URL_KEY],

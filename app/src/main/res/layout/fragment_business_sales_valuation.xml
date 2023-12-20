@@ -1,71 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="16dp"
     tools:context=".ui.businessowner.businessdataregistration.BusinessSalesValuationFragment">
 
-    <TextView
-        android:id="@+id/tv_question"
-        style="@style/BevestDesign.Typography.BodySemiBold2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/data_valuasi_penjualan" />
+    <data>
+        <variable
+            name="viewModel"
+            type="com.bevesttech.bevest.ui.businessowner.businessdataregistration.BusinessDataRegistrationViewModel"/>
+    </data>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_penjualan_rata_rata"
-        style="@style/BevestDesign.Component.EditText"
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp">
+        android:orientation="vertical"
+        android:padding="16dp">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edt_penjualan_rata_rata"
+        <TextView
+            android:id="@+id/tv_question"
+            style="@style/BevestDesign.Typography.BodySemiBold2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/data_valuasi_penjualan" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_penjualan_rata_rata"
+            style="@style/BevestDesign.Component.EditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/penjualan_rata_rata_per_tahun"
-            android:imeOptions="actionNext"
-            android:inputType="number"
-            android:maxLines="1"
-            android:textAppearance="@style/BevestDesign.Typography.Body1" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_marginTop="8dp">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_nilai_jaminan_aset_kredit"
-        style="@style/BevestDesign.Component.EditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_penjualan_rata_rata"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/penjualan_rata_rata_per_tahun"
+                android:imeOptions="actionNext"
+                android:inputType="number"
+                android:maxLines="1"
+                android:textAppearance="@style/BevestDesign.Typography.Body1"
+                android:onTextChanged="@{(text, start, before, count) -> viewModel.setAverageAnnualSales(text)}"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edt_nilai_jaminan_aset_kredit"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_nilai_jaminan_aset_kredit"
+            style="@style/BevestDesign.Component.EditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/nilai_jaminan_aset_kredit"
-            android:imeOptions="actionNext"
-            android:inputType="number"
-            android:maxLines="1"
-            android:textAppearance="@style/BevestDesign.Typography.Body1" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_marginTop="8dp">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_jumlah_karyawan"
-        style="@style/BevestDesign.Component.EditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_nilai_jaminan_aset_kredit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/nilai_jaminan_aset_kredit"
+                android:imeOptions="actionNext"
+                android:inputType="number"
+                android:maxLines="1"
+                android:textAppearance="@style/BevestDesign.Typography.Body1"
+                android:onTextChanged="@{(text, start, before, count) -> viewModel.setCreditAssetCollateral(text)}" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edt_jumlah_karyawan"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_jumlah_karyawan"
+            style="@style/BevestDesign.Component.EditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/jumlah_karyawan"
-            android:imeOptions="actionNext"
-            android:inputType="number"
-            android:maxLines="1"
-            android:textAppearance="@style/BevestDesign.Typography.Body1" />
-    </com.google.android.material.textfield.TextInputLayout>
-</androidx.appcompat.widget.LinearLayoutCompat>
+            android:layout_marginTop="8dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_jumlah_karyawan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/jumlah_karyawan"
+                android:imeOptions="actionNext"
+                android:inputType="number"
+                android:maxLines="1"
+                android:textAppearance="@style/BevestDesign.Typography.Body1"
+                android:onTextChanged="@{(text, start, before, count) -> viewModel.setEmployeesNumber(text)}" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

@@ -188,6 +188,7 @@ class OwnerRegistrationViewModel(private val authRepository: AuthRepository, pri
             haveBusinessEntity = haveBusinessEntity.value,
             fullName = fullName.value,
             whatsappNumber = whatsappNumber.value,
+            fullAddress = fullAddress.value,
             photo = "",
             ktpPhoto = "",
             nik = nik.value,
