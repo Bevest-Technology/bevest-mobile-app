@@ -50,7 +50,8 @@ class LaporanKeuanganActivity : AppCompatActivity() {
                 if (position == 0) {
                     showBottomDialog(DialogType.UPDATE)
                 } else {
-                    showBottomDialog(DialogType.LIHAT)
+                    Toast.makeText(this@LaporanKeuanganActivity,"Fitur ini belum tersedia.", Toast.LENGTH_SHORT).show()
+                    //showBottomDialog(DialogType.LIHAT)
                 }
             }
         })
