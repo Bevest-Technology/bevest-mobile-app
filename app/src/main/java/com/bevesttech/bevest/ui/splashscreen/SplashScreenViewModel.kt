@@ -20,4 +20,6 @@ class SplashScreenViewModel(private val sessionPreference: SessionPreference, pr
     fun isRoleAlreadySet(user: LoggedInUser) = !user.role.isNullOrEmpty()
 
     fun isAlreadyOwnerRegistration(user: LoggedInUser) = businessRepository.getBusinessOwnerByUID(user.uid ?: "")
+    fun isBusinessScreeningPassed(user: LoggedInUser) = businessRepository.getBusinessCoreDataByUID(user.uid ?: "")
+
 }

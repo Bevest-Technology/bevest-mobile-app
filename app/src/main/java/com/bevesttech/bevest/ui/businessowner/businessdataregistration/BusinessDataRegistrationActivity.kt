@@ -14,6 +14,7 @@ import com.bevesttech.bevest.databinding.ActivityBusinessDataRegistrationBinding
 import com.bevesttech.bevest.utils.ViewModelFactory
 import com.bevesttech.bevest.utils.setupAppBar
 import com.bevesttech.bevest.data.Result
+import com.bevesttech.bevest.ui.businessowner.businessscreening.BusinessScreeningWaitingActivity
 import com.bevesttech.bevest.utils.blockInput
 import com.bevesttech.bevest.utils.disabled
 import com.bevesttech.bevest.utils.enabled
@@ -104,7 +105,7 @@ class BusinessDataRegistrationActivity : AppCompatActivity() {
                                         progressIndicator.gone()
                                         unblockInput()
 
-                                        Intent(this@BusinessDataRegistrationActivity, MainActivity::class.java).also {
+                                        Intent(this@BusinessDataRegistrationActivity, BusinessScreeningWaitingActivity::class.java).also {
                                             startActivity(it)
                                         }
                                     }

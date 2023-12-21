@@ -154,7 +154,6 @@
     </string-array>
 
 
-
     <string name="large_text">
         "Material is the metaphor.\n\n"
 
@@ -321,4 +320,11 @@
         libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
+    <string name="subtitle_business_screening_waiting">Proses pengecekan data anda memerlukan waktu beberapa detik, jika ada kendala hubungin customer service kami</string>
+    <string name="title_business_screening_waiting">Mohon tunggu sebentar, kami sedang menganalisis bisnis kamu</string>
+    <string name="total_aset">Total Aset</string>
+    <string name="title_business_screening_rejected">Yahh,, Mohon maaf \nBisnis kamu belum berhasil kami terima!</string>
+    <string name="subtitle_business_screening_rejected">Silahkan coba lagi atau hubungi customer service jika memiliki keluhan</string>
+    <string name="subtitle_business_screening_accepted">Silahkan lanjut ke proses wawancara</string>
+    <string name="title_business_screening_accepter">Selamat!! \nProses Screening Bisnis Anda Diterima</string>
 </resources>

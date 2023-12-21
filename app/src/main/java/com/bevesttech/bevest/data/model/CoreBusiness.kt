@@ -11,9 +11,12 @@ data class CoreBusiness(
     val legalEntityType: String? = null,
     val salesSystemType: String? = null,
     val averageAnnualSales: Double? = null,
+    val assetTotal: Double? = null,
     val creditAssetCollateral: Double? = null,
     val employeesNumber: Int? = null,
     val creditDocumentNumber: Int? = null,
     val websiteUrl: String? = null,
-    val socialMedia: String? = null
+    val socialMedia: String? = null,
+    val businessScreeningStatus: String? = null,
+    val businessValuationStatus: String? = null,
 )

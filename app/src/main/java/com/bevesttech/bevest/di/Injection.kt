@@ -9,6 +9,7 @@ import com.bevesttech.bevest.data.source.local.SessionPreference
 import com.bevesttech.bevest.data.source.local.dataStore
 import com.bevesttech.bevest.data.source.remote.BusinessRemoteDataSource
 import com.bevesttech.bevest.data.source.remote.UserRemoteDataSource
+import com.bevesttech.bevest.data.source.remote.retrofit.ApiConfig
 import com.google.firebase.auth.FirebaseAuth
 
 object Injection {
@@ -27,7 +28,7 @@ object Injection {
     fun provideBusinessRepository(context: Context): BusinessRepository {
         val firebaseAuth = FirebaseAuth.getInstance()
         val businessRemoteDataSource = BusinessRemoteDataSource()
-        return BusinessRepositoryImpl.getInstance(firebaseAuth, businessRemoteDataSource)
+        val apiService = ApiConfig.getApiService()
+        return BusinessRepositoryImpl.getInstance(firebaseAuth, businessRemoteDataSource, apiService)
     }
-
 }

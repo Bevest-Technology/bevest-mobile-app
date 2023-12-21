@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="16dp"
+    tools:context=".ui.businessowner.businessscreening.BusinessScreeningAcceptedActivity">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/gif_page_img"
+        android:layout_width="164dp"
+        android:layout_height="317dp"
+        android:layout_gravity="center"
+        android:src="@drawable/bevest_blue_mascot_sad"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/title_business_screening_accepter"
+        android:textAlignment="center"
+        android:textColor="@color/ds_blue_60"
+        style="@style/BevestDesign.Typography.BodySemiBold1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/gif_page_img"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_subtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/subtitle_business_screening_accepted"
+        android:textAlignment="center"
+        android:textColor="@color/ds_neutral_70"
+        style="@style/BevestDesign.Typography.Body3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_lanjut_wawancara"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/BevestDesign.Component.ButtonFilled"
+        android:text="Lanjut Proses Wawancara"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

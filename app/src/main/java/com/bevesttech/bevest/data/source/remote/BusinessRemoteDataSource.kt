@@ -1,5 +1,6 @@
 package com.bevesttech.bevest.data.source.remote
 
+import android.util.Log
 import com.bevesttech.bevest.data.model.BusinessOwner
 import com.bevesttech.bevest.data.model.CoreBusiness
 import com.bevesttech.bevest.data.source.BusinessDataSource
@@ -26,8 +27,12 @@ class BusinessRemoteDataSource: BusinessDataSource {
     }
 
     override suspend fun getBusinessCoreDataByUID(uid: String): CoreBusiness? {
-        return businessOwnerCollection.document(uid).get().await().toObject(CoreBusiness::class.java)
+        return businessCoreCollection.document(uid).get().await().toObject(CoreBusiness::class.java)
     }
 
+    override suspend fun updateScreeningStatus(uid: String, status: String) {
+        Log.d("BusinessRemoteDataSource", "updateScreeningStatus: $status $uid")
+        businessCoreCollection.document(uid).update(Constants.BUSINESS_SCREENING_STATUS_FIELD, status).await()
+    }
 
 }

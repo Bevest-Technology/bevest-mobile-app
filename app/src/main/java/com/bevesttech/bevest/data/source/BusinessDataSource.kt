@@ -8,4 +8,5 @@ interface BusinessDataSource {
     suspend fun getBusinessOwnerByUID(uid: String): BusinessOwner?
     suspend fun setBusinessCoreData(uid: String, businessOwner: CoreBusiness)
     suspend fun getBusinessCoreDataByUID(uid: String): CoreBusiness?
+    suspend fun updateScreeningStatus(uid: String, status: String)
 }

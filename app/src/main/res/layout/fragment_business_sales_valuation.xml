@@ -42,11 +42,28 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_total_aset"
+            style="@style/BevestDesign.Component.EditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_total_aset"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/total_aset"
+                android:imeOptions="actionNext"
+                android:inputType="number"
+                android:maxLines="1"
+                android:textAppearance="@style/BevestDesign.Typography.Body1"
+                android:onTextChanged="@{(text, start, before, count) -> viewModel.setAssetTotal(text)}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/til_nilai_jaminan_aset_kredit"
             style="@style/BevestDesign.Component.EditText"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp">
+            android:layout_height="wrap_content">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edt_nilai_jaminan_aset_kredit"
@@ -64,8 +81,7 @@
             android:id="@+id/til_jumlah_karyawan"
             style="@style/BevestDesign.Component.EditText"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp">
+            android:layout_height="wrap_content">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edt_jumlah_karyawan"

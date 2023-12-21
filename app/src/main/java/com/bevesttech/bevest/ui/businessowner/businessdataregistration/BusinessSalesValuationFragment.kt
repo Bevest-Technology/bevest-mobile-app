@@ -36,6 +36,9 @@ class BusinessSalesValuationFragment : Fragment() {
                 if (state.averageAnnualSalesError != null) {
                     edtPenjualanRataRata.error = getString(state.averageAnnualSalesError)
                 }
+                if (state.assetTotalError != null) {
+                    edtTotalAset.error = getString(state.assetTotalError)
+                }
                 if (state.creditAssetCollateralError != null) {
                     edtNilaiJaminanAsetKredit.error = getString(state.creditAssetCollateralError)
                 }

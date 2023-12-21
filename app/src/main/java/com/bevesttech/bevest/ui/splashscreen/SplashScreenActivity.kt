@@ -9,6 +9,7 @@ import com.bevesttech.bevest.MainActivity
 import com.bevesttech.bevest.data.Result
 import com.bevesttech.bevest.databinding.ActivitySplashScreenBinding
 import com.bevesttech.bevest.ui.businessowner.businessdataregistration.BusinessDataRegistrationActivity
+import com.bevesttech.bevest.ui.businessowner.businessscreening.BusinessScreeningWaitingActivity
 import com.bevesttech.bevest.ui.businessowner.ownerregistration.OwnerRegistrationActivity
 import com.bevesttech.bevest.ui.chooserole.ChooseRoleActivity
 import com.bevesttech.bevest.ui.login.LoginActivity
@@ -50,9 +51,35 @@ class SplashScreenActivity : AppCompatActivity() {
 
                                         is Result.Success -> {
                                             state.data?.let {
-                                                Intent(this, BusinessDataRegistrationActivity::class.java).also {
-                                                    startActivity(it)
-                                                    finish()
+                                                viewModel.isBusinessScreeningPassed(user).observe(this) { screening ->
+                                                    when (screening) {
+                                                        is Result.Loading -> {
+
+                                                        }
+
+                                                        is Result.Success -> {
+                                                            screening.data?.let {
+                                                               Intent(this, BusinessScreeningWaitingActivity::class.java).also {
+                                                                   startActivity(it)
+                                                                   finish()
+                                                               }
+                                                            }
+
+                                                            if (screening.data == null) {
+                                                                Intent(this, BusinessDataRegistrationActivity::class.java).also {
+                                                                    startActivity(it)
+                                                                    finish()
+                                                                }
+                                                            }
+                                                        }
+
+                                                        is Result.Error -> {
+//                                                            Intent(this, MainActivity::class.java).also {
+//                                                                startActivity(it)
+//                                                                finish()
+//                                                            }
+                                                        }
+                                                    }
                                                 }
                                             }
                                             if (state.data == null) {
@@ -64,10 +91,10 @@ class SplashScreenActivity : AppCompatActivity() {
                                         }
 
                                         is Result.Error -> {
-                                            Intent(this, MainActivity::class.java).also {
-                                                startActivity(it)
-                                                finish()
-                                            }
+//                                            Intent(this, MainActivity::class.java).also {
+//                                                startActivity(it)
+//                                                finish()
+//                                            }
                                         }
                                     }
 

@@ -8,7 +8,8 @@ import com.bevesttech.bevest.data.model.CoreBusiness
 import com.bevesttech.bevest.data.repository.BusinessRepository
 import kotlinx.coroutines.Dispatchers
 
-class BusinessDataRegistrationViewModel(private val businessRepository: BusinessRepository) : ViewModel() {
+class BusinessDataRegistrationViewModel(private val businessRepository: BusinessRepository) :
+    ViewModel() {
 
     private val _businessEntityDataFormState = MutableLiveData<BusinessEntityDataFormState>()
     val businessEntityDataFormState = _businessEntityDataFormState
@@ -53,6 +54,9 @@ class BusinessDataRegistrationViewModel(private val businessRepository: Business
     private val _averageAnnualSales = MutableLiveData<String>()
     val averageAnnualSales = _averageAnnualSales
 
+    private val _assetTotal = MutableLiveData<String>()
+    val assetTotal = _assetTotal
+
     private val _creditAssetCollateral = MutableLiveData<String>()
     val creditAssetCollateral = _creditAssetCollateral
 
@@ -79,6 +83,7 @@ class BusinessDataRegistrationViewModel(private val businessRepository: Business
         _legalEntityType.value = ""
         _salesSystemType.value = ""
         _averageAnnualSales.value = ""
+        _assetTotal.value = ""
         _creditAssetCollateral.value = ""
         _employeesNumber.value = ""
         _creditDocumentNumber.value = ""
@@ -124,6 +129,10 @@ class BusinessDataRegistrationViewModel(private val businessRepository: Business
 
     fun setAverageAnnualSales(value: CharSequence) {
         _averageAnnualSales.value = value.toString()
+    }
+
+    fun setAssetTotal(value: CharSequence) {
+        _assetTotal.value = value.toString()
     }
 
     fun setCreditAssetCollateral(value: CharSequence) {
@@ -186,6 +195,9 @@ class BusinessDataRegistrationViewModel(private val businessRepository: Business
         if (averageAnnualSales.value.isNullOrEmpty()) {
             _businessSalesValuationFromState.value =
                 BusinessSalesValuationFormState(averageAnnualSalesError = R.string.tidak_boleh_kosong)
+        } else if (assetTotal.value.isNullOrEmpty()) {
+            _businessSalesValuationFromState.value =
+                BusinessSalesValuationFormState(assetTotalError = R.string.tidak_boleh_kosong)
         } else if (creditAssetCollateral.value.isNullOrEmpty()) {
             _businessSalesValuationFromState.value =
                 BusinessSalesValuationFormState(creditAssetCollateralError = R.string.tidak_boleh_kosong)
@@ -220,6 +232,7 @@ class BusinessDataRegistrationViewModel(private val businessRepository: Business
             salesSystemType = salesSystemType.value,
             averageAnnualSales = averageAnnualSales.value?.toDouble(),
             creditAssetCollateral = creditAssetCollateral.value?.toDouble(),
+            assetTotal = assetTotal.value?.toDouble(),
             employeesNumber = employeesNumber.value?.toInt(),
             creditDocumentNumber = creditDocumentNumber.value?.toInt(),
             websiteUrl = websiteUrl.value,
