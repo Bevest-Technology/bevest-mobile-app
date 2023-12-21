@@ -12,9 +12,7 @@ import com.bevesttech.bevest.ui.businessowner.ownerregistration.OwnerRegistratio
 import com.bevesttech.bevest.ui.chooserole.ChooseRoleViewModel
 import com.bevesttech.bevest.ui.forgotpassword.ForgotPasswordViewModel
 import com.bevesttech.bevest.ui.investor.register.ProfileResikoViewModel
-import com.bevesttech.bevest.ui.laporan.LaporanKeuanganActivity
 import com.bevesttech.bevest.ui.laporan.LaporanKeuanganViewModel
-import com.bevesttech.bevest.ui.laporan.UpdateLaporanActivity
 import com.bevesttech.bevest.ui.login.LoginViewModel
 import com.bevesttech.bevest.ui.onboarding.OnboardingViewModel
 import com.bevesttech.bevest.ui.register.RegisterViewModel
@@ -22,72 +20,72 @@ import com.bevesttech.bevest.ui.splashscreen.SplashScreenViewModel
 
 class ViewModelFactory(val context: Context) : ViewModelProvider.Factory {
     @Suppress("UNCHECKED_CAST")
-    override fun <T : ViewModel> create(modelClass: Class<T>): T = when(modelClass){
-        LoginViewModel::class.java -> LoginViewModel(Injection.provideAuthRepository())
-        RegisterViewModel::class.java -> RegisterViewModel(Injection.provideAuthRepository())
-        ChooseRoleViewModel::class.java -> ChooseRoleViewModel(Injection.provideAuthRepository())
-        ForgotPasswordViewModel::class.java -> ForgotPasswordViewModel(Injection.provideAuthRepository())
-        BisnisListingViewModel::class.java -> BisnisListingViewModel(Injection.provideAuthRepository())
-        LaporanKeuanganViewModel::class.java -> LaporanKeuanganViewModel(Injection.provideAuthRepository())
-        ProfileResikoViewModel::class.java -> ProfileResikoViewModel()
     override fun <T : ViewModel> create(modelClass: Class<T>): T = when (modelClass) {
-        SplashScreenViewModel::class.java -> SplashScreenViewModel(
-            Injection.provideSessionPreferences(
-                context
-            ),
-            Injection.provideBusinessRepository(context)
-        )
-
-        OnboardingViewModel::class.java -> OnboardingViewModel(
-            Injection.provideSessionPreferences(
-                context
+            SplashScreenViewModel::class.java -> SplashScreenViewModel(
+                Injection.provideSessionPreferences(
+                    context
+                ),
+                Injection.provideBusinessRepository(context)
             )
-        )
 
-        LoginViewModel::class.java -> LoginViewModel(Injection.provideAuthRepository(context))
-        RegisterViewModel::class.java -> RegisterViewModel(Injection.provideAuthRepository(context))
-        ChooseRoleViewModel::class.java -> ChooseRoleViewModel(
-            Injection.provideAuthRepository(
-                context
+            OnboardingViewModel::class.java -> OnboardingViewModel(
+                Injection.provideSessionPreferences(
+                    context
+                )
             )
-        )
 
-        ForgotPasswordViewModel::class.java -> ForgotPasswordViewModel(
-            Injection.provideAuthRepository(
-                context
+            LoginViewModel::class.java -> LoginViewModel(Injection.provideAuthRepository(context))
+            RegisterViewModel::class.java -> RegisterViewModel(
+                Injection.provideAuthRepository(
+                    context
+                )
             )
-        )
 
-        BisnisListingViewModel::class.java -> BisnisListingViewModel(
-            Injection.provideAuthRepository(
-                context
+            ChooseRoleViewModel::class.java -> ChooseRoleViewModel(
+                Injection.provideAuthRepository(
+                    context
+                )
             )
-        )
 
-        OwnerRegistrationViewModel::class.java -> OwnerRegistrationViewModel(
-            Injection.provideAuthRepository(
-                context
-            ), Injection.provideBusinessRepository(context)
-        )
+            ForgotPasswordViewModel::class.java -> ForgotPasswordViewModel(
+                Injection.provideAuthRepository(
+                    context
+                )
+            )
 
-        BusinessDataRegistrationViewModel::class.java -> BusinessDataRegistrationViewModel(
-            Injection.provideBusinessRepository(context)
-        )
+            BisnisListingViewModel::class.java -> BisnisListingViewModel(
+                Injection.provideAuthRepository(
+                    context
+                )
+            )
 
-        BusinessScreeningViewModel::class.java -> BusinessScreeningViewModel(
-            Injection.provideSessionPreferences(
-                context
-            ),
-            Injection.provideBusinessRepository(context)
-        )
+            OwnerRegistrationViewModel::class.java -> OwnerRegistrationViewModel(
+                Injection.provideAuthRepository(
+                    context
+                ), Injection.provideBusinessRepository(context)
+            )
 
-        BusinessValuationViewModel::class.java -> BusinessValuationViewModel(
-            Injection.provideSessionPreferences(
-                context
-            ),
-            Injection.provideBusinessRepository(context)
-        )
+            BusinessDataRegistrationViewModel::class.java -> BusinessDataRegistrationViewModel(
+                Injection.provideBusinessRepository(context)
+            )
 
-        else -> throw IllegalArgumentException("Unknown ViewModel class")
-    } as T
-}
+            BusinessScreeningViewModel::class.java -> BusinessScreeningViewModel(
+                Injection.provideSessionPreferences(
+                    context
+                ),
+                Injection.provideBusinessRepository(context)
+            )
+
+            BusinessValuationViewModel::class.java -> BusinessValuationViewModel(
+                Injection.provideSessionPreferences(
+                    context
+                ),
+                Injection.provideBusinessRepository(context)
+            )
+
+            LaporanKeuanganViewModel::class.java -> LaporanKeuanganViewModel(Injection.provideAuthRepository(context))
+            ProfileResikoViewModel::class.java -> ProfileResikoViewModel()
+
+            else -> throw IllegalArgumentException("Unknown ViewModel class")
+        } as T
+    }

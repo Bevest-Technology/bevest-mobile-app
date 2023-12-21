@@ -1,6 +1,5 @@
 <resources>
-    <string name="app_name">Bevest Mobile Application</string>
-    <!-- TODO: Remove or change this placeholder text -->
+    <string name="app_name">Bevest</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="onboarding_title_1">Investasi Equity Crowdfunding dengan Praktis!</string>
     <string name="onboarding_title_2">Keuntungan Anda, Kemajuan UMKM</string>
@@ -80,33 +79,9 @@
     <string name="alamat_bisnis">Alamat Bisnis</string>
     <string name="unggah_bukti_brand_usaha_banner">Unggah Bukti Brand Usaha /Banner</string>
     <string name="kategori_bisnis">Kategori Bisnis</string>
-    <string name="icon_location">icon_location</string>
-    <string name="inkubasi">Inkubasi</string>
-    <string name="cek_proggress">Cek Proggress</string>
-    <string name="agenda_inkubasi">Agenda Inkubasi</string>
-    <string name="mohon_maaf_agenda_ninkubasi_belum_tersedia">Mohon Maaf, Agenda\nInkubasi belum tersedia</string>
     <string name="sudah">Sudah</string>
     <string name="belum">Belum</string>
     <string name="pastikan_hasil_foto_kamu_terbaca_dengan_jelas_untuk_keperluan_identitas_kamu">Pastikan hasil foto kamu terbaca dengan jelas untuk keperluan identitas kamu</string>
-    <string name="bisnis">Bisnis</string>
-    <string name="laporan_keuangan_tahunan">Laporan Keuangan Tahunan</string>
-    <string name="total_laba_bersih_juta">Total Laba Bersih (Juta)</string>
-    <string name="laporan_keuangan_neraca_pdf">Laporan Keuangan Neraca (PDF)</string>
-    <string name="upload">Upload</string>
-    <string name="simpan">Simpan</string>
-    <string name="laporan_keuangan_laba_rugi_pdf">Laporan Keuangan Laba Rugi (PDF)</string>
-    <string name="edit_profile">Edit Profile</string>
-    <string name="security">Security</string>
-    <string name="faq">FAQ</string>
-    <string name="keluar">Keluar</string>
-    <string name="umur">Umur</string>
-    <string name="pendapatan_bulan_rp">Pendapatan /bulan (Rp)</string>
-    <string name="jenis_kelamin">Jenis Kelamin</string>
-    <string name="pendidikan_terakhir">Pendidikan Terakhir</string>
-    <string name="kepemilikan_rumah_pribadi">Kepemilikan Rumah Pribadi</string>
-    <string name="selamat_kamu_adalah_tipe_investor">Selamat, Kamu Adalah Tipe Investor</string>
-    <string name="investor_seperti_kamu_cocok_untuk_nmenabung">Investor Seperti Kamu Cocok Untuk\nMenabung</string>
-    <string name="lanjut_registrasi">Lanjut Registrasi</string>
 
     <string-array name="kategori_bisnis_list">
         <item>Penyediaan Akomodasi dan Makan Minum Peternakan</item>
@@ -173,6 +148,23 @@
         <item>Penjualan Grosir</item>
     </string-array>
 
+    <string-array name="jenis_kelamin">
+        <item>Laki - Laki</item>
+        <item>Perempuan</item>
+    </string-array>
+
+    <string-array name="kepemilikan_rumah">
+        <item>Rumah Pribadi</item>
+        <item>Menyewa</item>
+    </string-array>
+
+    <string-array name="pendidikan_terakhir">
+        <item>SMA</item>
+        <item>D3</item>
+        <item>S1</item>
+        <item>S2</item>
+        <item>S3</item>
+    </string-array>
 
     <string name="large_text">
         "Material is the metaphor.\n\n"
@@ -303,6 +295,29 @@
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
+    <string name="icon_location">icon_location</string>
+    <string name="inkubasi">Inkubasi</string>
+    <string name="cek_proggress">Cek Proggress</string>
+    <string name="agenda_inkubasi">Agenda Inkubasi</string>
+    <string name="mohon_maaf_agenda_ninkubasi_belum_tersedia">Mohon Maaf, Agenda\nInkubasi belum tersedia</string>
+    <string name="bisnis">Bisnis</string>
+    <string name="laporan_keuangan_tahunan">Laporan Keuangan Tahunan</string>
+    <string name="total_laba_bersih_juta">Total Laba Bersih (Juta)</string>
+    <string name="laporan_keuangan_neraca_pdf">Laporan Keuangan Neraca (PDF)</string>
+    <string name="upload">Upload</string>
+    <string name="simpan">Simpan</string>
+    <string name="laporan_keuangan_laba_rugi_pdf">Laporan Keuangan Laba Rugi (PDF)</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="security">Security</string>
+    <string name="faq">FAQ</string>
+    <string name="keluar">Keluar</string>
+    <string name="umur">Umur</string>
+    <string name="pendapatan_bulan_rp">Pendapatan /bulan (Rp)</string>
+    <string name="pendidikan_terakhir">Pendidikan Terakhir</string>
+    <string name="kepemilikan_rumah_pribadi">Kepemilikan Rumah Pribadi</string>
+    <string name="selamat_kamu_adalah_tipe_investor">Selamat, Kamu Adalah Tipe Investor</string>
+    <string name="investor_seperti_kamu_cocok_untuk_nmenabung">Investor Seperti Kamu Cocok Untuk\nMenabung</string>
+    <string name="lanjut_registrasi">Lanjut Registrasi</string>
 
     <string name="lorem_ipsum">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris
@@ -348,22 +363,4 @@
     <string name="subtitle_business_screening_accepted">Silahkan lanjut ke proses wawancara</string>
     <string name="title_business_screening_accepter">Selamat!! \nProses Screening Bisnis Anda Diterima</string>
     <string name="coming_soon">Kami sedang mempersiapkan fitur ini :)</string>
-
-    <string-array name="jenis_kelamin">
-        <item>Laki - Laki</item>
-        <item>Perempuan</item>
-    </string-array>
-
-    <string-array name="kepemilikan_rumah">
-        <item>Rumah Pribadi</item>
-        <item>Menyewa</item>
-    </string-array>
-
-    <string-array name="pendidikan_terakhir">
-        <item>SMA</item>
-        <item>D3</item>
-        <item>S1</item>
-        <item>S2</item>
-        <item>S3</item>
-    </string-array>
 </resources>
