@@ -17,9 +17,6 @@ class FirstProfileResikoFragment : Fragment(), View.OnClickListener {
     private var _binding: FragmentFirstProfileResikoBinding? = null
     private val binding get() = _binding!!
 
-    private val viewModel: ProfileResikoViewModel by viewModels {
-        ViewModelFactory(requireActivity())
-    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

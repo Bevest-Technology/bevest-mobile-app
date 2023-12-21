@@ -101,6 +101,9 @@
     <string name="jenis_kelamin">Jenis Kelamin</string>
     <string name="pendidikan_terakhir">Pendidikan Terakhir</string>
     <string name="kepemilikan_rumah_pribadi">Kepemilikan Rumah Pribadi</string>
+    <string name="selamat_kamu_adalah_tipe_investor">Selamat, Kamu Adalah Tipe Investor</string>
+    <string name="investor_seperti_kamu_cocok_untuk_nmenabung">Investor Seperti Kamu Cocok Untuk\nMenabung</string>
+    <string name="lanjut_registrasi">Lanjut Registrasi</string>
 
     <string-array name="kategori_bisnis_list">
         <item>Penyediaan Akomodasi dan Makan Minum Peternakan</item>

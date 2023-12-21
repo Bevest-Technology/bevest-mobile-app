@@ -13,6 +13,20 @@ class ProfileResikoViewModel: ViewModel() {
         _profileResiko = profileResikoModel
     }
 
+    private var _tipeInvestor: String = "Progresif"
+    val tipeInvestor get() = _tipeInvestor
+
+    fun setTipeInvestor(tipeInvestor: String) {
+        _tipeInvestor = tipeInvestor
+    }
+
+    private var _rekomendasiMenabung: String = "Rp.100.000 - RP. 300.000/Bulan"
+    val rekomendasiMenabung get() = _rekomendasiMenabung
+
+    fun setRekomendasiMenabung(rekomendasiMenabung: String) {
+        _rekomendasiMenabung = rekomendasiMenabung
+    }
+
 }
 
 @Parcelize
