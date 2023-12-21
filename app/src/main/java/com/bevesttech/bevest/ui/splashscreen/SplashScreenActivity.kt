@@ -43,7 +43,6 @@ class SplashScreenActivity : AppCompatActivity() {
                 viewModel.getUserSession().observe(this) { user ->
                     if (viewModel.isUserLoggedIn(user)) {
                         if (viewModel.isRoleAlreadySet(user)) {
-
                             if (Utils.isBusiness(user.role ?: "")) {
                                 viewModel.isAlreadyOwnerRegistration(user).observe(this) { state ->
                                     when (state) {
@@ -138,17 +137,17 @@ class SplashScreenActivity : AppCompatActivity() {
 //                                        finish()
 //                                    }
                                 }
-                            } else {
-                                Intent(this, ChooseRoleActivity::class.java).also {
-                                    startActivity(it)
-                                    finish()
-                                }
                             }
                         } else {
-                            Intent(this, LoginActivity::class.java).also {
+                            Intent(this, ChooseRoleActivity::class.java).also {
                                 startActivity(it)
                                 finish()
                             }
+                        }
+                    } else {
+                        Intent(this, LoginActivity::class.java).also {
+                            startActivity(it)
+                            finish()
                         }
                     }
                 }
