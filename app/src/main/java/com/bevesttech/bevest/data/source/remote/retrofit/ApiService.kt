@@ -1,6 +1,8 @@
 package com.bevesttech.bevest.data.source.remote.retrofit
 
+import com.bevesttech.bevest.data.source.remote.response.ProfilingResponse
 import com.bevesttech.bevest.data.source.remote.response.ScreeningResponse
+import com.bevesttech.bevest.data.source.remote.response.ValuationResponse
 import com.google.gson.annotations.JsonAdapter
 import okhttp3.RequestBody
 import retrofit2.Response
@@ -14,4 +16,14 @@ interface ApiService {
     suspend fun screening(
         @Body body: RequestBody
     ): Response<ScreeningResponse>
+
+    @POST("valuation")
+    suspend fun valuation(
+        @Body body: RequestBody
+    ): Response<ValuationResponse>
+
+    @POST("profiling")
+    suspend fun profiling(
+        @Body body: RequestBody
+    ): Response<ProfilingResponse>
 }

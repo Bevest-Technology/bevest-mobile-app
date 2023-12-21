@@ -9,4 +9,7 @@ interface BusinessDataSource {
     suspend fun setBusinessCoreData(uid: String, businessOwner: CoreBusiness)
     suspend fun getBusinessCoreDataByUID(uid: String): CoreBusiness?
     suspend fun updateScreeningStatus(uid: String, status: String)
+    suspend fun updateWhatsappNumber(uid: String, whatsappNumber: String)
+    suspend fun updateValuationStatus(uid: String, status: String)
+    suspend fun updateValuationValue(uid: String, valuationValue: String)
 }

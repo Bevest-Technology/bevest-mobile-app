@@ -22,6 +22,7 @@ import com.bevesttech.bevest.data.Result
 
 enum class Role { BUSINESS, INVESTOR, NONE }
 enum class Onboarding { FINISH, ACTIVE }
+enum class BusinessValuationState { WAITING, PROCESS, REJECTED, ACCEPTED, COMPLETED }
 
 object Utils {
     private const val FILENAME_FORMAT = "yyyyMMdd_HHmmss"

@@ -19,4 +19,5 @@ data class CoreBusiness(
     val socialMedia: String? = null,
     val businessScreeningStatus: String? = null,
     val businessValuationStatus: String? = null,
+    val businessValuation: Double? = null,
 )

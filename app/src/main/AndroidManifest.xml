@@ -20,6 +20,24 @@
         android:theme="@style/Theme.BevestMobileApplication"
         tools:targetApi="31">
         <activity
+            android:name=".ui.comingsoon.ComingSoonActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.businessowner.businessvaluation.BusinessValuationRejectedActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.businessowner.businessvaluation.BusinessValuationAcceptedActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.businessowner.businessvaluation.BusinessCallProcessActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.businessowner.businessvaluation.BusinessChangeWhatsappActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.businessowner.businessvaluation.BusinessWhatsappValidationActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.businessowner.businessscreening.BusinessScreeningAcceptedActivity"
             android:exported="false" />
         <activity

@@ -7,6 +7,7 @@ import com.bevesttech.bevest.di.Injection
 import com.bevesttech.bevest.ui.bisnislisting.BisnisListingViewModel
 import com.bevesttech.bevest.ui.businessowner.businessdataregistration.BusinessDataRegistrationViewModel
 import com.bevesttech.bevest.ui.businessowner.businessscreening.BusinessScreeningViewModel
+import com.bevesttech.bevest.ui.businessowner.businessvaluation.BusinessValuationViewModel
 import com.bevesttech.bevest.ui.businessowner.ownerregistration.OwnerRegistrationViewModel
 import com.bevesttech.bevest.ui.chooserole.ChooseRoleViewModel
 import com.bevesttech.bevest.ui.forgotpassword.ForgotPasswordViewModel
@@ -62,6 +63,13 @@ class ViewModelFactory(val context: Context) : ViewModelProvider.Factory {
         )
 
         BusinessScreeningViewModel::class.java -> BusinessScreeningViewModel(
+            Injection.provideSessionPreferences(
+                context
+            ),
+            Injection.provideBusinessRepository(context)
+        )
+
+        BusinessValuationViewModel::class.java -> BusinessValuationViewModel(
             Injection.provideSessionPreferences(
                 context
             ),

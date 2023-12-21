@@ -8,6 +8,7 @@ import com.bevesttech.bevest.data.model.BusinessOwner
 import com.bevesttech.bevest.data.model.CoreBusiness
 import com.bevesttech.bevest.data.source.BusinessDataSource
 import com.bevesttech.bevest.data.source.remote.response.ScreeningResponse
+import com.bevesttech.bevest.data.source.remote.response.ValuationResponse
 import com.bevesttech.bevest.data.source.remote.retrofit.ApiService
 import com.bevesttech.bevest.utils.Utils.safeApiCall
 import com.google.firebase.auth.FirebaseAuth
@@ -104,6 +105,60 @@ class BusinessRepositoryImpl(
             emit(Result.Error(e.message.toString()))
         }
 
+    }
+
+    override fun updateWhatsappNumber(uid: String, whatsappNumber: String) = flow {
+        try {
+            emit(Result.Loading)
+            businessRemoteDataSource.updateWhatsappNumber(uid, whatsappNumber).also {
+                emit(Result.Success(it))
+            }
+        } catch (e: Exception) {
+            emit(Result.Error(e.message.toString()))
+        }
+    }
+
+    override fun updateValuationStatus(uid: String, status: String) = flow {
+        try {
+            emit(Result.Loading)
+            businessRemoteDataSource.updateValuationStatus(uid, status).also {
+                emit(Result.Success(it))
+            }
+        } catch (e: Exception) {
+            emit(Result.Error(e.message.toString()))
+        }
+    }
+
+    override fun valuationBusiness(business: CoreBusiness): LiveData<Result<ValuationResponse>> =
+        liveData {
+            emit(Result.Loading)
+            val jsonObject = JSONObject()
+            jsonObject.put("total_aset", (business.assetTotal?.toInt() ?: 0) / 1000000)
+            jsonObject.put("penjualan_rata2", (business.averageAnnualSales?.toInt() ?: 0) / 1000000)
+            jsonObject.put("tenaga_kerja", business.employeesNumber ?: 0)
+            jsonObject.put("aset_jaminan_kredit", (business.creditAssetCollateral?.toInt() ?: 0) / 1000000)
+            jsonObject.put("jumlah_dokumen_kredit", business.creditDocumentNumber ?: 0)
+
+            val jsonObjectString = jsonObject.toString()
+
+            val requestBody = jsonObjectString.toRequestBody("application/json".toMediaTypeOrNull())
+
+            emit(safeApiCall {
+                apiService.valuation(
+                    requestBody
+                )
+            })
+        }
+
+    override fun updateValuationValue(uid: String, valuationValue: String): Flow<Result<Unit>> = flow {
+        try {
+            emit(Result.Loading)
+            businessRemoteDataSource.updateValuationValue(uid, valuationValue).also {
+                emit(Result.Success(it))
+            }
+        } catch (e: Exception) {
+            emit(Result.Error(e.message.toString()))
+        }
     }
 
 
