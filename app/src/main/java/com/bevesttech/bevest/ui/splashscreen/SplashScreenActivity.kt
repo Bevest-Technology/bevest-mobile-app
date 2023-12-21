@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import com.bevesttech.bevest.MainActivity
 import com.bevesttech.bevest.data.Result
 import com.bevesttech.bevest.databinding.ActivitySplashScreenBinding
 import com.bevesttech.bevest.ui.businessowner.businessdataregistration.BusinessDataRegistrationActivity
@@ -76,6 +77,11 @@ class SplashScreenActivity : AppCompatActivity() {
                                                                         }
                                                                     } else if (screening.data.businessValuationStatus == BusinessValuationState.REJECTED.name) {
                                                                         Intent(this, BusinessScreeningRejectedActivity::class.java).also {
+                                                                            startActivity(it)
+                                                                            finish()
+                                                                        }
+                                                                    } else if (screening.data.businessValuationStatus == BusinessValuationState.COMPLETED.name) {
+                                                                        Intent(this, MainActivity::class.java).also {
                                                                             startActivity(it)
                                                                             finish()
                                                                         }
