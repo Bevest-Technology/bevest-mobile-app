@@ -19,6 +19,7 @@ import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
 import com.bevesttech.bevest.data.Result
+import java.text.NumberFormat
 
 enum class Role { BUSINESS, INVESTOR, NONE }
 enum class Onboarding { FINISH, ACTIVE }
@@ -102,5 +103,13 @@ object Utils {
                 Result.Error(error = "Something went wrong")
             }
         }
+    }
+
+    fun String.toIDRCurrenty(): String {
+        val localeID = Locale("in", "ID")
+        val doubleValue = this.toDoubleOrNull() ?: return this
+        val numberFormat = NumberFormat.getCurrencyInstance(localeID)
+        numberFormat.minimumFractionDigits = 0
+        return numberFormat.format(doubleValue)
     }
 }

@@ -4,6 +4,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="16dp"
     tools:context=".ui.comingsoon.ComingSoonActivity">
 
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/gif_page_img"
+        android:layout_width="287dp"
+        android:layout_height="328dp"
+        android:layout_gravity="center"
+        android:src="@drawable/mascot_sad_happy_animation"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/coming_soon"
+        android:textAlignment="center"
+        android:textColor="@color/ds_blue_60"
+        style="@style/BevestDesign.Typography.Headline2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/guideline"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.6"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -327,4 +327,5 @@
     <string name="subtitle_business_screening_rejected">Silahkan coba lagi atau hubungi customer service jika memiliki keluhan</string>
     <string name="subtitle_business_screening_accepted">Silahkan lanjut ke proses wawancara</string>
     <string name="title_business_screening_accepter">Selamat!! \nProses Screening Bisnis Anda Diterima</string>
+    <string name="coming_soon">Kami sedang mempersiapkan fitur ini :)</string>
 </resources>

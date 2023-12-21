@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="16dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.businessowner.businessvaluation.BusinessValuationRejectedActivity">
 
@@ -47,7 +48,6 @@
                 style="@style/BevestDesign.Typography.BodySemiBold1"
                 android:textAlignment="center"
                 android:textColor="@color/ds_blue_60"
-                android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="8dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -61,7 +61,6 @@
         android:layout_height="wrap_content"
         style="@style/BevestDesign.Component.ButtonFilled"
         android:text="@string/ajukan_kembali"
-        android:layout_marginHorizontal="16dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toTopOf="@id/btn_bevest_academy"
         app:layout_constraintStart_toStartOf="parent"
@@ -73,8 +72,7 @@
         android:layout_height="wrap_content"
         style="@style/BevestDesign.Component.ButtonOutlined"
         android:text="@string/baca_bevest_academy"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>

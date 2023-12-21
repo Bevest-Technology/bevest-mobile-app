@@ -15,6 +15,7 @@ import com.bevesttech.bevest.databinding.ActivityLoginBinding
 import com.bevesttech.bevest.ui.chooserole.ChooseRoleActivity
 import com.bevesttech.bevest.ui.forgotpassword.ForgotPasswordActivity
 import com.bevesttech.bevest.ui.register.RegisterActivity
+import com.bevesttech.bevest.ui.splashscreen.SplashScreenActivity
 import com.bevesttech.bevest.utils.Constants
 import com.bevesttech.bevest.utils.ViewModelFactory
 import com.bevesttech.bevest.utils.afterTextChanged
@@ -185,21 +186,9 @@ class LoginActivity : AppCompatActivity() {
                     unblockInput()
                     btnLogin.enabled()
 
-                    if (!viewModel.isUserHaveRole(result.data)) {
-                        Intent(
-                            this@LoginActivity,
-                            ChooseRoleActivity::class.java
-                        ).also {
-                            startActivity(it)
-                        }
-                    } else {
-                        Intent(
-                            this@LoginActivity,
-                            MainActivity::class.java
-                        ).also {
-                            startActivity(it)
-                        }
-                        finishAffinity()
+                    Intent(this@LoginActivity, SplashScreenActivity::class.java).also {
+                        startActivity(it)
+                        finish()
                     }
                 }
 
