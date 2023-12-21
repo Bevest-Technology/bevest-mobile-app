@@ -60,6 +60,20 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".ui.investor.profileresiko.ProfileResikoActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:exported="false" />
+        <activity
+            android:name=".ui.investor.register.InvestorRegisterActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:exported="false" />
+        <activity
+            android:name=".ui.laporan.UpdateLaporanActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.laporan.LaporanKeuanganActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.businessowner.ownerregistration.OwnerRegistrationActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustNothing" />
@@ -103,6 +117,12 @@
                 android:resource="@xml/file_paths" />
         </provider> <!-- Trigger Google Play services to install the backported photo picker module. -->
         <!-- suppress AndroidDomInspection -->
+        <service
+            android:name="com.google.android.gms.metadata.ModuleDependencies"
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
         <service
             android:name="com.google.android.gms.metadata.ModuleDependencies"
             android:enabled="false"

@@ -1,5 +1,7 @@
 package com.bevesttech.bevest.ui.inkubasi
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -22,6 +24,12 @@ class InkubasiFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.btnCekProggress.setOnClickListener {
+            Intent(Intent.ACTION_VIEW, Uri.parse("https://inkubator.lpdb.id/")).also {
+                startActivity(it)
+            }
+        }
     }
 
     override fun onDestroy() {
