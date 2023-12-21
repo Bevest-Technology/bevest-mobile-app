@@ -16,6 +16,10 @@
         android:theme="@style/Theme.BevestMobileApplication"
         tools:targetApi="31">
         <activity
+            android:name=".ui.investor.register.InvestorRegisterActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:exported="false" />
+        <activity
             android:name=".ui.laporan.UpdateLaporanActivity"
             android:exported="false" />
         <activity

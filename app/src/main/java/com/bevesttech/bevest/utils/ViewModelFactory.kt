@@ -7,6 +7,7 @@ import com.bevesttech.bevest.di.Injection
 import com.bevesttech.bevest.ui.bisnislisting.BisnisListingViewModel
 import com.bevesttech.bevest.ui.chooserole.ChooseRoleViewModel
 import com.bevesttech.bevest.ui.forgotpassword.ForgotPasswordViewModel
+import com.bevesttech.bevest.ui.investor.register.ProfileResikoViewModel
 import com.bevesttech.bevest.ui.laporan.LaporanKeuanganActivity
 import com.bevesttech.bevest.ui.laporan.LaporanKeuanganViewModel
 import com.bevesttech.bevest.ui.laporan.UpdateLaporanActivity
@@ -22,6 +23,7 @@ class ViewModelFactory(val context: Context) : ViewModelProvider.Factory {
         ForgotPasswordViewModel::class.java -> ForgotPasswordViewModel(Injection.provideAuthRepository())
         BisnisListingViewModel::class.java -> BisnisListingViewModel(Injection.provideAuthRepository())
         LaporanKeuanganViewModel::class.java -> LaporanKeuanganViewModel(Injection.provideAuthRepository())
+        ProfileResikoViewModel::class.java -> ProfileResikoViewModel()
         else -> throw IllegalArgumentException("Unknown ViewModel class")
     } as T
 }

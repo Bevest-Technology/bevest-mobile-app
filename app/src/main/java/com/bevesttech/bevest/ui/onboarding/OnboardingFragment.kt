@@ -11,6 +11,7 @@ import androidx.viewpager2.widget.ViewPager2
 import com.bevesttech.bevest.R
 import com.bevesttech.bevest.databinding.FragmentOnboardingBinding
 import com.bevesttech.bevest.ui.bisnislisting.BisnisListingActivity
+import com.bevesttech.bevest.ui.investor.register.InvestorRegisterActivity
 import com.bevesttech.bevest.ui.login.LoginActivity
 
 class OnboardingFragment : Fragment() {
@@ -56,7 +57,7 @@ class OnboardingFragment : Fragment() {
             }
 
             btnSkip.setOnClickListener {
-                Intent(activity, LoginActivity::class.java).also {
+                Intent(activity, InvestorRegisterActivity::class.java).also {
                     startActivity(it)
                 }
             }

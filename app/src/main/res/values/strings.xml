@@ -96,6 +96,11 @@
     <string name="security">Security</string>
     <string name="faq">FAQ</string>
     <string name="keluar">Keluar</string>
+    <string name="umur">Umur</string>
+    <string name="pendapatan_bulan_rp">Pendapatan /bulan (Rp)</string>
+    <string name="jenis_kelamin">Jenis Kelamin</string>
+    <string name="pendidikan_terakhir">Pendidikan Terakhir</string>
+    <string name="kepemilikan_rumah_pribadi">Kepemilikan Rumah Pribadi</string>
 
     <string-array name="kategori_bisnis_list">
         <item>Penyediaan Akomodasi dan Makan Minum Peternakan</item>
@@ -119,5 +124,23 @@
         <item>Service/Layanan</item>
         <item>Manufaktur/Produksi</item>
         <item>Retail/Distribusi/Logistik</item>
+    </string-array>
+
+    <string-array name="jenis_kelamin">
+        <item>Laki - Laki</item>
+        <item>Perempuan</item>
+    </string-array>
+
+    <string-array name="kepemilikan_rumah">
+        <item>Rumah Pribadi</item>
+        <item>Menyewa</item>
+    </string-array>
+
+    <string-array name="pendidikan_terakhir">
+        <item>SMA</item>
+        <item>D3</item>
+        <item>S1</item>
+        <item>S2</item>
+        <item>S3</item>
     </string-array>
 </resources>
