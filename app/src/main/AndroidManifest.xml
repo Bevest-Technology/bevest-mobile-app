@@ -20,6 +20,9 @@
         android:theme="@style/Theme.BevestMobileApplication"
         tools:targetApi="31">
         <activity
+            android:name=".ui.investor.home.InvestorHomeActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.businesshome.BusinessHomeActivity"
             android:exported="false"
             android:label="@string/title_activity_business_home" />

@@ -16,6 +16,7 @@ import com.bevesttech.bevest.ui.businessowner.businessvaluation.BusinessCallProc
 import com.bevesttech.bevest.ui.businessowner.businessvaluation.BusinessValuationAcceptedActivity
 import com.bevesttech.bevest.ui.businessowner.ownerregistration.OwnerRegistrationActivity
 import com.bevesttech.bevest.ui.chooserole.ChooseRoleActivity
+import com.bevesttech.bevest.ui.investor.home.InvestorHomeActivity
 import com.bevesttech.bevest.ui.investor.register.InvestorRegisterActivity
 import com.bevesttech.bevest.ui.login.LoginActivity
 import com.bevesttech.bevest.ui.onboarding.OnboardingActivity
@@ -149,7 +150,11 @@ class SplashScreenActivity : AppCompatActivity() {
                                 }
                             } else {
 
-                                Intent(this, InvestorRegisterActivity::class.java).also {
+//                                Intent(this, InvestorRegisterActivity::class.java).also {
+//                                    startActivity(it)
+//                                    finish()
+//                                }
+                                Intent(this, InvestorHomeActivity::class.java).also {
                                     startActivity(it)
                                     finish()
                                 }
