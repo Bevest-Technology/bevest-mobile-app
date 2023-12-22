@@ -23,6 +23,7 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginEnd="12dp"
+                android:src="@drawable/bevest_orange_mascot"
                 android:contentDescription="@string/foto_profile"
                 tools:src="@tools:sample/avatars" />
 
@@ -48,6 +49,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/ds_neutral_100"
+                    android:text="Selamat Datang"
                     tools:text="John Doe" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
