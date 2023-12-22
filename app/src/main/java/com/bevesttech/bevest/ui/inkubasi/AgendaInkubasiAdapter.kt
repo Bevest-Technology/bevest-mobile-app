@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bevesttech.bevest.databinding.ItemAgendaInkubasiBinding
 
-class AgendaInkubasiAdapter: RecyclerView.Adapter<AgendaInkubasiAdapter.ViewHolder>() {
+class AgendaInkubasiAdapter(private val listInkubasi: List<ItemInkubasiModel>): RecyclerView.Adapter<AgendaInkubasiAdapter.ViewHolder>() {
     class ViewHolder(var binding: ItemAgendaInkubasiBinding): RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -14,11 +14,20 @@ class AgendaInkubasiAdapter: RecyclerView.Adapter<AgendaInkubasiAdapter.ViewHold
         return ViewHolder(binding)
     }
 
-    override fun getItemCount(): Int {
-        TODO("Not yet implemented")
-    }
+    override fun getItemCount(): Int = listInkubasi.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        TODO("Not yet implemented")
+        val item = listInkubasi[position]
+        val status = item.status
+        val title = item.title
+        val date = item.date
+        val location = item.location
+
+        holder.binding.apply {
+            tvTitle.text = title
+            tvKeterangan.text = status
+            tvDate.text = date
+            tvLocation.text = location
+        }
     }
 }
