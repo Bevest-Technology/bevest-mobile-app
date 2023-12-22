@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.net.toUri
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bevesttech.bevest.R
 import com.bevesttech.bevest.databinding.FragmentBerandaBusinessBinding
@@ -49,11 +50,12 @@ class BerandaBusinessFragment : Fragment() {
             //Avatar
             load(R.drawable.bevest_logo).circleCrop().into(binding.ivProfileAvatar)
             //Banner
-            load(R.drawable.image_linear_gradient).transform(RoundedCorners(16)).into(binding.ivBanner)
+            load(R.drawable.kodakopi_banner).transform(RoundedCorners(16)).into(binding.ivBanner)
         }
 
-        val listKembangkanBisnis = listOf<CardBerandaModel>()
-        val listCeritaSukses = listOf<CardBerandaModel>()
+
+        val listKembangkanBisnis = makeDummyData()
+        val listCeritaSukses = makeDummyData()
 
         showRecyclerView(listKembangkanBisnis, listCeritaSukses)
     }
@@ -78,6 +80,23 @@ class BerandaBusinessFragment : Fragment() {
     override fun onDestroy() {
         _binding = null
         super.onDestroy()
+    }
+
+    fun makeDummyData(): List<CardBerandaModel> {
+        return listOf<CardBerandaModel>(
+            CardBerandaModel(
+                "https://i1.wp.com/www.maxmanroe.com/vid/wp-content/uploads/2017/12/Pengertian-UMKM.png?fit=700%2C363&ssl=1".toUri(),
+                "Kembangkan Bisnis Anda bersama Bevest, Dapatkan Pendanaan hingga Rp1 Miliar"
+            ),
+            CardBerandaModel(
+                "https://thumbs.dreamstime.com/b/ecuadorian-women-sell-plant-fiber-baskets-ecuador-cuenca-november-two-esmeraldas-province-their-handmade-made-artisans-155879600.jpg".toUri(),
+                "Manajemen Keuangan Usaha untuk Pelaku UMKM yang Harus Anda Terapkan"
+            ),
+            CardBerandaModel(
+                "https://th.bing.com/th/id/OIP.fFcnPGX5i8xup-fcOrDxFAHaE6?rs=1&pid=ImgDetMain".toUri(),
+                "(UMKM): Pengertian, Jenis, dan Peranannya di Indonesia"
+            ),
+        )
     }
 
 }
