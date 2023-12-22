@@ -108,11 +108,11 @@
     <string name="lanjutkan_isi_data">Lanjutkan Isi Data</string>
     <string name="keambangkan_bisnis_anda">Keambangkan Bisnis Anda</string>
     <string name="cerita_sukses">Cerita Sukses</string>
-    =======
+
     <string name="sudah">Sudah</string>
     <string name="belum">Belum</string>
     <string name="pastikan_hasil_foto_kamu_terbaca_dengan_jelas_untuk_keperluan_identitas_kamu">Pastikan hasil foto kamu terbaca dengan jelas untuk keperluan identitas kamu</string>
-    >>>>>>> 214d1c855de39ff998db7dd4ff3cdaf3be4bb2b8
+
 
     <string-array name="kategori_bisnis_list">
         <item>Penyediaan Akomodasi dan Makan Minum Peternakan</item>
@@ -400,4 +400,10 @@
     <string name="spesial_untuk_kamu">Spesial Untuk Kamu</string>
     <string name="baru_rilis">Baru Rilis</string>
     <string name="lihat_selengkapnya">Lihat Selengkapnya</string>
+    <string name="title_activity_business_home">BusinessHomeActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="beranda">Beranda</string>
+    <string name="profile">Profile</string>
 </resources>
