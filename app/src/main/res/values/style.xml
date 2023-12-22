@@ -87,4 +87,5 @@
         <item name="cardBackgroundColor">@color/ds_neutral_20</item>
         <item name="strokeWidth">0dp</item>
     </style>
+
 </resources>
