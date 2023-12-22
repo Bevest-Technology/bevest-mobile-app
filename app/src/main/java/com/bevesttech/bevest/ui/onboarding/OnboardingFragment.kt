@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.bevesttech.bevest.R
 import com.bevesttech.bevest.databinding.FragmentOnboardingBinding
-import com.bevesttech.bevest.ui.businesshome.BusinessHomeActivity
 import com.bevesttech.bevest.ui.login.LoginActivity
 import com.bevesttech.bevest.utils.ViewModelFactory
 
@@ -62,7 +61,7 @@ class OnboardingFragment : Fragment() {
 
             btnSkip.setOnClickListener {
                 viewModel.saveOnboardingSession()
-                Intent(activity, BusinessHomeActivity::class.java).also {
+                Intent(activity, LoginActivity::class.java).also {
                     startActivity(it)
                     requireActivity().finish()
                 }
