@@ -13,6 +13,7 @@ import com.bevesttech.bevest.R
 import com.bevesttech.bevest.data.Result
 import com.bevesttech.bevest.databinding.ActivityRegisterBinding
 import com.bevesttech.bevest.ui.chooserole.ChooseRoleActivity
+import com.bevesttech.bevest.ui.splashscreen.SplashScreenActivity
 import com.bevesttech.bevest.utils.Constants
 import com.bevesttech.bevest.utils.ViewModelFactory
 import com.bevesttech.bevest.utils.afterTextChanged
@@ -91,21 +92,10 @@ class RegisterActivity : AppCompatActivity() {
                         progressIndicator.gone()
                         unblockInput()
 
-                        if (viewModel.isUserHaveRole(response.data)) {
-                            Intent(
-                                this@RegisterActivity,
-                                ChooseRoleActivity::class.java
-                            ).also {
-                                startActivity(it)
-                            }
-                        } else {
-                            Intent(
-                                this@RegisterActivity,
-                                MainActivity::class.java
-                            ).also {
-                                startActivity(it)
-                            }
-                        }
+                       Intent(this@RegisterActivity, SplashScreenActivity::class.java).also {
+                           startActivity(it)
+                           finish()
+                       }
 
                     }
 

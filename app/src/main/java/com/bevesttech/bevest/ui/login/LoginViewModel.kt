@@ -18,7 +18,7 @@ class LoginViewModel(private val userRepository: AuthRepository) : ViewModel() {
 
     fun loginWithGoogle(idToken: String) = userRepository.loginWithGoogle(idToken)
 
-    fun isUserHaveRole(loggedInUser: LoggedInUser) = loggedInUser.role != null && loggedInUser.role != Role.NONE.name
+    fun isUserHaveRole(loggedInUser: LoggedInUser) = loggedInUser.role != null && loggedInUser.role != Role.NONE.name && loggedInUser.role.isNotEmpty()
 
     fun loginDataChanged(email: String, password: String) {
         if (!Utils.isValidEmail(email)) {
@@ -30,5 +30,5 @@ class LoginViewModel(private val userRepository: AuthRepository) : ViewModel() {
         }
     }
 
-    fun logout() = userRepository.logout()
+    suspend fun logout() = userRepository.logout()
 }

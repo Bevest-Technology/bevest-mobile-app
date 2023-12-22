@@ -9,15 +9,12 @@ import com.google.firebase.auth.FirebaseUser
 import kotlinx.coroutines.flow.Flow
 
 interface AuthRepository {
-
-    val currentUser: FirebaseUser?
+    var currentUser: LoggedInUser?
     fun login(email: String, password: String): LiveData<Result<LoggedInUser>>
     fun loginWithGoogle(idToken: String): LiveData<Result<LoggedInUser>>
     fun signup(name: String, email: String, password: String): LiveData<Result<LoggedInUser>>
     fun updateUserRole(role: Role): Flow<Result<Unit>>
-    fun logout()
-
-    //Forgot Password
+    suspend fun logout()
     fun forgotPassword(email: String): LiveData<Result<String>>
 
 }

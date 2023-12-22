@@ -6,16 +6,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.bevesttech.bevest.R
 import com.bevesttech.bevest.databinding.FragmentOnboardingBinding
-import com.bevesttech.bevest.ui.bisnislisting.BisnisListingActivity
 import com.bevesttech.bevest.ui.login.LoginActivity
+import com.bevesttech.bevest.utils.ViewModelFactory
 
 class OnboardingFragment : Fragment() {
     private var _binding: FragmentOnboardingBinding? = null
     private val binding get() = _binding!!
+    private val viewModel: OnboardingViewModel by viewModels { ViewModelFactory(requireContext()) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,6 +49,7 @@ class OnboardingFragment : Fragment() {
 
             btnContinue.setOnClickListener {
                 if (vpPage.currentItem == MAX_STEP - 1) {
+                    viewModel.saveOnboardingSession()
                     Intent(activity, LoginActivity::class.java).also {
                         startActivity(it)
                     }
@@ -56,6 +59,7 @@ class OnboardingFragment : Fragment() {
             }
 
             btnSkip.setOnClickListener {
+                viewModel.saveOnboardingSession()
                 Intent(activity, LoginActivity::class.java).also {
                     startActivity(it)
                 }

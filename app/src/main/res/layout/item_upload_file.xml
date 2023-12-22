@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_upload_file"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:strokeColor="#D2D5DA">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp">
+
+        <TextView
+            android:id="@+id/tv_hint"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            style="@style/BevestDesign.Typography.Body2"
+            android:textColor="@color/ds_neutral_50"
+            android:layout_marginEnd="100dp"
+            tools:text="@string/unggah_foto_owner"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/ib_upload"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <ImageButton
+            android:id="@+id/ib_upload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginVertical="40dp"
+            android:backgroundTint="@color/color_transparent"
+            android:src="@drawable/ic_upload"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_preview"
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:layout_centerVertical="true"
+            android:layout_marginVertical="40dp"
+            android:layout_marginEnd="16dp"
+            android:visibility="invisible"
+            tools:visibility="visible"
+            tools:src="@tools:sample/avatars"
+            android:scaleType="fitEnd"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_preview_full"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:visibility="gone"
+            android:scaleType="centerCrop"
+            tools:src="@tools:sample/avatars"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</com.google.android.material.card.MaterialCardView>

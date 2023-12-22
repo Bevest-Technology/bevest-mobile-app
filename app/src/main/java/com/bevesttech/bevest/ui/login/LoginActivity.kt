@@ -10,10 +10,12 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.bevesttech.bevest.MainActivity
 import com.bevesttech.bevest.data.Result
+import com.bevesttech.bevest.data.model.LoggedInUser
 import com.bevesttech.bevest.databinding.ActivityLoginBinding
 import com.bevesttech.bevest.ui.chooserole.ChooseRoleActivity
 import com.bevesttech.bevest.ui.forgotpassword.ForgotPasswordActivity
 import com.bevesttech.bevest.ui.register.RegisterActivity
+import com.bevesttech.bevest.ui.splashscreen.SplashScreenActivity
 import com.bevesttech.bevest.utils.Constants
 import com.bevesttech.bevest.utils.ViewModelFactory
 import com.bevesttech.bevest.utils.afterTextChanged
@@ -58,22 +60,23 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun initResultLauncher() {
-        resultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-            if (result.resultCode == RESULT_OK) {
-                val task = GoogleSignIn.getSignedInAccountFromIntent(result.data)
+        resultLauncher =
+            registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+                if (result.resultCode == RESULT_OK) {
+                    val task = GoogleSignIn.getSignedInAccountFromIntent(result.data)
 
-                try {
-                    val googleSignInAccount = task.getResult(ApiException::class.java)
-                    googleSignInAccount?.apply {
-                        idToken?.let { idToken ->
-                            loginWithGoogle(idToken)
+                    try {
+                        val googleSignInAccount = task.getResult(ApiException::class.java)
+                        googleSignInAccount?.apply {
+                            idToken?.let { idToken ->
+                                loginWithGoogle(idToken)
+                            }
                         }
+                    } catch (e: Exception) {
+                        print(e.message)
                     }
-                } catch (e: Exception) {
-                    print(e.message)
                 }
             }
-        }
     }
 
     private fun setView() {
@@ -151,47 +154,7 @@ class LoginActivity : AppCompatActivity() {
     private fun loginWithGoogle(idToken: String) {
         with(binding) {
             viewModel.loginWithGoogle(idToken).observe(this@LoginActivity) { response ->
-                when (response) {
-                    is Result.Loading -> {
-                        progressIndicator.visible()
-                        blockInput()
-                        btnLogin.disabled()
-                    }
-
-                    is Result.Success -> {
-                        progressIndicator.gone()
-                        unblockInput()
-                        btnLogin.enabled()
-
-                        if (!viewModel.isUserHaveRole(response.data)) {
-                            Intent(
-                                this@LoginActivity,
-                                ChooseRoleActivity::class.java
-                            ).also {
-                                startActivity(it)
-                            }
-                        } else {
-                            Intent(
-                                this@LoginActivity,
-                                MainActivity::class.java
-                            ).also {
-                                startActivity(it)
-                            }
-                        }
-
-                    }
-
-                    is Result.Error -> {
-                        progressIndicator.gone()
-                        unblockInput()
-                        btnLogin.enabled()
-                        Toast.makeText(
-                            this@LoginActivity,
-                            response.error.toString(),
-                            Toast.LENGTH_SHORT
-                        ).show()
-                    }
-                }
+              loginHandle(response)
             }
         }
     }
@@ -204,34 +167,40 @@ class LoginActivity : AppCompatActivity() {
             val passwordField = edtPassword.text.toString()
 
             viewModel.login(emailField, passwordField).observe(this@LoginActivity) { result ->
-                when (result) {
-                    is Result.Loading -> {
-                        progressIndicator.visible()
-                        blockInput()
-                        btnLogin.disabled()
-                    }
+                loginHandle(result)
+            }
+        }
+    }
 
-                    is Result.Success -> {
-                        progressIndicator.gone()
-                        unblockInput()
-                        Intent(
-                            this@LoginActivity,
-                            ChooseRoleActivity::class.java
-                        ).also {
-                            startActivity(it)
-                        }
-                    }
+    private fun loginHandle(result: Result<LoggedInUser>) {
+        with(binding) {
+            when (result) {
+                is Result.Loading -> {
+                    progressIndicator.visible()
+                    blockInput()
+                    btnLogin.disabled()
+                }
 
-                    is Result.Error -> {
-                        progressIndicator.gone()
-                        unblockInput()
-                        btnLogin.enabled()
-                        Toast.makeText(
-                            this@LoginActivity,
-                            result.error.toString(),
-                            Toast.LENGTH_SHORT
-                        ).show()
+                is Result.Success -> {
+                    progressIndicator.gone()
+                    unblockInput()
+                    btnLogin.enabled()
+
+                    Intent(this@LoginActivity, SplashScreenActivity::class.java).also {
+                        startActivity(it)
+                        finish()
                     }
+                }
+
+                is Result.Error -> {
+                    progressIndicator.gone()
+                    unblockInput()
+                    btnLogin.enabled()
+                    Toast.makeText(
+                        this@LoginActivity,
+                        result.error.toString(),
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
             }
         }

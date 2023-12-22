@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.businessowner.businessdataregistration.BusinessSalesValuationFragment">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.bevesttech.bevest.ui.businessowner.businessdataregistration.BusinessDataRegistrationViewModel"/>
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tv_question"
+            style="@style/BevestDesign.Typography.BodySemiBold2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/data_valuasi_penjualan" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_penjualan_rata_rata"
+            style="@style/BevestDesign.Component.EditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_penjualan_rata_rata"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/penjualan_rata_rata_per_tahun"
+                android:imeOptions="actionNext"
+                android:inputType="number"
+                android:maxLines="1"
+                android:textAppearance="@style/BevestDesign.Typography.Body1"
+                android:onTextChanged="@{(text, start, before, count) -> viewModel.setAverageAnnualSales(text)}"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_total_aset"
+            style="@style/BevestDesign.Component.EditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_total_aset"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/total_aset"
+                android:imeOptions="actionNext"
+                android:inputType="number"
+                android:maxLines="1"
+                android:textAppearance="@style/BevestDesign.Typography.Body1"
+                android:onTextChanged="@{(text, start, before, count) -> viewModel.setAssetTotal(text)}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_nilai_jaminan_aset_kredit"
+            style="@style/BevestDesign.Component.EditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_nilai_jaminan_aset_kredit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/nilai_jaminan_aset_kredit"
+                android:imeOptions="actionNext"
+                android:inputType="number"
+                android:maxLines="1"
+                android:textAppearance="@style/BevestDesign.Typography.Body1"
+                android:onTextChanged="@{(text, start, before, count) -> viewModel.setCreditAssetCollateral(text)}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_jumlah_karyawan"
+            style="@style/BevestDesign.Component.EditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_jumlah_karyawan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/jumlah_karyawan"
+                android:imeOptions="actionNext"
+                android:inputType="number"
+                android:maxLines="1"
+                android:textAppearance="@style/BevestDesign.Typography.Body1"
+                android:onTextChanged="@{(text, start, before, count) -> viewModel.setEmployeesNumber(text)}" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>
