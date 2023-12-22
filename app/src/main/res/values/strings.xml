@@ -166,6 +166,27 @@
         <item>S3</item>
     </string-array>
 
+    <string-array name="bank_list">
+        <item>Bank Mandiri</item>
+        <item>Bank Central Asia (BCA)</item>
+        <item>Bank Rakyat Indonesia (BRI)</item>
+        <item>Bank Negara Indonesia (BNI)</item>
+        <item>Bank Danamon</item>
+        <item>Bank CIMB Niaga</item>
+        <item>Bank Panin</item>
+        <item>Bank Permata</item>
+        <item>Bank Maybank Indonesia</item>
+        <item>Bank Mega</item>
+        <item>Bank Bukopin</item>
+        <item>Bank OCBC NISP</item>
+        <item>Bank BTPN</item>
+        <item>Bank BRI Syariah</item>
+        <item>Bank Muamalat</item>
+        <item>Bank Jabar Banten (BJB)</item>
+        <item>Bank Tabungan Negara (BTN)</item>
+        <item>Bank DBS Indonesia</item>
+    </string-array>
+
     <string name="large_text">
         "Material is the metaphor.\n\n"
 
@@ -365,4 +386,7 @@
     <string name="coming_soon">Kami sedang mempersiapkan fitur ini :)</string>
     <string name="jumlah_anak">Jumlah Anak</string>
     <string name="status_pernikahan">Status Pernikahan</string>
+    <string name="data_pribadi_investor">Data Pribadi Investor</string>
+    <string name="bank">Bank</string>
+    <string name="nomor_rekening">Nomor Rekening</string>
 </resources>

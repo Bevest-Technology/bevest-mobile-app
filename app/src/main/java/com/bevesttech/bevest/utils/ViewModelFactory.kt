@@ -11,6 +11,7 @@ import com.bevesttech.bevest.ui.businessowner.businessvaluation.BusinessValuatio
 import com.bevesttech.bevest.ui.businessowner.ownerregistration.OwnerRegistrationViewModel
 import com.bevesttech.bevest.ui.chooserole.ChooseRoleViewModel
 import com.bevesttech.bevest.ui.forgotpassword.ForgotPasswordViewModel
+import com.bevesttech.bevest.ui.investor.investorpersonaldata.InvestorPersonalDataViewModel
 import com.bevesttech.bevest.ui.investor.register.ProfileResikoViewModel
 import com.bevesttech.bevest.ui.laporan.LaporanKeuanganViewModel
 import com.bevesttech.bevest.ui.login.LoginViewModel
@@ -94,6 +95,10 @@ class ViewModelFactory(val context: Context) : ViewModelProvider.Factory {
             Injection.provideInvestorRepository(
                 context
             )
+        )
+
+        InvestorPersonalDataViewModel::class.java -> InvestorPersonalDataViewModel(
+            Injection.provideInvestorRepository(context)
         )
 
         else -> throw IllegalArgumentException("Unknown ViewModel class")

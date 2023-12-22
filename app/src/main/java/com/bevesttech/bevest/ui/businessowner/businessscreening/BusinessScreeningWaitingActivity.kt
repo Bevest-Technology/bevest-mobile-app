@@ -31,7 +31,7 @@ class BusinessScreeningWaitingActivity : AppCompatActivity() {
                                 when (screening) {
                                     is Result.Loading -> {}
                                     is Result.Success -> {
-                                        if (screening.data.label == "Layak") {
+                                        if (screening.data.label == "Layak" || screening.data.label == "layak") {
                                             viewModel.updateScreeningStatus(user.uid ?: "", "Layak")
                                                 .observe(this) {
                                                     when (it) {
