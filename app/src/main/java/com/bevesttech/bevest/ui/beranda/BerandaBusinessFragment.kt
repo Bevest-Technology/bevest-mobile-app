@@ -1,5 +1,6 @@
 package com.bevesttech.bevest.ui.beranda
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,6 +10,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bevesttech.bevest.R
 import com.bevesttech.bevest.databinding.FragmentBerandaBusinessBinding
+import com.bevesttech.bevest.ui.businesshome.BusinessHomeActivity
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 
@@ -34,7 +36,9 @@ class BerandaBusinessFragment : Fragment() {
 
     private fun setListener() {
         binding.btnLanjutIsiData.setOnClickListener {
-            Toast.makeText(requireActivity(), "Lanjut Isi Data", Toast.LENGTH_SHORT).show()
+            Intent(requireActivity(), BusinessHomeActivity::class.java).also {
+                startActivity(it)
+            }
         }
     }
 

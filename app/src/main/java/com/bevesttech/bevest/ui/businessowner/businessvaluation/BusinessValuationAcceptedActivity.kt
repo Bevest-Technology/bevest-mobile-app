@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.bevesttech.bevest.MainActivity
 import com.bevesttech.bevest.data.Result
 import com.bevesttech.bevest.databinding.ActivityBusinessValuationAcceptedBinding
+import com.bevesttech.bevest.ui.businesshome.BusinessHomeActivity
 import com.bevesttech.bevest.utils.BusinessValuationState
 import com.bevesttech.bevest.utils.Utils.toIDRCurrenty
 import com.bevesttech.bevest.utils.ViewModelFactory
@@ -48,7 +49,7 @@ class BusinessValuationAcceptedActivity : AppCompatActivity() {
 
                                         }
                                         is Result.Success -> {
-                                            Intent(this@BusinessValuationAcceptedActivity, MainActivity::class.java).also {
+                                            Intent(this@BusinessValuationAcceptedActivity, BusinessHomeActivity::class.java).also {
                                                 startActivity(it)
                                                 finish()
                                             }
