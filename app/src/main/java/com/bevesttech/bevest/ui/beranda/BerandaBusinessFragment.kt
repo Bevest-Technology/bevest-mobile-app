@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bevesttech.bevest.R
 import com.bevesttech.bevest.databinding.FragmentBerandaBusinessBinding
+import com.bevesttech.bevest.ui.bisnislisting.BisnisListingActivity
 import com.bevesttech.bevest.ui.businesshome.BusinessHomeActivity
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
@@ -36,7 +37,7 @@ class BerandaBusinessFragment : Fragment() {
 
     private fun setListener() {
         binding.btnLanjutIsiData.setOnClickListener {
-            Intent(requireActivity(), BusinessHomeActivity::class.java).also {
+            Intent(requireActivity(), BisnisListingActivity::class.java).also {
                 startActivity(it)
             }
         }
