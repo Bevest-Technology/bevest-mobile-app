@@ -7,6 +7,7 @@ object Constants {
     const val BUSINESS_OWNER_COL = "business_owner"
     const val BUSINESS_CORE_COL = "business_core"
     const val INVESTOR_PROFILE_COL = "investor_profile"
+    const val INVESTOR_CORE_COL = "investor_core"
 
     // firebase field
     const val ROLE_FIELD = "role"

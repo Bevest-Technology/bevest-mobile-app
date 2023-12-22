@@ -3,6 +3,7 @@ package com.bevesttech.bevest.data.repository
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.liveData
 import com.bevesttech.bevest.data.Result
+import com.bevesttech.bevest.data.model.InvestorCore
 import com.bevesttech.bevest.data.model.InvestorProfile
 import com.bevesttech.bevest.data.source.remote.InvestorRemoteDataSource
 import com.bevesttech.bevest.data.source.remote.response.ProfilingResponse
@@ -80,6 +81,20 @@ class InvestorRepositoryImpl(
                 apiService.profiling(requestBody)
             })
         }
+
+    override fun setInvestorCoreData(investoreCore: InvestorCore) = flow {
+        try {
+            emit(Result.Loading)
+            investorRemoteDataSource.setInvestoreCoreData(
+                firebaseAuth.uid.toString(),
+                investoreCore
+            ).also {
+                emit(Result.Success(it))
+            }
+        } catch (e: Exception) {
+            emit(Result.Error(e.message.toString()))
+        }
+    }
 
     companion object {
         @Volatile

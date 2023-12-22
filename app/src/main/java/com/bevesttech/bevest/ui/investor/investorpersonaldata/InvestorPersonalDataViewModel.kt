@@ -2,8 +2,11 @@ package com.bevesttech.bevest.ui.investor.investorpersonaldata
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.liveData
 import com.bevesttech.bevest.R
+import com.bevesttech.bevest.data.model.InvestorCore
 import com.bevesttech.bevest.data.repository.InvestorRepository
+import kotlinx.coroutines.Dispatchers
 
 class InvestorPersonalDataViewModel(private val investorRepository: InvestorRepository) : ViewModel() {
 
@@ -145,4 +148,25 @@ class InvestorPersonalDataViewModel(private val investorRepository: InvestorRepo
             _bankAccountFormState.value = InvestorBankAccountFormState(isDataValid = true)
         }
     }
+
+    fun setInvestorCoreData() = liveData(Dispatchers.IO) {
+        val investorCoreData = InvestorCore(
+            nik = nik.value,
+            placeOfBirth = placeOfBirth.value,
+            gender = gender.value,
+            address = address.value,
+            rtRw = rtRw.value,
+            religion = religion.value,
+            maritalStatus = maritalStatus.value,
+            job = job.value,
+            citizenship = citizenship.value,
+            bankName = bankName.value,
+            bankAccountNumber = bankNumber.value
+        )
+
+        investorRepository.setInvestorCoreData(investorCoreData).collect {
+            emit(it)
+        }
+    }
+
 }

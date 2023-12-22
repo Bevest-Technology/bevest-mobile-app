@@ -8,6 +8,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.viewpager2.widget.ViewPager2
+import com.bevesttech.bevest.MainActivity
 import com.bevesttech.bevest.R
 import com.bevesttech.bevest.data.Result
 import com.bevesttech.bevest.databinding.ActivityInvestorPersonalDataBinding
@@ -51,39 +52,39 @@ class InvestorPersonalDataActivity : AppCompatActivity() {
 
                 sharedViewModel.detailKtpFormState.observe(this@InvestorPersonalDataActivity) { state ->
                     if (state.isDataValid) {
-//                        sharedViewModel.setOwnerRegistrationData()
-//                            .observe(this@InvestorPersonalDataActivity) { result ->
-//                                when (result) {
-//                                    is Result.Loading -> {
-//                                        progressIndicator.visible()
-//                                        blockInput()
-//                                        btnNext.disabled()
-//                                    }
-//
-//                                    is Result.Success -> {
-//                                        progressIndicator.gone()
-//                                        unblockInput()
-//
-//                                        Intent(
-//                                            this@InvestorPersonalDataActivity,
-//                                            BusinessDataRegistrationActivity::class.java
-//                                        ).also {
-//                                            startActivity(it)
-//                                        }
-//                                    }
-//
-//                                    is Result.Error -> {
-//                                        progressIndicator.gone()
-//                                        unblockInput()
-//                                        btnNext.enabled()
-//                                        Toast.makeText(
-//                                            this@InvestorPersonalDataActivity,
-//                                            result.error.toString(),
-//                                            Toast.LENGTH_SHORT
-//                                        ).show()
-//                                    }
-//                                }
-//                            }
+                        sharedViewModel.setInvestorCoreData()
+                            .observe(this@InvestorPersonalDataActivity) { result ->
+                                when (result) {
+                                    is Result.Loading -> {
+                                        progressIndicator.visible()
+                                        blockInput()
+                                        btnNext.disabled()
+                                    }
+
+                                    is Result.Success -> {
+                                        progressIndicator.gone()
+                                        unblockInput()
+
+                                        Intent(
+                                            this@InvestorPersonalDataActivity,
+                                            MainActivity::class.java
+                                        ).also {
+                                            startActivity(it)
+                                        }
+                                    }
+
+                                    is Result.Error -> {
+                                        progressIndicator.gone()
+                                        unblockInput()
+                                        btnNext.enabled()
+                                        Toast.makeText(
+                                            this@InvestorPersonalDataActivity,
+                                            result.error.toString(),
+                                            Toast.LENGTH_SHORT
+                                        ).show()
+                                    }
+                                }
+                            }
                     }
                 }
             }
