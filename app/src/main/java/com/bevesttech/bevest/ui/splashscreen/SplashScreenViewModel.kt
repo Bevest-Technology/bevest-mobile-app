@@ -23,6 +23,8 @@ class SplashScreenViewModel(
     fun isAlreadyOwnerRegistration(user: LoggedInUser) =
         businessRepository.getBusinessOwnerByUID(user.uid ?: "")
 
+
+
     fun isBusinessScreeningPassed(user: LoggedInUser) =
         businessRepository.getBusinessCoreDataByUID(user.uid ?: "")
 
