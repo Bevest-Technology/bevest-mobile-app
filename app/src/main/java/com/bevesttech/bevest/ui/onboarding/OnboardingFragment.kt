@@ -52,6 +52,7 @@ class OnboardingFragment : Fragment() {
                     viewModel.saveOnboardingSession()
                     Intent(activity, LoginActivity::class.java).also {
                         startActivity(it)
+                        requireActivity().finish()
                     }
                 } else {
                     vpPage.currentItem = vpPage.currentItem + 1
@@ -62,6 +63,7 @@ class OnboardingFragment : Fragment() {
                 viewModel.saveOnboardingSession()
                 Intent(activity, LoginActivity::class.java).also {
                     startActivity(it)
+                    requireActivity().finish()
                 }
             }
         }

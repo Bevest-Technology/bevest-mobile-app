@@ -2,15 +2,16 @@ package com.bevesttech.bevest.ui.splashscreen
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
-import androidx.lifecycle.liveData
 import com.bevesttech.bevest.data.model.LoggedInUser
-import com.bevesttech.bevest.data.repository.AuthRepository
 import com.bevesttech.bevest.data.repository.BusinessRepository
+import com.bevesttech.bevest.data.repository.InvestorRepository
 import com.bevesttech.bevest.data.source.local.SessionPreference
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.collect
 
-class SplashScreenViewModel(private val sessionPreference: SessionPreference, private val businessRepository: BusinessRepository) : ViewModel() {
+class SplashScreenViewModel(
+    private val sessionPreference: SessionPreference,
+    private val businessRepository: BusinessRepository,
+    private val investorRepository: InvestorRepository
+) : ViewModel() {
     fun isAlreadyOnboarding() = sessionPreference.isAlreadyOnboarding().asLiveData()
 
     fun getUserSession() = sessionPreference.getUserSession().asLiveData()
@@ -19,7 +20,10 @@ class SplashScreenViewModel(private val sessionPreference: SessionPreference, pr
 
     fun isRoleAlreadySet(user: LoggedInUser) = !user.role.isNullOrEmpty()
 
-    fun isAlreadyOwnerRegistration(user: LoggedInUser) = businessRepository.getBusinessOwnerByUID(user.uid ?: "")
-    fun isBusinessScreeningPassed(user: LoggedInUser) = businessRepository.getBusinessCoreDataByUID(user.uid ?: "")
+    fun isAlreadyOwnerRegistration(user: LoggedInUser) =
+        businessRepository.getBusinessOwnerByUID(user.uid ?: "")
+
+    fun isBusinessScreeningPassed(user: LoggedInUser) =
+        businessRepository.getBusinessCoreDataByUID(user.uid ?: "")
 
 }

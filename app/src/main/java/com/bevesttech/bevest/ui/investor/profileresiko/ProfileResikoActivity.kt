@@ -24,7 +24,7 @@ class ProfileResikoActivity : AppCompatActivity() {
 
         val fragmentManager = supportFragmentManager
         val resultFragment = ProfileResikoResultFragment()
-        resultFragment.tipeInvestor = viewModel.tipeInvestor
+//        resultFragment.tipeInvestor = viewModel.tipeInvestor
         val fragment = fragmentManager.findFragmentByTag(ProfileResikoResultFragment::class.java.simpleName)
 
         if (fragment != resultFragment) {

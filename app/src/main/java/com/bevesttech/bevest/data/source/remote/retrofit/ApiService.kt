@@ -22,7 +22,7 @@ interface ApiService {
         @Body body: RequestBody
     ): Response<ValuationResponse>
 
-    @POST("profiling")
+    @POST("profilling")
     suspend fun profiling(
         @Body body: RequestBody
     ): Response<ProfilingResponse>

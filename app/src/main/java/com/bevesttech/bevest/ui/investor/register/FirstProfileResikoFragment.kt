@@ -1,11 +1,13 @@
 package com.bevesttech.bevest.ui.investor.register
 
 import android.os.Bundle
+import android.provider.ContactsContract.Profile
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.commit
 import androidx.fragment.app.viewModels
 import com.bevesttech.bevest.R
@@ -16,6 +18,7 @@ class FirstProfileResikoFragment : Fragment(), View.OnClickListener {
 
     private var _binding: FragmentFirstProfileResikoBinding? = null
     private val binding get() = _binding!!
+    private val sharedViewModel: ProfileResikoViewModel by activityViewModels { ViewModelFactory(requireActivity()) }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,6 +33,11 @@ class FirstProfileResikoFragment : Fragment(), View.OnClickListener {
         super.onViewCreated(view, savedInstanceState)
 
         binding.btnLanjut.setOnClickListener(this)
+
+        with(binding) {
+            viewModel = sharedViewModel
+            lifecycleOwner = viewLifecycleOwner
+        }
     }
 
     override fun onDestroy() {
@@ -39,13 +47,13 @@ class FirstProfileResikoFragment : Fragment(), View.OnClickListener {
 
     override fun onClick(v: View) {
         if (v.id == R.id.btn_lanjut) {
-            val nama = binding.edtName.text
             val umur = binding.edtUmur.text
+            val anak = binding.edtChildren.text
             val pendapatan = binding.edtPendapatan.text
             var valid = true
 
-            if (nama.isNullOrEmpty()) {
-                binding.edtName.error = "Field ini tidak boleh kosong!"
+            if (anak.isNullOrEmpty()) {
+                binding.edtChildren.error = "Field ini tidak boleh kosong!"
                 valid = false
             }
             if (umur.isNullOrEmpty()) {
@@ -58,14 +66,8 @@ class FirstProfileResikoFragment : Fragment(), View.OnClickListener {
             }
 
             if (valid) {
-                val model = ProfileResikoModel(
-                    nama = nama.toString(),
-                    umur = umur.toString().toInt(),
-                    pendapatan = pendapatan.toString().toInt()
-                )
                 val fragmentManager = parentFragmentManager
                 val secondFragment = SecondProfileResikoFragment()
-                secondFragment.models = model
                 fragmentManager.commit {
                     replace(
                         R.id.fragment_container,

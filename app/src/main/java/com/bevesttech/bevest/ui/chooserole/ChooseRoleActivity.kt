@@ -10,6 +10,7 @@ import com.bevesttech.bevest.R
 import com.bevesttech.bevest.data.Result
 import com.bevesttech.bevest.databinding.ActivityChooseRoleBinding
 import com.bevesttech.bevest.ui.businessowner.ownerregistration.OwnerRegistrationActivity
+import com.bevesttech.bevest.ui.investor.register.InvestorRegisterActivity
 import com.bevesttech.bevest.utils.Role
 import com.bevesttech.bevest.utils.ViewModelFactory
 import com.bevesttech.bevest.utils.blockInput
@@ -92,11 +93,18 @@ class ChooseRoleActivity : AppCompatActivity() {
                                             OwnerRegistrationActivity::class.java
                                         ).also {
                                             startActivity(it)
+                                            finish()
                                         }
                                     }
 
                                     Role.INVESTOR -> {
-
+                                        Intent(
+                                            this@ChooseRoleActivity,
+                                            InvestorRegisterActivity::class.java
+                                        ).also {
+                                            startActivity(it)
+                                            finish()
+                                        }
                                     }
 
                                     Role.NONE -> {
@@ -105,6 +113,7 @@ class ChooseRoleActivity : AppCompatActivity() {
                                             MainActivity::class.java
                                         ).also {
                                             startActivity(it)
+                                            finish()
                                         }
                                     }
                                 }

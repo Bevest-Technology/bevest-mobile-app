@@ -1,5 +1,6 @@
 package com.bevesttech.bevest.ui.splashscreen
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
@@ -14,12 +15,14 @@ import com.bevesttech.bevest.ui.businessowner.businessvaluation.BusinessCallProc
 import com.bevesttech.bevest.ui.businessowner.businessvaluation.BusinessValuationAcceptedActivity
 import com.bevesttech.bevest.ui.businessowner.ownerregistration.OwnerRegistrationActivity
 import com.bevesttech.bevest.ui.chooserole.ChooseRoleActivity
+import com.bevesttech.bevest.ui.investor.register.InvestorRegisterActivity
 import com.bevesttech.bevest.ui.login.LoginActivity
 import com.bevesttech.bevest.ui.onboarding.OnboardingActivity
 import com.bevesttech.bevest.utils.BusinessValuationState
 import com.bevesttech.bevest.utils.Utils
 import com.bevesttech.bevest.utils.ViewModelFactory
 
+@SuppressLint("CustomSplashScreen")
 class SplashScreenActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySplashScreenBinding
@@ -142,6 +145,12 @@ class SplashScreenActivity : AppCompatActivity() {
 //                                        startActivity(it)
 //                                        finish()
 //                                    }
+                                }
+                            } else {
+
+                                Intent(this, InvestorRegisterActivity::class.java).also {
+                                    startActivity(it)
+                                    finish()
                                 }
                             }
                         } else {

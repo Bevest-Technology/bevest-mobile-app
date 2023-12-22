@@ -33,7 +33,7 @@ class InvestorRecommendationFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.tvRekomendasiMenabung.text = viewModel.rekomendasiMenabung
+//        binding.tvRekomendasiMenabung.text = viewModel.rekomendasiMenabung
     }
 
     override fun onDestroy() {

@@ -149,7 +149,7 @@
     </string-array>
 
     <string-array name="jenis_kelamin">
-        <item>Laki - Laki</item>
+        <item>Laki-Laki</item>
         <item>Perempuan</item>
     </string-array>
 
@@ -363,4 +363,6 @@
     <string name="subtitle_business_screening_accepted">Silahkan lanjut ke proses wawancara</string>
     <string name="title_business_screening_accepter">Selamat!! \nProses Screening Bisnis Anda Diterima</string>
     <string name="coming_soon">Kami sedang mempersiapkan fitur ini :)</string>
+    <string name="jumlah_anak">Jumlah Anak</string>
+    <string name="status_pernikahan">Status Pernikahan</string>
 </resources>

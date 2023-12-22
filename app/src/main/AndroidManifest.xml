@@ -20,6 +20,9 @@
         android:theme="@style/Theme.BevestMobileApplication"
         tools:targetApi="31">
         <activity
+            android:name=".ui.investor.register.RiskProfileResultActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.comingsoon.ComingSoonActivity"
             android:exported="false" />
         <activity
@@ -115,10 +118,8 @@
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />
-        </provider>
-        <!-- Trigger Google Play services to install the backported photo picker module. -->
+        </provider> <!-- Trigger Google Play services to install the backported photo picker module. -->
         <!-- suppress AndroidDomInspection -->
-
         <service
             android:name="com.google.android.gms.metadata.ModuleDependencies"
             android:enabled="false"
