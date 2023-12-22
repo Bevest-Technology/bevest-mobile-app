@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.bevesttech.bevest.R
 import com.bevesttech.bevest.databinding.FragmentInkubasiBinding
 
@@ -29,6 +30,23 @@ class InkubasiFragment : Fragment() {
             Intent(Intent.ACTION_VIEW, Uri.parse("https://inkubator.lpdb.id/")).also {
                 startActivity(it)
             }
+        }
+
+        val listAgendaInkubasi = listOf<ItemInkubasiModel>()
+        setView(listAgendaInkubasi)
+    }
+
+    private fun setView(list: List<ItemInkubasiModel>) {
+        if (list.isNotEmpty()) {
+            val rv = binding.rvInkubasi
+            val rvAdapter = AgendaInkubasiAdapter(list)
+            rv.apply {
+                setHasFixedSize(true)
+                layoutManager = LinearLayoutManager(requireActivity())
+                adapter = rvAdapter
+            }
+        } else {
+            binding.agendaEmpty.visibility = View.VISIBLE
         }
     }
 

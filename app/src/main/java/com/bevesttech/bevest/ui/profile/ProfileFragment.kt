@@ -1,19 +1,28 @@
 package com.bevesttech.bevest.ui.profile
 
+import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.fragment.app.viewModels
 import com.bevesttech.bevest.R
 import com.bevesttech.bevest.databinding.FragmentProfileBinding
+import com.bevesttech.bevest.ui.login.LoginActivity
+import com.bevesttech.bevest.utils.ViewModelFactory
 import com.bumptech.glide.Glide
 
 class ProfileFragment : Fragment(), View.OnClickListener {
 
     private var _binding: FragmentProfileBinding? = null
     private val binding get() = _binding!!
+
+    private val viewModel: ProfileViewModel by viewModels {
+        ViewModelFactory(requireActivity())
+    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -52,7 +61,19 @@ class ProfileFragment : Fragment(), View.OnClickListener {
     }
 
     override fun onClick(v: View) {
-        TODO("Not yet implemented")
+        when (v.id) {
+            R.id.layout_keluar -> {
+                viewModel.logout()
+                Intent(requireActivity(), LoginActivity::class.java).also {
+                    startActivity(it)
+                    requireActivity().finishAffinity()
+                }
+            }
+
+            else -> {
+                Toast.makeText(requireActivity(), "Fitur ini belum tersedia.", Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 
 }

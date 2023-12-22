@@ -4,17 +4,82 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <uses-feature android:name="android.hardware.camera" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/bevest_logo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/bevest_logo"
         android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/Theme.BevestMobileApplication"
         tools:targetApi="31">
+        <activity
+            android:name=".ui.investor.home.InvestorHomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.businesshome.BusinessHomeActivity"
+            android:exported="false"
+            android:label="@string/title_activity_business_home" />
+        <activity
+            android:name=".ui.investor.investorpersonaldata.InvestorPersonalDataActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.investor.register.RiskProfileResultActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.comingsoon.ComingSoonActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.businessowner.businessvaluation.BusinessValuationRejectedActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.businessowner.businessvaluation.BusinessValuationAcceptedActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.businessowner.businessvaluation.BusinessCallProcessActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.businessowner.businessvaluation.BusinessChangeWhatsappActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.businessowner.businessvaluation.BusinessWhatsappValidationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.businessowner.businessscreening.BusinessScreeningAcceptedActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.businessowner.businessscreening.BusinessScreeningRejectedActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.businessowner.businessscreening.BusinessScreeningWaitingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.businessowner.businessdataregistration.BusinessDataRegistrationActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustNothing" />
+        <activity
+            android:name=".ui.splashscreen.SplashScreenActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.investor.profileresiko.ProfileResikoActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:exported="false" />
+        <activity
+            android:name=".ui.investor.register.InvestorRegisterActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:exported="false" />
         <activity
             android:name=".ui.laporan.UpdateLaporanActivity"
             android:exported="false" />
@@ -23,7 +88,8 @@
             android:exported="false" />
         <activity
             android:name=".ui.businessowner.ownerregistration.OwnerRegistrationActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:windowSoftInputMode="adjustNothing" />
         <activity
             android:name=".ui.bisnislisting.BisnisListingActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
@@ -52,14 +118,22 @@
             android:exported="false" />
         <activity
             android:name=".ui.onboarding.OnboardingActivity"
-            android:exported="true">
+            android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider> <!-- Trigger Google Play services to install the backported photo picker module. -->
+        <!-- suppress AndroidDomInspection -->
         <service
             android:name="com.google.android.gms.metadata.ModuleDependencies"
             android:enabled="false"

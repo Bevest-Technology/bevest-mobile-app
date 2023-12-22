@@ -32,6 +32,20 @@
         <item name="android:paddingBottom">8dp</item>
     </style>
 
+    <style name="BevestDesign.Component.Dropdown" parent="Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+        <item name="boxStrokeColor">@color/edittext_box_selector</item>
+        <item name="hintTextColor">@color/edittext_hinttext_selector</item>
+        <item name="android:textColorHint">@color/edittext_hinttext_selector</item>
+        <item name="strokeWidth">1.5dp</item>
+        <item name="hintTextAppearance">?attr/dsTypographyBody1</item>
+        <item name="android:textAppearance">?attr/dsTypographyBody1</item>
+        <item name="boxCornerRadiusBottomStart">8dp</item>
+        <item name="boxCornerRadiusBottomEnd">8dp</item>
+        <item name="boxCornerRadiusTopEnd">8dp</item>
+        <item name="boxCornerRadiusTopStart">8dp</item>
+        <item name="android:paddingBottom">8dp</item>
+    </style>
+
     <style name="BevestDesign.Component.DropDown" parent="Widget.Material3.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu">
         <item name="boxStrokeColor">@color/edittext_box_selector</item>
         <item name="hintTextColor">@color/edittext_hinttext_selector</item>
@@ -73,4 +87,5 @@
         <item name="cardBackgroundColor">@color/ds_neutral_20</item>
         <item name="strokeWidth">0dp</item>
     </style>
+
 </resources>

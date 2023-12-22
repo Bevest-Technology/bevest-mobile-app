@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.businessowner.businessdataregistration.BusinessDataOptionalFragment">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.bevesttech.bevest.ui.businessowner.businessdataregistration.BusinessDataRegistrationViewModel"/>
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tv_question"
+            style="@style/BevestDesign.Typography.BodySemiBold2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/data_bisnis_penunjang" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_dokumen_kredit"
+            style="@style/BevestDesign.Component.EditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_dokumen_kredit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/jumlah_dokumen_kredit"
+                android:imeOptions="actionNext"
+                android:inputType="number"
+                android:maxLines="1"
+                android:textAppearance="@style/BevestDesign.Typography.Body1"
+                android:onTextChanged="@{(text, start, before, count) -> viewModel.setCreditDocumentNumber(text)}"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_website"
+            style="@style/BevestDesign.Component.EditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_website"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/website_opsional"
+                android:imeOptions="actionNext"
+                android:inputType="textUri"
+                android:maxLines="1"
+                android:textAppearance="@style/BevestDesign.Typography.Body1"
+                android:onTextChanged="@{(text, start, before, count) -> viewModel.setWebsiteUrl(text)}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_media_sosial"
+            style="@style/BevestDesign.Component.EditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_media_sosial"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/media_sosial_opsional"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:maxLines="1"
+                android:textAppearance="@style/BevestDesign.Typography.Body1"
+                android:onTextChanged="@{(text, start, before, count) -> viewModel.setSocialMedia(text)}"/>
+        </com.google.android.material.textfield.TextInputLayout>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

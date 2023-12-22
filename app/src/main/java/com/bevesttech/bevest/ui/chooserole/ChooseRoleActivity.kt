@@ -9,6 +9,8 @@ import com.bevesttech.bevest.MainActivity
 import com.bevesttech.bevest.R
 import com.bevesttech.bevest.data.Result
 import com.bevesttech.bevest.databinding.ActivityChooseRoleBinding
+import com.bevesttech.bevest.ui.businessowner.ownerregistration.OwnerRegistrationActivity
+import com.bevesttech.bevest.ui.investor.register.InvestorRegisterActivity
 import com.bevesttech.bevest.utils.Role
 import com.bevesttech.bevest.utils.ViewModelFactory
 import com.bevesttech.bevest.utils.blockInput
@@ -83,11 +85,37 @@ class ChooseRoleActivity : AppCompatActivity() {
                             is Result.Success -> {
                                 progressIndicator.gone()
                                 unblockInput()
-                                Intent(
-                                    this@ChooseRoleActivity,
-                                    MainActivity::class.java
-                                ).also {
-                                    startActivity(it)
+
+                                when(role){
+                                    Role.BUSINESS -> {
+                                        Intent(
+                                            this@ChooseRoleActivity,
+                                            OwnerRegistrationActivity::class.java
+                                        ).also {
+                                            startActivity(it)
+                                            finish()
+                                        }
+                                    }
+
+                                    Role.INVESTOR -> {
+                                        Intent(
+                                            this@ChooseRoleActivity,
+                                            InvestorRegisterActivity::class.java
+                                        ).also {
+                                            startActivity(it)
+                                            finish()
+                                        }
+                                    }
+
+                                    Role.NONE -> {
+                                        Intent(
+                                            this@ChooseRoleActivity,
+                                            MainActivity::class.java
+                                        ).also {
+                                            startActivity(it)
+                                            finish()
+                                        }
+                                    }
                                 }
                             }
 

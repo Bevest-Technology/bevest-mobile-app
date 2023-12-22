@@ -1,120 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="16dp"
     tools:context=".ui.businessowner.ownerregistration.PersonalIdentityFragment">
 
-    <TextView
-        android:id="@+id/tv_question"
-        style="@style/BevestDesign.Typography.BodySemiBold2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/identitas_pribadi" />
+    <data>
+        <variable
+            name="viewModel"
+            type="com.bevesttech.bevest.ui.businessowner.ownerregistration.OwnerRegistrationViewModel"/>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_owner_name"
-        style="@style/BevestDesign.Component.EditText"
+        <variable
+            name="fragment"
+            type="com.bevesttech.bevest.ui.businessowner.ownerregistration.PersonalIdentityFragment"/>
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp">
+        android:orientation="vertical"
+        android:padding="16dp">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edt_owner_name"
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/tv_question"
+            style="@style/BevestDesign.Typography.BodySemiBold2"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="@string/nama_lengkap_owner"
-            android:imeOptions="actionNext"
-            android:inputType="textPersonName"
-            android:maxLines="1"
-            android:textAppearance="@style/BevestDesign.Typography.Body1" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_active_whatsapp_number"
-        style="@style/BevestDesign.Component.EditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edt_active_whatsapp_number"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/no_whatsapp_aktif"
-            android:imeOptions="actionNext"
-            android:inputType="number|phone"
-            android:maxLines="1"
-            android:textAppearance="@style/BevestDesign.Typography.Body1" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_address"
-        style="@style/BevestDesign.Component.EditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edt_address"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/alamat_lengkap"
-            android:imeOptions="actionNext"
-            android:inputType="textMultiLine"
-            android:maxLines="3"
-            android:textAppearance="@style/BevestDesign.Typography.Body1" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <RelativeLayout
-        android:id="@+id/layout_owner_profile_photo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp">
+            android:text="@string/identitas_pribadi" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_owner_profile_photo"
+            android:id="@+id/til_owner_name"
+            style="@style/BevestDesign.Component.EditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_owner_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/nama_lengkap_owner"
+                android:imeOptions="actionNext"
+                android:inputType="textPersonName"
+                android:maxLines="1"
+                android:textAppearance="@style/BevestDesign.Typography.Body1"
+                android:onTextChanged="@{(text, start, before, count) -> viewModel.setFullName(text)}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_active_whatsapp_number"
             style="@style/BevestDesign.Component.EditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edt_owner_profile_photo"
+                android:id="@+id/edt_active_whatsapp_number"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:enabled="false"
-                android:hint="@string/unggah_foto_owner"
-                android:inputType="textMultiLine"
-                android:minLines="5"
-                android:textAppearance="@style/BevestDesign.Typography.Body1" />
+                android:hint="@string/no_whatsapp_aktif"
+                android:imeOptions="actionNext"
+                android:inputType="number|phone"
+                android:maxLines="1"
+                android:textAppearance="@style/BevestDesign.Typography.Body1"
+                android:onTextChanged="@{(text, start, before, count) -> viewModel.setWhatsappNumber(text)}" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <ImageView
-            android:id="@+id/iv_owner_profile_photo"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_address"
+            style="@style/BevestDesign.Component.EditText"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignStart="@id/til_owner_profile_photo"
-            android:layout_alignTop="@id/til_owner_profile_photo"
-            android:layout_alignEnd="@id/til_owner_profile_photo"
-            android:layout_alignBottom="@id/til_owner_profile_photo"
-            android:layout_centerVertical="true"
-            android:layout_marginHorizontal="8dp"
-            android:layout_marginVertical="16dp"
-            android:scaleType="fitCenter"
-            android:adjustViewBounds="true"
-            tools:src="@tools:sample/avatars" />
+            android:layout_height="wrap_content">
 
-        <ImageButton
-            android:id="@+id/btn_foto_profile"
-            android:layout_width="wrap_content"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/alamat_lengkap"
+                android:imeOptions="actionNext"
+                android:inputType="textMultiLine"
+                android:maxLines="3"
+                android:textAppearance="@style/BevestDesign.Typography.Body1"
+                android:onTextChanged="@{(text, start, before, count) -> viewModel.setFullAddress(text)}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <include
+            android:id="@+id/card_upload_owner_photo"
+            layout="@layout/item_upload_file"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignEnd="@id/til_owner_profile_photo"
-            android:layout_centerVertical="true"
-            android:layout_marginEnd="16dp"
-            android:backgroundTint="@color/color_transparent"
-            android:src="@drawable/ic_upload" />
-    </RelativeLayout>
+            android:layout_marginTop="8dp"/>
 
-</androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

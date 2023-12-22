@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.investor.investorpersonaldata.InvestoBankAccountFragment">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.bevesttech.bevest.ui.investor.investorpersonaldata.InvestorPersonalDataViewModel"/>
+
+        <variable
+            name="fragment"
+            type="com.bevesttech.bevest.ui.investor.investorpersonaldata.InvestorBankAccountFragment"/>
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            tools:context=".ui.businessowner.ownerregistration.PersonalIdentityFragment">
+
+            <TextView
+                android:id="@+id/tv_question"
+                style="@style/BevestDesign.Typography.BodySemiBold2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Data Bank" />
+
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_bank_name"
+                style="@style/BevestDesign.Component.DropDown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/bank"
+                android:layout_marginTop="8dp">
+
+                <AutoCompleteTextView
+                    android:id="@+id/act_bank_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:inputType="none"
+                    android:textAppearance="@style/BevestDesign.Typography.Body1"
+                    android:onTextChanged="@{(text, start, before, count) -> viewModel.setBankName(text)}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_bank_number"
+                style="@style/BevestDesign.Component.EditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_bank_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/nomor_rekening"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:maxLines="1"
+                    android:textAppearance="@style/BevestDesign.Typography.Body1"
+                    android:onTextChanged="@{(text, start, before, count) -> viewModel.setBankNumber(text)}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.core.widget.NestedScrollView>
+</layout>

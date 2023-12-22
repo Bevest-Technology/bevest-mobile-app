@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".ui.investor.investorpersonaldata.InvestorKtpUploadFragment">
+
+    <TextView
+        android:id="@+id/tv_question"
+        style="@style/BevestDesign.Typography.BodySemiBold2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/identitas_pribadi" />
+
+    <TextView
+        style="@style/BevestDesign.Typography.Body3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:textColor="@color/ds_neutral_80"
+        android:text="@string/pastikan_hasil_foto_kamu_terbaca_dengan_jelas_untuk_keperluan_identitas_kamu"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_ktp_criteria"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/ktp_criteria"
+        android:layout_gravity="center"/>
+
+    <include
+        android:id="@+id/card_upload_ktp"
+        layout="@layout/item_upload_file"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"/>
+
+</androidx.appcompat.widget.LinearLayoutCompat>
