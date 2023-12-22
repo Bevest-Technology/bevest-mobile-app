@@ -10,7 +10,7 @@
 
         <variable
             name="fragment"
-            type="com.bevesttech.bevest.ui.investor.investorpersonaldata.InvestoBankAccountFragment"/>
+            type="com.bevesttech.bevest.ui.investor.investorpersonaldata.InvestorBankAccountFragment"/>
     </data>
 
     <androidx.core.widget.NestedScrollView
