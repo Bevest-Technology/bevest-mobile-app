@@ -104,6 +104,12 @@
     <string name="selamat_kamu_adalah_tipe_investor">Selamat, Kamu Adalah Tipe Investor</string>
     <string name="investor_seperti_kamu_cocok_untuk_nmenabung">Investor Seperti Kamu Cocok Untuk\nMenabung</string>
     <string name="lanjut_registrasi">Lanjut Registrasi</string>
+    <string name="foto_profile">Foto Profile</string>
+    <string name="halo">Halo,</string>
+    <string name="lanjutkan_mengisi_data_bisnis_anda_nuntuk_segera_melanjutkan_ipo">Lanjutkan mengisi data bisnis Anda\nuntuk segera melanjutkan IPO</string>
+    <string name="lanjutkan_isi_data">Lanjutkan Isi Data</string>
+    <string name="keambangkan_bisnis_anda">Keambangkan Bisnis Anda</string>
+    <string name="cerita_sukses">Cerita Sukses</string>
 
     <string-array name="kategori_bisnis_list">
         <item>Penyediaan Akomodasi dan Makan Minum Peternakan</item>
@@ -146,4 +152,8 @@
         <item>S2</item>
         <item>S3</item>
     </string-array>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
 </resources>
