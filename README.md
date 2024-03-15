@@ -1,2 +1,1 @@
-# bevest-mobile-app
-tes
+Bevest, an equity crowdfunding application integrated with machine learning capabilities. Bevest aims to address the financing gap faced by SMEs using a novel crowdfunding platform, along with a dedicated team to guide and scale businesses. By implementing a screening process, business value estimator, and investor risk profiler powered by machine learning algorithms, Bevest will provide investors the necessary tools to make educated investment decisions. Additionally, the application will facilitate a secondary market for trading stocks (coming soon), enhancing liquidity and investment flexibility.
